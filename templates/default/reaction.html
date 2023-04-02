@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+{{ template "header" }}
+        <div id="Function">
+            <script>
+                var num = Math.ceil(Math.random()*8);
+                var flag=0;
+                var beginTime = 0;
+                var endTime = 0
+                function changeColor(){
+                    if(flag == 1){      
+                            endTime = +new Date();
+                            document.getElementById("reactionB").style.background="#57F15C";
+                            document.getElementById("reactionB").innerHTML=((endTime - beginTime) + " ms");           
+                        }
+
+                    else if(flag == 0){
+                        document.getElementById("reactionB").style.background="#57F15C";
+                        document.getElementById("reactionB").innerHTML="Wait...";
+                        setTimeout(function(){
+                            document.getElementById("reactionB").style.background="#E0457B";
+                            document.getElementById("reactionB").innerHTML="Click!";
+                            beginTime = +new Date();
+                        },num*1000+1000);
+                    }
+
+                    else if(flag == 2){
+                        location.reload();
+                    }
+
+                    flag++;
+                }
+            </script>
+            <br />
+            <div id="title">
+                <p style="text-align: center;"><label style="font-size:50px; color: #1e9595; font-weight: bold;" for="number">Reaction Test</label></p>
+            </div>
+            <br />
+            <br />
+            <div id="button">
+                <!--<p style="text-align: center;" id="reactionB" onclick="changeColor()"><input style="width: 550px; height: 350px;" type = "button" id="reactionB" onclick="changeColor()"></p>-->
+                <p style="text-align: center;">           
+                    <button onclick="changeColor()" id="reactionB" style="
+                                            width: 600px;
+                                            height: 400px;
+                                            border-width: 0px;
+                                            border-radius: 19px;
+                                            cursor: pointer;
+                                            outline: none; 
+                                            color: white;
+                                            background-color: #57F15C;
+                                            font-family: 'Open Sans';
+                                            font-size: 40px;">
+                    Click Here</button>
+                </p>
+            </div>
+            <br />
+            <br />
+            <div id="info">
+                <p style="text-align: center;"><label style="font-size:20px;" for="number">Click the button above. When the button turns red, click it again to know the response time.</label></p>
+            </div>
+        </div>
+{{ template "footer" }}
+</html>

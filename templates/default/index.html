@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+{{template "header"}}
+<br />
+<br />
+<body>
+    <!--logo-->
+    <br />
+    <br />
+    <br />
+    <div id="logo_main">
+        <br />
+        <p style="text-align: center;"> 
+            <img src="{{.image_logo}}"
+            width="446"
+            height="80">
+        </p>
+        <br />
+        <br />
+    </div>
+
+    <div id="Timer" style="text-align: center;">
+        <p id="timer_s" style="color: #c7437ccd"></p>
+        <script>
+            var myVar=setInterval(function(){myTimer()},1);
+            var clock = document.getElementById("Timer")
+            function myTimer(){
+                var d=new Date();
+                var t=d.toLocaleTimeString();
+                clock.innerHTML=t;
+                clock.style.color = "#c7437ccd"
+                clock.style.fontWeight = "bold"
+                clock.style.fontFamily = "Open Sans"
+            }
+        </script>
+    
+    </div>
+    
+    <div id="menu" style="margin-left: 150px; margin: 150px; border-radius: 10px;background-color:#a19a9a19; text-align: center; clear:both;">
+        <!--functions--> 
+        <div id="div menu">    
+            <br />
+            <p style="text-align: center"><a href="/digit_converter" style="color:#1e9595; text-decoration: none; font-size: large;">进制转换器 DigitConverter</a></p>
+            <p style="text-align: center"><a href="/reaction_test" style="color:#1e9595; text-decoration: none; font-size: large;">反应测试 ReactionTest</a></p>
+            <p style="text-align: center; color: #de77a5; font-size: large;">持续更新中...</p>
+            <br />
+        </div>
+    </div>
+	<br />
+	<br />
+	<div id="intro" style="text-align: center; clear: both; overflow: hidden;">
+        	<a style="color:#010101f6; text-decoration: none; font-size: 30px; font-weight: bolder; font-family: Arial">关于作者</a>
+        	<br />
+		<br />
+		<br />
+            <p style="color:#010101f6; text-decoration: none; font-size: 20px; font-family: Arial;">
+                大家好！我是BinL。本网站的制作人。<br />
+                <br />
+                本网站从2022年6月开始慢慢建设中......<br />
+                <br />
+                    今后将添加更多有用有趣的小功能！
+            </p>
+	</div>
+    </body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    {{template "footer"}}
+</html>
