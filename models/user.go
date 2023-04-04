@@ -11,7 +11,7 @@ import (
 type User struct {
 	gorm.Model
 	UserName string `gorm:"type:varchar(20);not null"`
-	Password string `gorm:"type:varchar(30);not null"`
+	Password string `gorm:"type:varchar(255);not null"`
 }
 
 func InitDB() *gorm.DB {
