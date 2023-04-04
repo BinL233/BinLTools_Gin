@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+{{template "header"}}
+<br />
+<br />
+<body>
+	<div>
+		<div class='login'>
+			<div class='title'>Login</div>
+			<div class='biao'>
+				<form action="/login" method='post'>
+					<label>用户：</label><input type="text" name='user'><br><br>
+					<label>密码：</label><input type="password" name='pwd'><br>
+					<input type="submit" value='登录' style='width:240px;height:30px;margin-top:25px;background:#ffffff'>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+{{template "footer"}}
+</html>
