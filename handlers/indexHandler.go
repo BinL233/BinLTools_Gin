@@ -1,8 +1,10 @@
 package handlers
 
 import (
+	"BinLTools_Gin/dto"
 	"BinLTools_Gin/middlewares"
 	"BinLTools_Gin/models"
+	"BinLTools_Gin/util"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
 	"net/http"
@@ -21,7 +23,7 @@ func Login(c *gin.Context) {
 
 func LoginProcess(c *gin.Context) {
 	//Initialize database
-	db := models.InitDB()
+	DB := models.GetDB()
 
 	//Fetch data
 	userName := c.PostForm("user")
@@ -30,11 +32,19 @@ func LoginProcess(c *gin.Context) {
 	var user models.User
 
 	//Check username
-	db.Where("user_name = ?", userName).First(&user)
-	if user.ID == 0 {
+	DB.Where("user_name = ?", userName).First(&user)
+	if len(userName) == 0 {
 		c.JSON(http.StatusUnprocessableEntity, gin.H{
 			"code": 422,
 			"msg":  "Username cannot be null",
+		})
+		return
+	}
+
+	if user.ID == 0 {
+		c.JSON(http.StatusUnprocessableEntity, gin.H{
+			"code": 422,
+			"msg":  "Username not exist",
 		})
 		return
 	}
@@ -75,13 +85,21 @@ func LoginProcess(c *gin.Context) {
 	})
 }
 
+func Info(c *gin.Context) {
+	user, _ := c.Get("user")
+	c.JSON(http.StatusOK, gin.H{
+		"code": 200,
+		"data": gin.H{"user": dto.ToUserDto(user.(models.User))},
+	})
+}
+
 func Register(c *gin.Context) {
 	c.HTML(http.StatusOK, "register.html", gin.H{})
 }
 
 func RegisterProcess(c *gin.Context) {
 	//Initialize database
-	db := models.InitDB()
+	DB := models.GetDB()
 
 	//Fetch data
 	userName := c.PostForm("user")
@@ -98,10 +116,10 @@ func RegisterProcess(c *gin.Context) {
 
 	//Check userName
 	if len(userName) == 0 {
-		userName = models.RandomString(10)
+		userName = util.RandomString(10)
 	}
 
-	if models.IsUserNameExist(db, userName) {
+	if models.IsUserNameExist(DB, userName) {
 		c.JSON(http.StatusUnprocessableEntity, gin.H{
 			"code": 422,
 			"msg":  "Name already exist",
@@ -122,7 +140,7 @@ func RegisterProcess(c *gin.Context) {
 		UserName: userName,
 		Password: string(phasedPassword),
 	}
-	db.Create(&newUser)
+	DB.Create(&newUser)
 
 	c.JSON(http.StatusOK, gin.H{
 		"code": 200,
