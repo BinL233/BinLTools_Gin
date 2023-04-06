@@ -48,3 +48,9 @@ func IsUserNameExist(db *gorm.DB, userName string) bool {
 
 	return false
 }
+
+func FindUserByField(value string) User {
+	var u User
+	DB.Where("id = ?", value).First(&u)
+	return u
+}

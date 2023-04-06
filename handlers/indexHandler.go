@@ -1,6 +1,8 @@
 package handlers
 
 import (
+	"BinLTools_Gin/Responses"
+	"BinLTools_Gin/Services"
 	"BinLTools_Gin/dto"
 	"BinLTools_Gin/middlewares"
 	"BinLTools_Gin/models"
@@ -8,17 +10,30 @@ import (
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
 	"net/http"
+	"strconv"
 )
 
 func Index(c *gin.Context) {
+	userInfo := Services.GetUserInfo(c)
+	if len(userInfo) == 0 {
+		userInfo["username"] = "Sign Up"
+	}
 	c.HTML(http.StatusOK, "index.html", gin.H{
 		"title":      "BinLTools",
 		"image_logo": "/static/images/logo.png",
+		"userName":   userInfo,
 	})
 }
 
 func Login(c *gin.Context) {
-	c.HTML(http.StatusOK, "login.html", gin.H{})
+	userInfo := Services.GetUserInfo(c)
+	if len(userInfo) == 0 {
+		userInfo["username"] = "Sign Up"
+	}
+	c.HTML(http.StatusOK, "login.html", gin.H{
+		"title":    "Login",
+		"userName": userInfo,
+	})
 }
 
 func LoginProcess(c *gin.Context) {
@@ -34,35 +49,23 @@ func LoginProcess(c *gin.Context) {
 	//Check username
 	DB.Where("user_name = ?", userName).First(&user)
 	if len(userName) == 0 {
-		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"code": 422,
-			"msg":  "Username cannot be null",
-		})
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Username cannot be null")
 		return
 	}
 
 	if user.ID == 0 {
-		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"code": 422,
-			"msg":  "Username not exist",
-		})
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Username not exist")
 		return
 	}
 
 	//Check password
 	if len(password) == 0 {
-		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"code": 422,
-			"msg":  "Password cannot be null",
-		})
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Password cannot be null")
 		return
 	}
 
 	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password)); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"code": 400,
-			"msg":  "Incorrect password",
-		})
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Incorrect password")
 		return
 	}
 
@@ -70,31 +73,33 @@ func LoginProcess(c *gin.Context) {
 	token, err := middlewares.ReleaseToken(user)
 
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"code": 500,
-			"msg":  "Server Error",
-		})
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "Server Error")
 		return
 	}
 
 	//Success
-	c.JSON(http.StatusOK, gin.H{
-		"code": 200,
-		"data": gin.H{"token": token},
-		"msg":  "Success!",
-	})
+	if user.ID > 0 {
+		Services.SaveAuthSession(c, string(strconv.Itoa(int(user.ID))))
+	} else {
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "System error")
+	}
+	Responses.Success(c, gin.H{"token": token}, "Success!")
 }
 
 func Info(c *gin.Context) {
 	user, _ := c.Get("user")
-	c.JSON(http.StatusOK, gin.H{
-		"code": 200,
-		"data": gin.H{"user": dto.ToUserDto(user.(models.User))},
-	})
+	Responses.Success(c, gin.H{"user": dto.ToUserDto(user.(models.User))}, "Success!")
 }
 
 func Register(c *gin.Context) {
-	c.HTML(http.StatusOK, "register.html", gin.H{})
+	userInfo := Services.GetUserInfo(c)
+	if userInfo == nil {
+		userInfo["username"] = "Sign Up"
+	}
+	c.HTML(http.StatusOK, "register.html", gin.H{
+		"title":    "Sign Up",
+		"userName": userInfo,
+	})
 }
 
 func RegisterProcess(c *gin.Context) {
@@ -107,10 +112,7 @@ func RegisterProcess(c *gin.Context) {
 
 	//Check password
 	if len(password) < 6 {
-		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"code": 422,
-			"msg":  "Password cannot less than 6.",
-		})
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Password cannot less than 6")
 		return
 	}
 
@@ -120,20 +122,14 @@ func RegisterProcess(c *gin.Context) {
 	}
 
 	if models.IsUserNameExist(DB, userName) {
-		c.JSON(http.StatusUnprocessableEntity, gin.H{
-			"code": 422,
-			"msg":  "Name already exist",
-		})
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Name already exist")
 		return
 	}
 
 	//Create account
 	phasedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"code": 500,
-			"msg":  "Encrypt error",
-		})
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "Encrypt error")
 		return
 	}
 	newUser := models.User{
@@ -141,9 +137,11 @@ func RegisterProcess(c *gin.Context) {
 		Password: string(phasedPassword),
 	}
 	DB.Create(&newUser)
+	/*	if newUser.ID > 0 {
+			Services.SaveAuthSession(c, strconv.Itoa(int(newUser.ID)))
+		} else {
+			Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "System error")
+		}*/
 
-	c.JSON(http.StatusOK, gin.H{
-		"code": 200,
-		"msg":  "Success!",
-	})
+	Responses.Success(c, nil, "Success!")
 }

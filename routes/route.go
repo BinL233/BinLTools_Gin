@@ -1,13 +1,14 @@
 package routes
 
 import (
+	"BinLTools_Gin/Services"
 	"BinLTools_Gin/handlers"
 	"BinLTools_Gin/middlewares"
 	"github.com/gin-gonic/gin"
 )
 
 func InitRoutes(r *gin.Engine) {
-	idx := r.Group("/")
+	idx := r.Group("/", Services.EnableCookieSession())
 	{
 		idx.GET("/", handlers.Index)
 		idx.GET("/reaction_test", handlers.ReactionTest)

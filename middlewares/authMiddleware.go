@@ -1,6 +1,7 @@
 package middlewares
 
 import (
+	"BinLTools_Gin/Responses"
 	"BinLTools_Gin/models"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -14,10 +15,7 @@ func AuthMiddleware() gin.HandlerFunc {
 
 		//check token format
 		if tokenString == "" || !strings.HasPrefix(tokenString, "Bearer ") {
-			c.JSON(http.StatusUnauthorized, gin.H{
-				"code": 401,
-				"msg":  "Not authorized: Token format incorrect",
-			})
+			Responses.ErrorResponse(c, http.StatusUnauthorized, 401, nil, "Not authorized: Token format incorrect")
 			c.Abort()
 			return
 		}
@@ -26,10 +24,7 @@ func AuthMiddleware() gin.HandlerFunc {
 		token, claims, err := ParseToken(tokenString)
 
 		if err != nil || !token.Valid {
-			c.JSON(http.StatusUnauthorized, gin.H{
-				"code": 401,
-				"msg":  "Not authorized",
-			})
+			Responses.ErrorResponse(c, http.StatusUnauthorized, 401, nil, "Not authorized")
 			c.Abort()
 			return
 		}
@@ -42,10 +37,7 @@ func AuthMiddleware() gin.HandlerFunc {
 
 		//user not exist
 		if user.ID == 0 {
-			c.JSON(http.StatusUnauthorized, gin.H{
-				"code": 401,
-				"msg":  "Not authorized",
-			})
+			Responses.ErrorResponse(c, http.StatusUnauthorized, 401, nil, "Not authorized")
 			return
 		}
 
