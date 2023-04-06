@@ -19,7 +19,7 @@ func main() {
 
 	routes.InitRoutes(r)
 
-	err := r.Run()
+	err := r.Run("binltools.fun:80")
 	if err != nil {
 		return
 	}
