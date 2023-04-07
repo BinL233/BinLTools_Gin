@@ -132,6 +132,7 @@ func RegisterProcess(c *gin.Context) {
 		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "Encrypt error")
 		return
 	}
+
 	newUser := models.User{
 		UserName: userName,
 		Password: string(phasedPassword),

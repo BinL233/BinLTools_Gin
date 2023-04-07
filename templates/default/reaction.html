@@ -2,9 +2,8 @@
 <html>
 <title>{{.title}}</title>
 {{ template "header" .}}
-        <div id="Function">
             <script>
-                var num = Math.ceil(Math.random()*8);
+                var num = Math.ceil(Math.random()*5);
                 var flag=0;
                 var beginTime = 0;
                 var endTime = 0
@@ -12,7 +11,12 @@
                     if(flag == 1){      
                             endTime = +new Date();
                             document.getElementById("reactionB").style.background="#57F15C";
-                            document.getElementById("reactionB").innerHTML=((endTime - beginTime) + " ms");           
+                            document.getElementById("reactionB").innerHTML=((endTime - beginTime) + " ms");
+                            // Send "reactionB" value to the backend
+                            var xhr = new XMLHttpRequest();
+                            xhr.open("POST", "/handle-reaction-b", true);
+                            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                            xhr.send("reactionB=" + encodeURIComponent(document.getElementById("reactionB").innerHTML));
                         }
 
                     else if(flag == 0){
@@ -59,7 +63,20 @@
             <br />
             <div id="info">
                 <p style="text-align: center;"><label style="font-size:20px;" for="number">Click the button above. When the button turns red, click it again to know the response time.</label></p>
+            </div><br><br><br><br>
+            <div id="rank">
+                <div if="rank_title">
+                    <p style="text-align: center;"><label style="font-size:40px; color: #1e9595; font-weight: bold;">Rank</label></p>
+                </div><br><br><br>
+                <table style="left: 30%; border-collapse:separate; border-spacing:100px 30px; background-color: rgba(69,67,67,0.21); margin: 0 auto;">
+                    {{ range $element := .rank }}
+                        <tr style="left: 30%">
+                            <td>{{$element.id}}</td>
+                            <td>{{$element.userName}}</td>
+                            <td>{{$element.score}}</td>
+                        </tr>
+                    {{ end }}
+                </table>
             </div>
-        </div>
 {{ template "footer" }}
 </html>

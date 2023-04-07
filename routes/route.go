@@ -12,6 +12,7 @@ func InitRoutes(r *gin.Engine) {
 	{
 		idx.GET("/", handlers.Index)
 		idx.GET("/reaction_test", handlers.ReactionTest)
+		idx.POST("/handle-reaction-b", handlers.HandleReactionB)
 		idx.GET("/digit_converter", handlers.DigitConverter)
 		idx.GET("/login", handlers.Login)
 		idx.GET("/register", handlers.Register)
