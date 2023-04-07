@@ -43,8 +43,13 @@ func HandleReactionB(c *gin.Context) {
 	// Get the value of "reactionB" from the AJAX request
 	reactionB := c.PostForm("reactionB")
 	fmt.Printf("Get reactionB: %s\n", reactionB)
+	intB := strings.Split(reactionB, " ")[0]
+	B, err := strconv.Atoi(intB)
+	if err != nil {
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "System error: convert error")
+	}
 
-	if len(reactionB) <= 0 {
+	if B < 0 {
 		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "System error")
 		return
 	}
@@ -66,36 +71,23 @@ func HandleReactionB(c *gin.Context) {
 		//Create score for new user
 		newScore := models.ReactionTest{
 			UserName: userName,
-			Score:    reactionB,
+			Score:    B,
 		}
 		DB.Create(&newScore)
 	} else {
 		//Update user score
 		userInfo2 := models.FindUserInRank(userName)
 		userScore := userInfo2.Score
-		userscoreNum := strings.Split(userScore, " ")[0]
-		reactionbNum := strings.Split(reactionB, " ")[0]
 		fmt.Printf("user_name: %s\n", userName)
-		fmt.Printf("userscore: %s\n", userscoreNum)
-		fmt.Printf("reactionB: %s\n", reactionbNum)
-
-		//Change userscoreNum and reactionNum to int type
-		scoreNum, err1 := strconv.Atoi(userscoreNum)
-		if err1 != nil {
-			Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "System error: convert error")
-		}
-
-		bNum, err2 := strconv.Atoi(reactionbNum)
-		if err2 != nil {
-			Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "System error: convert error")
-		}
+		fmt.Printf("userscore: %d\n", userScore)
+		fmt.Printf("reactionB: %d\n", B)
 
 		//Update new record
-		if scoreNum > bNum {
+		if userScore > B {
 			var user models.ReactionTest
 			DB.AutoMigrate(&models.ReactionTest{})
 			DB.Where("user_name = ?", userName).Find(&user)
-			DB.Model(&user).Where("user_name = ?", userName).Update("score", reactionB)
+			DB.Model(&user).Where("user_name = ?", userName).Update("score", B)
 		}
 	}
 }

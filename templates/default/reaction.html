@@ -64,12 +64,12 @@
                 <div if="rank_title">
                     <p style="text-align: center;"><label style="font-size:40px; color: #1e9595; font-weight: bold;">Rank</label></p>
                 </div><br><br><br>
-                <table style="left: 30%; border-collapse:separate; border-spacing:100px 30px; background-color: rgba(69,67,67,0.21); margin: 0 auto;">
+                <table style="left: 30%; border-collapse:separate; border-spacing:100px 30px; background-color: rgba(69,67,67,0.21); margin: 0 auto; text-align: center">
                     {{ range $element := .rank }}
-                        <tr style="left: 30%">
+                        <tr style="left: 30%; text-align: center">
                             <td>{{$element.id}}</td>
                             <td>{{$element.userName}}</td>
-                            <td>{{$element.score}}</td>
+                            <td>{{$element.score}} ms</td>
                         </tr>
                     {{ end }}
                 </table>

@@ -6,7 +6,7 @@ import (
 
 type ReactionTest struct {
 	UserName string `gorm:"type:varchar(20);not null"`
-	Score    string `gorm:"type:varchar(15);not null"`
+	Score    int    `gorm:"type:int;not null"`
 }
 
 // TableName Set the name of table in database
@@ -39,7 +39,7 @@ func FindTopTen() []ReactionTest {
 		return user
 	}
 
-	DB.Order("score desc").Limit(10).Find(&user)
+	DB.Order("score asc").Limit(10).Find(&user)
 
 	if len(user) < 10 {
 		for i := len(user); i < 10; i++ {
