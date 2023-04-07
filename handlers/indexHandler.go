@@ -137,11 +137,11 @@ func RegisterProcess(c *gin.Context) {
 		Password: string(phasedPassword),
 	}
 	DB.Create(&newUser)
-	/*	if newUser.ID > 0 {
-			Services.SaveAuthSession(c, strconv.Itoa(int(newUser.ID)))
-		} else {
-			Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "System error")
-		}*/
+	if newUser.ID > 0 {
+		Services.SaveAuthSession(c, strconv.Itoa(int(newUser.ID)))
+	} else {
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "System error")
+	}
 
 	Responses.Success(c, nil, "Success!")
 }
