@@ -7,6 +7,8 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"strconv"
+	"strings"
 )
 
 func ReactionTest(c *gin.Context) {
@@ -59,6 +61,7 @@ func HandleReactionB(c *gin.Context) {
 		c.Redirect(http.StatusFound, "/login")
 	}
 
+	//If user not exist, Create record
 	if !models.IsUserNameExistInRTR(DB, userName) {
 		//Create score for new user
 		newScore := models.ReactionTest{
@@ -70,12 +73,29 @@ func HandleReactionB(c *gin.Context) {
 		//Update user score
 		userInfo2 := models.FindUserInRank(userName)
 		userScore := userInfo2.Score
-		if userScore < reactionB {
+		userscoreNum := strings.Split(userScore, " ")[0]
+		reactionbNum := strings.Split(reactionB, " ")[0]
+		fmt.Printf("user_name: %s\n", userName)
+		fmt.Printf("userscore: %s\n", userscoreNum)
+		fmt.Printf("reactionB: %s\n", reactionbNum)
+
+		//Change userscoreNum and reactionNum to int type
+		scoreNum, err1 := strconv.Atoi(userscoreNum)
+		if err1 != nil {
+			Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "System error: convert error")
+		}
+
+		bNum, err2 := strconv.Atoi(reactionbNum)
+		if err2 != nil {
+			Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "System error: convert error")
+		}
+
+		//Update new record
+		if scoreNum > bNum {
 			var user models.ReactionTest
-			DB.Where("user_name = ?", userName).First(&user)
-			user.Score = reactionB
-			DB.Save(&user)
+			DB.AutoMigrate(&models.ReactionTest{})
+			DB.Where("user_name = ?", userName).Find(&user)
+			DB.Model(&user).Where("user_name = ?", userName).Update("score", reactionB)
 		}
 	}
-
 }
