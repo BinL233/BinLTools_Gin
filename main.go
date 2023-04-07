@@ -4,10 +4,14 @@ import (
 	"BinLTools_Gin/models"
 	"BinLTools_Gin/routes"
 	"github.com/gin-gonic/gin"
+	"github.com/spf13/viper"
+	"net/http"
 )
 
 func main() {
 	models.InitDB()
+	port := viper.GetString(`app.port`)
+
 	//Create the server
 	r := gin.Default()
 
@@ -18,10 +22,11 @@ func main() {
 	r.Static("/static", "./static")
 
 	routes.InitRoutes(r)
+	http.ListenAndServe(":"+port, r)
 
-	err := r.Run("binltools.fun:80")
-	if err != nil {
-		return
-	}
-	//r.Run(":8000")
+	/*	err := r.Run("98.235.70.90:80")
+		//err := r.Run()
+		if err != nil {
+			return
+		}*/
 }
