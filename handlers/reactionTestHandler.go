@@ -7,9 +7,9 @@ import (
 )
 
 func ReactionTest(c *gin.Context) {
-	userInfo := Services.GetUserInfo(c)["username"]
-	if userInfo == nil {
-		userInfo = "Sign Up"
+	userInfo := Services.GetUserInfo(c)
+	if len(userInfo) == 0 {
+		userInfo["username"] = "Sign Up"
 	}
 	c.HTML(http.StatusOK, "reaction.html", gin.H{
 		"title":    "反应测试ReactionTest",
