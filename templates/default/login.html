@@ -17,8 +17,14 @@
 		<br />
 		<div class='biao'>
 			<form id="myForm" action="/login_process" method='post'><br><br>
-				<label style=" letter-spacing: 2px; font-weight: bold; color: #333333">Username: </label><input type="username" name='user'><br><br>
-				<label style=" letter-spacing: 2px; font-weight: bold; color: #333333">Password: </label><input type="password" name='pwd'>
+				<div style="width: 50%; float: left; text-align: right">
+					<label style="margin-right: 5%; letter-spacing: 2px; font-weight: bold; color: #333333; padding:0 8px;">Username: </label><br><br>
+					<label style="margin-right: 5%; letter-spacing: 2px; font-weight: bold; color: #333333; padding:0 8px;">Password: </label><br><br>
+				</div>
+				<div style="width: 50%; float: right; text-align: left">
+					<input  type="username" name='user'><br><br>
+					<input  type="password" name='pwd'><br><br>
+				</div>
 <!--				<button type="submit" value='Log in' style='width:240px;height:50px;margin-top:25px;background:#ffffff'>Sign In</button>-->
 				<div class="container">
 					<a href="#", onclick="submitForm()", type="submit" value="log in" class="button">

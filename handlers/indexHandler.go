@@ -109,10 +109,16 @@ func RegisterProcess(c *gin.Context) {
 	//Fetch data
 	userName := c.PostForm("user")
 	password := c.PostForm("pwd")
+	confirmPwd := c.PostForm("cpwd")
 
 	//Check password
 	if len(password) < 6 {
 		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Password cannot less than 6")
+		return
+	}
+
+	if password != confirmPwd {
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "two Password fields not match")
 		return
 	}
 
