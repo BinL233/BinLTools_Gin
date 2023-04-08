@@ -4,19 +4,37 @@
 <br /><br /><br /><br />
 <body>
 <title>{{.title}}</title>
+<style>
+	@import "/static/css/button1.css";
+	@import "/static/css/input.css";
+</style>
 	<div>
 		<div class='register' style="text-align: center">
-			<div class='title' style="font-size: 40px">Register</div>
+			<div class='title' style="font-size: 40px; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; letter-spacing: 2px; font-weight: bold; color: #29b2d0">Register</div>
 			<br />
 			<br />
 			<div class='biao'>
-				<form action="/register_process" method='post'>
-					<label>Username: <br></label><input type="username" name='user'><br><br>
-					<label>Password: <br></label><input type="password" name='pwd'><br><br><br>
-					<button type="submit" value='Sign up' style='width:240px;height:50px;margin-top:25px;background:#ffffff'>Sign Up</button>
+				<form id="myForm" action="/register_process" method='post'><br><br>
+					<label style=" letter-spacing: 2px; font-weight: bold; color: #333333">Username: </label><input type="username" name='user'><br><br>
+					<label style=" letter-spacing: 2px; font-weight: bold; color: #333333">Password: </label><input type="password" name='pwd'>
+<!--					<button type="submit" value='Sign up' style='width:240px;height:50px;margin-top:25px;background:#ffffff'>Sign Up</button>-->
 <!--					<input type="button" value='Back' style='width:240px;height:30px;margin-top:25px;background:#ffffff'  value = "Submit">-->
+					<div class="container">
+						<a href="#", onclick="submitForm()", type="submit" value="Sign up" class="button">
+							<div class="button__line"></div>
+							<div class="button__line"></div>
+							<span class="button__text">Sign up</span>
+						</a>
+						<p><a href="/login" style="color:rgba(201,67,120,0.8); text-decoration: none; font-size: small;">I already had an account</a></p>
+
+					</div>
 				</form>
-				<p><a href="/login" style="color:rgba(201,67,120,0.8); text-decoration: none; font-size: small;">I already had an account</a></p>
+				<script>
+					function submitForm() {
+						var form = document.getElementById("myForm");
+						form.submit();
+					}
+				</script>
 			</div>
 		</div>
 	</div>

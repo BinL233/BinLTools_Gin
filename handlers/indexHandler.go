@@ -122,7 +122,7 @@ func RegisterProcess(c *gin.Context) {
 	}
 
 	if models.IsUserNameExist(DB, userName) {
-		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Name already exist")
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Name exist")
 		return
 	}
 
