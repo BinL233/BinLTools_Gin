@@ -19,7 +19,7 @@
 
 2. 反应测试 Reaction Test
     - 成绩自动上传 Automatic upload of scores
-    - 实时排名 Real-time Ranking
+    - 排名系统 Ranking System
     
 3. 进制转换器 Digit Converter
     - 进制快速转换 Fast conversion of digits
@@ -80,3 +80,8 @@
 └── util
     └── util.go
 ``` 
+## TODO
+- [x] 反应测试排名系统 Reaction test ranking system
+- [] 完善进制转换器 Improve Digit Converter
+- [] 完善登出功能 Inprove log out function
+- [] 个人主页 Personal homepage
