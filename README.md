@@ -8,7 +8,7 @@
 ## 技术栈 
 - Frame: Gin
 - Frontend: HTML + CSS
-- Backend: Go
+- Backend: Go + JavaScript
 - Database: Mysql
 
 ## 功能 Feature
