@@ -27,5 +27,56 @@
 ## 结构 Structure
 ``` 
 .
-
+├── README.md
+├── Responses
+│   └── response.go
+├── Services
+│   ├── javascript
+│   │   └── submitForm.js
+│   ├── session.go
+│   └── userServices.go
+├── config
+│   └── application.yml
+├── dto
+│   └── userDto.go
+├── go.mod
+├── go.sum
+├── handlers
+│   ├── digitConverterHandler.go
+│   ├── indexHandler.go
+│   └── reactionTestHandler.go
+├── main.go
+├── middlewares
+│   ├── authMiddleware.go
+│   └── jwt.go
+├── models
+│   ├── reactionTestRank.go
+│   ├── test.go
+│   └── user.go
+├── routes
+│   └── route.go
+├── static
+│   ├── css
+│   │   ├── button1.css
+│   │   ├── input
+│   │   ├── input.css
+│   │   └── style.css
+│   └── images
+│       ├── DigitConverter_logo.png
+│       └── logo.png
+├── templates
+│   └── default
+│       ├── base.html
+│       ├── digit_converter.html
+│       ├── error_page.html
+│       ├── footer.html
+│       ├── index.html
+│       ├── login.html
+│       ├── reaction.html
+│       ├── register.html
+│       └── success_page.html
+├── tmp
+│   └── runner-build
+└── util
+    └── util.go
 ``` 
