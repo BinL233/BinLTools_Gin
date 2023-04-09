@@ -5,7 +5,7 @@
 
 > Website: http://binltools.fun
 
-## 技术栈 
+## 技术栈 Tech
 - Frame: Gin
 - Frontend: HTML + CSS
 - Backend: Go + JavaScript
