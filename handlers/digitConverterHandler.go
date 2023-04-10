@@ -17,3 +17,31 @@ func DigitConverter(c *gin.Context) {
 		"userName":      userInfo,
 	})
 }
+
+/*func DigitConverterProcess(c *gin.Context) {
+	//Fetch data from frontend
+	input := c.PostForm("input")
+	sel1 := c.PostForm("sel1")
+	sel2 := c.PostForm("sel2")
+
+	//check input
+	for _, r := range input {
+		if !unicode.IsDigit(r) {
+			Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Please enter numbers")
+		}
+	}
+
+	input1, err := strconv.Atoi(input)
+	if err != nil {
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "Convert error")
+	}
+
+	//Process
+	if sel1 == "2" {
+		if sel2 == "2" {
+			DC := models.DigitConverter{
+				Output: input,
+			}
+		}
+	}
+}*/
