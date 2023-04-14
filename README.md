@@ -1,12 +1,12 @@
 # BinLTools_Gin
 
 > 基于Gin框架的项目
-> Gin Frame based project
+> Gin Framework-based project
 
 > Website: http://binltools.fun
 
 ## 技术栈 Tech
-- Frame: Gin
+- Framework: Gin
 - Frontend: HTML + CSS + JavaScript
 - Backend: Go
 - Database: Mysql
