@@ -10,6 +10,12 @@ import (
 
 func EnableCookieSession() gin.HandlerFunc {
 	store := cookie.NewStore([]byte(viper.GetString(`app.cookie_key`)))
+
+	//Set Session expire time
+	store.Options(sessions.Options{
+		MaxAge: 86400 * 7,
+	})
+
 	return sessions.Sessions("go-gin-binltools", store)
 }
 
