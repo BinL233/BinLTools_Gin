@@ -1,14 +1,14 @@
 # BinLTools_Gin
 
 > 基于Gin框架的项目
-> Gin Framework-based projects
+> Gin Framework-based project
 
 > Website: http://binltools.fun
 
 ## 技术栈 Tech
-- Frame: Gin
-- Frontend: HTML + CSS
-- Backend: Go + JavaScript
+- Framework: Gin
+- Frontend: HTML + CSS + JavaScript
+- Backend: Go
 - Database: Mysql
 
 ## 功能 Feature
@@ -58,9 +58,12 @@
 ├── static
 │   ├── css
 │   │   ├── button1.css
+│   │   ├── button2.css
 │   │   ├── input
 │   │   ├── input.css
-│   │   └── style.css
+│   │   ├── select.css
+│   │   ├── style.css
+│   │   └── textarea.css
 │   └── images
 │       ├── DigitConverter_logo.png
 │       └── logo.png
@@ -80,8 +83,9 @@
 └── util
     └── util.go
 ``` 
+
 ## TODO
 - [x] 反应测试排名系统 Reaction test ranking system
-- [ ] 完善进制转换器 Improve Digit Converter
+- [x] 完善进制转换器 Improve Digit Converter
 - [ ] 完善登出功能 Inprove log out function
 - [ ] 个人主页 Personal homepage
