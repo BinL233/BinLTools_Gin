@@ -27,7 +27,7 @@ func ReactionTest(c *gin.Context) {
 		{"id": 10, "userName": users[9].UserName, "score": users[9].Score},
 	}
 	if len(userInfo) == 0 {
-		userInfo["username"] = "Sign Up"
+		userInfo["username"] = "Sign In"
 	}
 	c.HTML(http.StatusOK, "reaction.html", gin.H{
 		"title":    "反应测试ReactionTest",

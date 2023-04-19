@@ -16,7 +16,7 @@ import (
 func Index(c *gin.Context) {
 	userInfo := Services.GetUserInfo(c)
 	if len(userInfo) == 0 {
-		userInfo["username"] = "Sign Up"
+		userInfo["username"] = "Sign In"
 	}
 	c.HTML(http.StatusOK, "index.html", gin.H{
 		"title":      "BinLTools",
@@ -28,7 +28,7 @@ func Index(c *gin.Context) {
 func Login(c *gin.Context) {
 	userInfo := Services.GetUserInfo(c)
 	if len(userInfo) == 0 {
-		userInfo["username"] = "Sign Up"
+		userInfo["username"] = "Sign In"
 	}
 	c.HTML(http.StatusOK, "login.html", gin.H{
 		"title":    "Login",
@@ -94,7 +94,7 @@ func Info(c *gin.Context) {
 func Register(c *gin.Context) {
 	userInfo := Services.GetUserInfo(c)
 	if userInfo == nil {
-		userInfo["username"] = "Sign Up"
+		userInfo["username"] = "Sign In"
 	}
 	c.HTML(http.StatusOK, "register.html", gin.H{
 		"title":    "Sign Up",

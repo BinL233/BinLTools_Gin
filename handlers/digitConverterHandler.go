@@ -9,7 +9,7 @@ import (
 func DigitConverter(c *gin.Context) {
 	userInfo := Services.GetUserInfo(c)
 	if len(userInfo) == 0 {
-		userInfo["username"] = "Sign Up"
+		userInfo["username"] = "Sign In"
 	}
 	c.HTML(http.StatusOK, "digit_converter.html", gin.H{
 		"title":         "进制转换器DigitConverter",
