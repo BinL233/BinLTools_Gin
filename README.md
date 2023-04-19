@@ -88,5 +88,5 @@
 ## TODO
 - [x] 反应测试排名系统 Reaction test ranking system
 - [x] 完善进制转换器 Improve Digit Converter
-- [ ] 完善登出功能 Inprove log out function
+- [ ] 完善登出功能 Improve log out function
 - [ ] 个人主页 Personal homepage
