@@ -23,6 +23,7 @@
     
 3. 进制转换器 Digit Converter
     - 进制快速转换 Fast conversion of digits
+    - 支持二进制、八进制、十进制和十六进制的相互转换 Support Binary, Octal, Decimal and Hexdecimal conversions.
     
 ## 结构 Structure
 ``` 
@@ -87,5 +88,5 @@
 ## TODO
 - [x] 反应测试排名系统 Reaction test ranking system
 - [x] 完善进制转换器 Improve Digit Converter
-- [ ] 完善登出功能 Inprove log out function
+- [ ] 完善登出功能 Improve log out function
 - [ ] 个人主页 Personal homepage
