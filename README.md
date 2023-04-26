@@ -14,6 +14,7 @@
 ## 功能 Feature
 1. 登陆/注册 Login/Registation
     - 密码加密 Password encryption
+    - JWT身份认证 JWT web tokens for users
     - 防止重复登录/注册 Prevent duplicate logins/registrations
     - 错误处理 Error handlers
 
@@ -88,5 +89,6 @@
 ## TODO
 - [x] 反应测试排名系统 Reaction test ranking system
 - [x] 完善进制转换器 Improve Digit Converter
+- [ ] Live2d面板植入 Live2d widget plugin
 - [ ] 完善登出功能 Improve log out function
 - [ ] 个人主页 Personal homepage
