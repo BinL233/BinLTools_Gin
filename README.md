@@ -88,6 +88,6 @@
 ## TODO
 - [x] 反应测试排名系统 Reaction test ranking system
 - [x] 完善进制转换器 Improve Digit Converter
-- [ ] Live2d插入 Live2d Plugin
+- [ ] Live2d面板植入 Live2d widget plugin
 - [ ] 完善登出功能 Improve log out function
 - [ ] 个人主页 Personal homepage
