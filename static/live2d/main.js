@@ -52,7 +52,7 @@ class Viewer {
             this.model.masks.update(this.app.renderer);
         });
         //窗口大小改变时重绘
-        window.onresize = (event) => {                 
+        window.onresize = (event) => {
             if (event === void 0) { event = null; }
 
             this.app.view.style.width = width + "px";
@@ -72,7 +72,7 @@ class Viewer {
             this.isClick = true;
         });
         
-        this.app.view.addEventListener('mousemove', (event) => {
+        window.addEventListener('mousemove', (event) => {
             this.isClick = false;
             if (this.model) {
                     this.model.inDrag = true;
@@ -81,8 +81,8 @@ class Viewer {
             if (this.model) {
                 let mouse_x = this.model.position.x - event.offsetX;
                 let mouse_y = this.model.position.y - event.offsetY;
-                this.model.pointerX = -mouse_x / this.app.view.height;
-                this.model.pointerY = -mouse_y / this.app.view.width;
+                this.model.pointerX = -mouse_x / window.innerHeight;
+                this.model.pointerY = -mouse_y / window.innerWidth;
             }
         });
         this.app.view.addEventListener('mouseup', (event) => {

@@ -128,7 +128,7 @@ class L2D {
                             textures.splice(i, 0, r[name+'_texture'+i].texture);
                         }
                     }
-                    console.log(r[name+'_physics'].data)
+
                     if (typeof(r[name+'_physics']) !== "undefined") {
                         this.setPhysics3Json(r[name+'_physics'].data);
                     }
