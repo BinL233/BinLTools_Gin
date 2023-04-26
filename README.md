@@ -14,6 +14,7 @@
 ## 功能 Feature
 1. 登陆/注册 Login/Registation
     - 密码加密 Password encryption
+    - JWT身份认证 JWT web tokens for users
     - 防止重复登录/注册 Prevent duplicate logins/registrations
     - 错误处理 Error handlers
 
