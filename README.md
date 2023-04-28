@@ -21,6 +21,9 @@
 2. 反应测试 Reaction Test
     - 成绩自动上传 Automatic upload of scores
     - 排名系统 Ranking System
+
+3. Live2D部件 Live2D Widgit
+    - 鼠标追踪 Mousemove tracking
     
 3. 进制转换器 Digit Converter
     - 进制快速转换 Fast conversion of digits
@@ -89,6 +92,6 @@
 ## TODO
 - [x] 反应测试排名系统 Reaction test ranking system
 - [x] 完善进制转换器 Improve Digit Converter
-- [ ] Live2d面板植入 Live2d widget plugin
+- [ ] Live2d部件 Live2d widget
 - [ ] 完善登出功能 Improve log out function
 - [ ] 个人主页 Personal homepage
