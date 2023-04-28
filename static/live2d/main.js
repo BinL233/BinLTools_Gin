@@ -58,7 +58,7 @@ class Viewer {
             this.app.view.style.width = width + "px";
             this.app.view.style.height = height + "px";
             this.app.renderer.resize(width, height);
-            
+
             if (this.model) {
                 this.model.position = new PIXI.Point((width * 0.4), (height * 0.6));
                 this.model.scale = new PIXI.Point((this.model.position.x * 1.5), (this.model.position.x * 1.5));
@@ -68,10 +68,11 @@ class Viewer {
 
         };
         this.isClick = false;
-        this.app.view.addEventListener('mousedown', (event) => {
+        window.addEventListener('mousedown', (event) => {
             this.isClick = true;
         });
-        
+
+        //Change the mouse range to full web screen
         window.addEventListener('mousemove', (event) => {
             this.isClick = false;
             if (this.model) {
@@ -79,13 +80,13 @@ class Viewer {
             }
 
             if (this.model) {
-                let mouse_x = this.model.position.x - event.offsetX;
-                let mouse_y = this.model.position.y - event.offsetY;
-                this.model.pointerX = -mouse_x / window.innerHeight;
-                this.model.pointerY = -mouse_y / window.innerWidth;
+                // let mouse_x = this.model.position.x - event.offsetX;
+                // let mouse_y = this.model.position.y - event.offsetY;
+                this.model.pointerX = (event.pageX / window.innerWidth) * 2 - 1;
+                this.model.pointerY = -(-(event.pageY / window.innerHeight) * 2 + 1);
             }
         });
-        this.app.view.addEventListener('mouseup', (event) => {
+        window.addEventListener('mouseup', (event) => {
             if (!this.model) {
                 return;
             }
