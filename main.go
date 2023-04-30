@@ -22,7 +22,7 @@ func main() {
 	routes.InitRoutes(r)
 	//http.ListenAndServe(":"+port, r)
 
-	err := r.Run(":80")
+	err := r.Run("：80")
 	//err := r.Run()
 	if err != nil {
 		return
