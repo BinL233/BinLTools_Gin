@@ -1,7 +1,7 @@
 # BinLTools_Gin
 
-- 基于Gin框架的项目 Gin Framework-based project
-- Website: http://binltools.fun
+基于Gin框架的项目 Gin Framework-based project  
+Website: http://binltools.fun
 
 ## 技术栈 Tech
 - Framework: Gin
@@ -75,6 +75,15 @@
 │   │   └── logo.png
 │   └── live2d
 │       ├── Resources
+│       │   ├── Domino
+│       │   │   ├── Domino.2048
+│       │   │   │   └── texture_00.png
+│       │   │   ├── Domino.cdi3.json
+│       │   │   ├── Domino.moc3
+│       │   │   ├── Domino.model3.json
+│       │   │   ├── Domino.physics3.json
+│       │   │   └── motions
+│       │   │       └── idle.motion3.json
 │       │   ├── Domino0
 │       │   │   ├── Domino0.2048
 │       │   │   │   └── texture_00.png
@@ -82,15 +91,6 @@
 │       │   │   ├── Domino0.moc3
 │       │   │   ├── Domino0.model3.json
 │       │   │   ├── Domino0.physics3.json
-│       │   │   └── motions
-│       │   │       └── idle.motion3.json
-│       │   ├── Domino2
-│       │   │   ├── Domino.2048
-│       │   │   │   └── texture_00.png
-│       │   │   ├── Domino.cdi3.json
-│       │   │   ├── Domino.moc3
-│       │   │   ├── Domino.model3.json
-│       │   │   ├── Domino.physics3.json
 │       │   │   └── motions
 │       │   │       └── idle.motion3.json
 │       │   └── XumoQ
@@ -126,6 +126,7 @@
 │   └── runner-build
 └── util
     └── util.go
+
 
 ``` 
 
