@@ -17,7 +17,7 @@ class Viewer {
         } 
         this.l2d = new L2D(config.basePath);
         this.canvas = document.getElementById("L2dCanvas");
-        this.l2d.load(role, this);      
+        this.l2d.load(role, this);
 
         this.app = new PIXI.Application({
             width: width,
