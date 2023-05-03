@@ -21,7 +21,7 @@ Website: http://binltools.fun
     - 排名系统 Ranking System
 
 3. Live2D看板娘部件 Live2D Widgit
-	- 此功能基于[](https://github.com/UsernameFull/l2d)开发。
+	- 此功能基于[l2d](https://github.com/UsernameFull/l2d)开发 Developed based on [l2d](https://github.com/UsernameFull/l2d)
 	- 模型适配 Model adaptation 
 	- 网站适配 Website adaptation
     - 窗口鼠标追踪 Window mousemove tracking
