@@ -21,7 +21,10 @@ Website: http://binltools.fun
     - 排名系统 Ranking System
 
 3. Live2D看板娘部件 Live2D Widgit
-    - 鼠标追踪 Mousemove tracking
+	- 此功能基于[](https://github.com/UsernameFull/l2d)开发。
+	- 模型适配 Model adaptation 
+	- 网站适配 Website adaptation
+    - 窗口鼠标追踪 Window mousemove tracking
     - *感谢[拉莫斯的壳](https://space.bilibili.com/6769942/?spm_id_from=333.999.0.0)制作的Live2D模型！！！*
     
 3. 进制转换器 Digit Converter
