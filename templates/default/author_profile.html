@@ -14,7 +14,7 @@
 
 <script>
     $(document).ready(function() {
-        $.get('/static/markdown/author_profile.md', function(data) {
+        $.get('{{.profile}}', function(data) {
             const markdownContent = document.getElementById('markdown-content');
             markdownContent.innerHTML = marked.parse(data);
         });
