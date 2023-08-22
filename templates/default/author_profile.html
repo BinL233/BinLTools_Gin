@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+{{template "header" .}}
+<br />
+<br />
+<br />
+<br />
+<body>
+<script src="https://cdn.jsdelivr.net/npm/marked"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div style="margin-left: 250px;">
+    <div id="markdown-content" style="font-size: 20px; color: #0e3126; font-family: 'Arial',sans-serif;"></div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $.get('/static/markdown/author_profile.md', function(data) {
+            const markdownContent = document.getElementById('markdown-content');
+            markdownContent.innerHTML = marked.parse(data);
+        });
+    });
+</script>
+</body>
+<br /><br /><br /><br /><br /><br /><br /><br />
+{{template "footer"}}
+</html>

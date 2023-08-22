@@ -25,6 +25,17 @@ func Index(c *gin.Context) {
 	})
 }
 
+func AuthorProfile(c *gin.Context) {
+	userInfo := Services.GetUserInfo(c)
+	if len(userInfo) == 0 {
+		userInfo["username"] = "Sign In"
+	}
+	c.HTML(http.StatusOK, "author_profile.html", gin.H{
+		"title":    "Author's Profile",
+		"userName": userInfo,
+	})
+}
+
 func Login(c *gin.Context) {
 	userInfo := Services.GetUserInfo(c)
 	if len(userInfo) == 0 {
