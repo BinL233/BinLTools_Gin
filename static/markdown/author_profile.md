@@ -1,6 +1,6 @@
-## Author's own repositories
+## <span style="color:#1e9595">Author's own repositories</span>
 
-### 1. BinLTools
+### <span style="color:#c7437ccd">1. BinLTools</span>
 
 To see the repository, please click [this link](https://github.com/BinL233/BinLTools_Gin).
 
@@ -24,7 +24,7 @@ Website: http://binltools.fun
         - Automatic upload of scores
         - Ranking System
     - Live2D Widgit
-        - Developed based on l2d
+        - Developed based on [l2d](https://github.com/UsernameFull/l2d)
         - Model adaptation
         - Website adaptation
         - Window mousemove tracking
@@ -33,7 +33,7 @@ Website: http://binltools.fun
         - Support Binary, Octal, Decimal and Hexadecimal conversions.
 
 
-### 2. Thread scheduler
+### <span style="color:#c7437ccd">2. Thread scheduler</span>
 
 To see the repository, please click [this link](https://github.com/BinL233/Thread-scheduler).
 
@@ -53,4 +53,4 @@ and two IO Devices based thread scheduler.
    - implemented A TLB mechanism to determine the 
    physical address of the memory request at the time of the TLB hit.
 
-## Not finished. To be continued.
+## <span style="color:#1e9595">Still working on this page. To be continued.</span>
