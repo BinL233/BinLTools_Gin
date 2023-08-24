@@ -20,5 +20,6 @@ func InitRoutes(r *gin.Engine) {
 		idx.POST("/register_process", handlers.RegisterProcess)
 		idx.GET("/user_info", middlewares.AuthMiddleware(), handlers.Info)
 		idx.GET("/author_profile", handlers.AuthorProfile)
+		idx.GET("/download/:filename", handlers.DownloadFile)
 	}
 }
