@@ -59,7 +59,6 @@ To see the repository, please click [this link](https://github.com/BinL233/Threa
 This is a 2D RPG game. 
 Control the character to fight against monsters 
 and defeat the boss at the end to clear the game.
-
 The most important thing is that if you die you need to start over!
 
 To download this game, please click [this link](/download/No_Death_Clear_0.8.3.exe).
