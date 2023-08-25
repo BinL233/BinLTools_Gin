@@ -1,4 +1,12 @@
-## <span style="color:#1e9595">Author's own repositories</span>
+- [Own repositories](#own-repositories)
+  - [1. BinLTools](#1-binltools)
+  - [2. Computer Organization and Design](#2-computer-organization-and-design)
+  - [3. Thread scheduler](#3-thread-scheduler)
+  - [4. One Death Clear](#4-one-death-clear)
+- [Open Source projects contributions](#open-source-projects-contributions)
+  - [1. Kueue](#1-kueue)
+
+## <span style="color:#1e9595">Own repositories</span>
 
 ### <span style="color:#c7437ccd">1. BinLTools</span>
 
@@ -33,10 +41,11 @@ Website: http://binltools.fun
     - Digit Converter
         - Fast conversion of digits
         - Support Binary, Octal, Decimal and Hexadecimal conversions.
+    - Download handler
 
 ### <span style="color:#c7437ccd">2. Computer Organization and Design</span>
 This project implements 5 stages: 
-Instruction Fetch, Instruction Decode, Instruction Execute, Memory, pipelined CPU 
+Instruction Fetch, Instruction Decode, Instruction Execute, Memory of the pipelined CPU 
 using the Xilinx design package for FPGAs.
 
 To see the repository, please click [this link](https://github.com/BinL233/Computer-Organization-and-Design)
@@ -44,9 +53,13 @@ To see the repository, please click [this link](https://github.com/BinL233/Compu
 1. Tech
    - Software: Vivado
    - Language: Verilog
-   - 
 2. Features:
-   - 
+   - Pipelining
+   - Circuits of the Instruction Fetch Stage
+   - Circuits of the Instruction Decode Stage
+   - Circuits of the Execution Stage
+   - Circuits of the Memory Access Stage
+   - Circuits of the Write Back Stage
 
 
 ### <span style="color:#c7437ccd">3. Thread scheduler</span>
@@ -90,4 +103,17 @@ To download the repository, please click [this link](/download/No_Death_Clear_0.
    - Health system
    - Buff mechanism
 
-## <span style="color:#1e9595">Still working on this page. To be continued.</span>
+## <span style="color:#1e9595">Open Source projects contributions</span>
+
+### <span style="color:#c7437ccd">1. Kueue</span>
+
+Kueue is a kubernetes-native system that manages quotas and how jobs consume them. 
+Kueue decides when a job should wait, when a job should be admitted to start (as in pods can be created) 
+and when a job should be preempted (as in active pods should be deleted).
+
+To see the repository, please click [this link](https://github.com/BinL233/kueue).
+
+**My contributions:**
+   - Pull requests: 8
+   - Code: 132 lines
+   - Issues: 1
