@@ -29,12 +29,27 @@ Website: http://binltools.fun
         - Model adaptation
         - Website adaptation
         - Window mousemove tracking
+        - Thanks for the L2D model made by [拉莫斯的壳](https://space.bilibili.com/6769942/?spm_id_from=333.999.0.0) !
     - Digit Converter
         - Fast conversion of digits
         - Support Binary, Octal, Decimal and Hexadecimal conversions.
 
+### <span style="color:#c7437ccd">2. Computer Organization and Design</span>
+This project implements 5 stages: 
+Instruction Fetch, Instruction Decode, Instruction Execute, Memory, pipelined CPU 
+using the Xilinx design package for FPGAs.
 
-### <span style="color:#c7437ccd">2. Thread scheduler</span>
+To see the repository, please click [this link](https://github.com/BinL233/Computer-Organization-and-Design)
+
+1. Tech
+   - Software: Vivado
+   - Language: Verilog
+   - 
+2. Features:
+   - 
+
+
+### <span style="color:#c7437ccd">3. Thread scheduler</span>
 
 This repository contains code for emulation of a single CPU with 
 the Shortest Remaining Time First scheduling policy 
@@ -54,7 +69,7 @@ To see the repository, please click [this link](https://github.com/BinL233/Threa
    - implemented TLB mechanism to determine the 
    physical address of the memory request at the time of the TLB hit.
 
-### <span style="color:#c7437ccd">3. One Death Clear</span>
+### <span style="color:#c7437ccd">4. One Death Clear</span>
 
 This is a 2D RPG game. 
 Control the character to fight against monsters 
