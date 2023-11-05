@@ -148,7 +148,7 @@ func RegisterProcess(c *gin.Context) {
 		return
 	}
 	if !matched {
-		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Invalid username format")
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Invalid username format: Username only accepts letters, numbers and underline")
 		return
 	}
 
