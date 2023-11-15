@@ -189,6 +189,7 @@
           Kueue is a kubernetes-native system that manages quotas and how jobs consume them. Kueue decides when a job should wait,
           when a job should be admitted to start (as in pods can be created) and when a job should be preempted (as in active pods should be deleted).
         </p>
+        <p><img src="../../static/images/theory-of-operation.svg" alt="kueue-theory-of-operation"></p>
       </div>
       <div>
         <a href="https://github.com/kubernetes-sigs/kueue" class="hover_button">Repository</a>
@@ -200,7 +201,7 @@
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
           <div>
-            <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> (iOS Application) Revive</h3>
+            <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> (Application for iOS) Revive</h3>
           </div>
           <div>
             <p style="font-size: 23px;">Oct 2023 - Present</p>
@@ -210,10 +211,92 @@
           In Revive, you can take care of a species from 0 to 1, starting with an egg. For your species to thrive,
           you need to do anything in a focused way-----such as studying, working, or other activities, which is the core of Revive.
         </p>
+        <div style="display: flex; padding: 30px">
+          <div><img src="../../static/images/ReviveReviveMockUp.jpg" alt="ReviveMockUp" style="width: 90%; height: auto"></div>
+          <div><img src="../../static/images/Flowchart.jpg" alt="ReviveFlowChart" style="width: 90%; height: auto"></div>
+        </div>
       </div>
       <div>
         <a href="https://github.com/BinL233/Revive" class="hover_button">Repository</a>
 <!--        <a href="#" class="hover_button">Website</a>-->
+      </div>
+    </section>
+
+    <section style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
+          <div>
+            <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> Thread scheduler</h3>
+          </div>
+          <div>
+            <p style="font-size: 23px;">Jan 2023 - Mar 2023</p>
+          </div>
+        </div>
+        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
+          This repository contains code for emulation of a single CPU with the Shortest Remaining Time First scheduling policy
+          and two IO Devices based thread scheduler. Implemented and parsed various mechanisms for virtual memory to physical
+          memory to page mapping and page scheduling algorithms (FIFO, LRU, CLOCK).
+          Built multi-process, CPU/IO multi-threading (spin locks, mutex locks, and thread scheduling algorithms (FCFS, SRJF)).
+          Constructed TLB mechanism to determine the physical address of the memory request at the time of the TLB hit.
+        </p>
+      </div>
+      <div>
+        <a href="https://github.com/BinL233/Thread-scheduler" class="hover_button">Repository</a>
+        <!--        <a href="#" class="hover_button">Website</a>-->
+      </div>
+    </section>
+
+    <section style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
+          <div>
+            <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> CPU Organization and Design</h3>
+          </div>
+          <div>
+            <p style="font-size: 23px;">Jun 2022 - Aug 2022</p>
+          </div>
+        </div>
+        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
+          This project builds an FPGA on Vivado via Verilog that simulates the key components and functions of a CPU:
+          Datapath for executing instructions and controlling data transfer; Pipeline Registers such as IDEXEPipelineReg,
+          IFIDPipelineReg. Pipeline Registers such as IDEXEPipelineReg, IFIDPipelineReg,
+          exememPipelineReg and memwbPipelineReg are used to store stage data and status information;
+          Control Unit is used to control other components to perform calculations;
+          Program Counter and Program Counter Adder are used to keep track of the address of the current
+          instruction and increase the number of PCs; Register File is used to store the temporary data of register;
+          ALU is used to perform computation and logic operations; Data Memory is used to store data; RegrtMultiplexer,
+          aluMultiplexer and WbMux are used to select different data sources according to the control signals.
+          By constructing the above components, this virtual CPU can realize read-save and add-subtract-multiply-divide calculations.
+        </p>
+      </div>
+      <div style="display: flex; padding: 30px">
+        <div><img src="../../static/images/CPU1.png" alt="CPU1" style="width: 90%; height: auto"></div>
+        <div><img src="../../static/images/CPU2.png" alt="CPU2" style="width: 90%; height: auto"></div>
+      </div>
+      <div>
+        <a href="https://github.com/BinL233/Computer-Organization-and-Design" class="hover_button">Repository</a>
+        <!--        <a href="#" class="hover_button">Website</a>-->
+      </div>
+    </section>
+
+    <section style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
+          <div>
+            <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> (Game for Windows) One Death Clear</h3>
+          </div>
+          <div>
+            <p style="font-size: 23px;">Jul 2021 - Sep 2022</p>
+          </div>
+        </div>
+        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
+          This is a 2D RPG game. Control the character to fight against monsters and defeat the boss at the end to clear the game.
+          The most important thing is that if you die you need to start over!
+        </p>
+      </div>
+      <div>
+        <a href="http://binltools.fun/download/No_Death_Clear_0.8.3.exe" class="hover_button">Game</a>
+        <a href="http://binltools.fun/download/No_Death_Clear_0.8.3_Project.zip" class="hover_button">Project</a>
       </div>
     </section>
   </section>
@@ -231,7 +314,7 @@
           </div>
         </div>
         <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- Back-end Developer Intern</p>
-        <p style="margin-left: 25px"><i class="fas fa-circle fa-xs"></i> <b>Cloud Native: </b> Kubernetes, Docker</p>
+        <p style="margin-left: 25px"><i class="fas fa-circle fa-xs"></i> <b>Cloud Native: </b> Kubernetes, Docker, Kueue</p>
         <p style="margin-left: 25px"><i class="fas fa-circle fa-xs"></i> <b>AI Models Platform: </b> KubeRay</p>
       </div>
     </section>
