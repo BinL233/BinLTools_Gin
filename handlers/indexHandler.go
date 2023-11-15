@@ -10,6 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
 	"net/http"
+	"regexp"
 	"strconv"
 )
 
@@ -122,6 +123,8 @@ func RegisterProcess(c *gin.Context) {
 	userName := c.PostForm("user")
 	password := c.PostForm("pwd")
 	confirmPwd := c.PostForm("cpwd")
+	userNameRegex := `^[a-zA-Z0-9_]{5,}$`
+	matched, err := regexp.MatchString(userNameRegex, userName)
 
 	//Check password
 	if len(password) < 6 {
@@ -137,6 +140,16 @@ func RegisterProcess(c *gin.Context) {
 	//Check userName
 	if len(userName) == 0 {
 		userName = util.RandomString(10)
+	}
+
+	// Check Regex
+	if err != nil {
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "Regex error")
+		return
+	}
+	if !matched {
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Invalid username format: Username only accepts letters, numbers and underline")
+		return
 	}
 
 	if models.IsUserNameExist(DB, userName) {

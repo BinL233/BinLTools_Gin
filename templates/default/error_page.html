@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 {{template "header" .}}
@@ -27,4 +28,35 @@
 </body>
 <br /><br /><br /><br /><br /><br /><br /><br />
 {{template "footer"}}
+=======
+<!DOCTYPE html>
+<html lang="en">
+{{template "header" .}}
+<br />
+<br />
+<br />
+<br />
+<head>
+    <meta charset="UTF-8">
+    <title>ERROR</title>
+</head>
+<body>
+<br><br><br><br>
+<div id="main">
+    <div id="error_title" style="text-align: center">
+        <a style="text-align: center; font-size: 50px; color: #1e9595">Sorry...There is something wrong...</a>
+    </div>
+    <br><br><br><br>
+    <div id="error_info" style="text-align: center">
+        <a style="text-align: center; font-size: 40px; color: #636e72">Error Code:  </a>
+        <a style="text-align: center; font-size: 40px; color: #2d3436">{{.code}}</a><br><br>
+        <a style="text-align: center; font-size: 40px; color: #636e72">Error Message:  </a>
+        <a style="text-align: center; font-size: 40px; color: #2d3436">{{.msg}}</a>
+
+    </div>
+</div>
+</body>
+<br /><br /><br /><br /><br /><br /><br /><br />
+{{template "footer"}}
+>>>>>>> 388f102937fe07671b437a0ed11c3b79cb6d0006
 </html>
