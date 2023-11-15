@@ -23,10 +23,17 @@
       color: #333;
     }
     .container {
-      width: 80%;
+      width: 1200px;;
       margin: auto;
       overflow: hidden;
     }
+
+    @media screen and (max-width: 1200px) {
+      body {
+        overflow-x: scroll;
+      }
+    }
+
     header {
       background: #333;
       color: #fff;

@@ -24,10 +24,17 @@
                 color: #333;
             }
             .container {
-                width: 80%;
+                width: 1200px;;
                 margin: auto;
                 overflow: hidden;
             }
+
+            @media screen and (max-width: 1200px) {
+                body {
+                    overflow-x: scroll;
+                }
+            }
+
             header {
                 background: #dcdcdc;
                 color: #fff;
@@ -109,7 +116,7 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="/author_homepage">Author's HomePage</a></li>
+                    <li><a href="/about_me">Author's HomePage</a></li>
                     <li><a href="https://github.com/BinL233">GitHub</a></li>
                     <li><a href="/login">{{.userName.username}}</a></li>
                 </ul>
