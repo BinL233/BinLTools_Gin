@@ -32,7 +32,7 @@ func AuthorProfile(c *gin.Context) {
 		userInfo["username"] = "Sign In"
 	}
 	c.HTML(http.StatusOK, "Author'sHomePage.html", gin.H{
-		"title":    "Author's HomePage",
+		"title":    "about_me",
 		"userName": userInfo,
 		//"profile":  "/static/markdown/author_profile.md",
 	})
