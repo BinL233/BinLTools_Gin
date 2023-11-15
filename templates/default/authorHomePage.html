@@ -118,6 +118,12 @@
       color: #fff;
     }
 
+    .custom-hr {
+      margin-bottom: 20px;
+      border-width:1px;
+      border-radius: 15px;
+    }
+
   </style>
 </head>
 
@@ -226,6 +232,29 @@
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
           <div>
+            <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> (Personal Website) BinLTools</h3>
+          </div>
+          <div>
+            <p style="font-size: 23px;">Jun 2022 - Present</p>
+          </div>
+        </div>
+        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
+          Gin Framework-based project. Used for small features and articles created by the author.
+          Applied Gin as Framework, HTML+CSS as Front-end, JavaScript+Golang as Back-end, and Mysql as Database.
+          This website allows users to log in, register, test reactions, convert digits (Binary, Octal, Decimal and
+          Hexadecimal), etc. It also contains an L2D Widget and Author's home page.
+        </p>
+      </div>
+      <div>
+        <a href="https://github.com/BinL233/BinLTools_Gin" class="hover_button">Repository</a>
+        <a href="http://binltools.fun/" class="hover_button">Website</a>
+      </div>
+    </section>
+
+    <section style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
+          <div>
             <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> Thread scheduler</h3>
           </div>
           <div>
@@ -233,11 +262,11 @@
           </div>
         </div>
         <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
-          This repository contains code for emulation of a single CPU with the Shortest Remaining Time First scheduling policy
-          and two IO Devices based thread scheduler. Implemented and parsed various mechanisms for virtual memory to physical
-          memory to page mapping and page scheduling algorithms (FIFO, LRU, CLOCK).
+          This repository contains code for emulation of a single CPU with the Shortest Remaining Time
+          First scheduling policy and two IO Devices-based thread schedulers. Implemented and parsed various
+          mechanisms for virtual memory to physical memory to page mapping and page scheduling algorithms (FIFO, LRU, CLOCK).
           Built multi-process, CPU/IO multi-threading (spin locks, mutex locks, and thread scheduling algorithms (FCFS, SRJF)).
-          Constructed TLB mechanism to determine the physical address of the memory request at the time of the TLB hit.
+          Constructed TLB mechanisms to determine the physical address of the memory request at the time of the TLB hit.
         </p>
       </div>
       <div>
@@ -259,14 +288,14 @@
         <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
           This project builds an FPGA on Vivado via Verilog that simulates the key components and functions of a CPU:
           Datapath for executing instructions and controlling data transfer; Pipeline Registers such as IDEXEPipelineReg,
-          IFIDPipelineReg. Pipeline Registers such as IDEXEPipelineReg, IFIDPipelineReg,
-          exememPipelineReg and memwbPipelineReg are used to store stage data and status information;
-          Control Unit is used to control other components to perform calculations;
-          Program Counter and Program Counter Adder are used to keep track of the address of the current
-          instruction and increase the number of PCs; Register File is used to store the temporary data of register;
-          ALU is used to perform computation and logic operations; Data Memory is used to store data; RegrtMultiplexer,
-          aluMultiplexer and WbMux are used to select different data sources according to the control signals.
-          By constructing the above components, this virtual CPU can realize read-save and add-subtract-multiply-divide calculations.
+          IFIDPipelineReg. Pipeline Registers such as IDEXEPipelineReg, IFIDPipelineReg, exememPipelineReg and
+          memwbPipelineReg are used to store stage data and status information; Control Unit is used to control other
+          components to perform calculations; Program Counter and Program Counter Adder are used to keep track of the
+          address of the current instruction and increase the number of PCs; Register File is used to store the temporary
+          data of register; ALU is used to perform computation and logic operations; Data Memory is used to store data;
+          RegrtMultiplexer, ALU multiplexer and WbMux are used to select different data sources according to the control
+          signals. By constructing the above components, this virtual CPU can realize read-save and
+          add-subtract-multiply-divide calculations.
         </p>
       </div>
       <div style="display: flex; padding: 30px">
@@ -298,6 +327,58 @@
         <a href="http://binltools.fun/download/No_Death_Clear_0.8.3.exe" class="hover_button">Game</a>
         <a href="http://binltools.fun/download/No_Death_Clear_0.8.3_Project.zip" class="hover_button">Project</a>
       </div>
+    </section>
+  </section>
+
+  <section id="competition" class="module">
+    <p style="text-align: center; font-size: 40px;">Competitions</p>
+    <section class="module2" style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: -40px">
+          <div>
+            <h3 style="font-size: 23px; ">DJI RoboMaster Competition in IEEE International Conference</h3>
+          </div>
+          <div>
+            <p style="font-size: 22px;">May 2022</p>
+          </div>
+        </div>
+          <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- 2nd Place</p>
+      </div>
+      <hr class="custom-hr">
+      <div style="display: flex;">
+        <div><img src="../../static/images/RoboMaster.jpg" style="margin-left: 20px; width: 76%; height: auto; border-radius: 15px;"></div>
+        <div><img src="../../static/images/RoboMaster2.jpg" style="margin-left: 20px; width: 70%; height: auto; border-radius: 15px;"></div>
+      </div>
+    </section>
+
+    <section class="module2" style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: -40px">
+          <div>
+            <h3 style="font-size: 23px; ">Nittany AI Challenge</h3>
+          </div>
+          <div>
+            <p style="font-size: 22px;">Feb 2022 - May 2022</p>
+          </div>
+        </div>
+        <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- TOP 20</p>
+      </div>
+    </section>
+
+    <section class="module2" style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: -40px">
+          <div>
+            <h3 style="font-size: 23px; ">ASA DataFest</h3>
+          </div>
+          <div>
+            <p style="font-size: 22px;">Mar 2022</p>
+          </div>
+        </div>
+        <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- Best Data Visualization Team</p>
+      </div>
+      <hr class="custom-hr">
+      <div><img src="../../static/images/ASADataFest.jpg" style="margin-left: 20px; width: 30%; height: auto; border-radius: 15px;"></div>
     </section>
   </section>
 
@@ -334,54 +415,9 @@
           </div>
         </div>
         <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
-          We reduces the time complexity of analyzing ChIP-nexus data by analyzing base pairs in DNA sequences.
-          Applied forward and backward propagation in neural network with multi-scale feature learning.
+          We reduce the time complexity of analyzing ChIP-nexus data by analyzing base pairs in DNA sequences.
+          Applied forward and backward propagation in neural networks with multi-scale feature learning.
         </p>
-      </div>
-    </section>
-  </section>
-
-  <section id="competition" class="module">
-    <p style="text-align: center; font-size: 40px;">Competitions</p>
-    <section class="module2" style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
-      <div>
-        <div style="display: flex; justify-content: space-between; margin-bottom: -40px">
-          <div>
-            <h3 style="font-size: 23px; ">DJI RoboMaster Competition in IEEE International Conference</h3>
-          </div>
-          <div>
-            <p style="font-size: 22px;">May 2022</p>
-          </div>
-        </div>
-        <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- 2nd Place</p>
-      </div>
-    </section>
-
-    <section class="module2" style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
-      <div>
-        <div style="display: flex; justify-content: space-between; margin-bottom: -40px">
-          <div>
-            <h3 style="font-size: 23px; ">Nittany AI Challenge</h3>
-          </div>
-          <div>
-            <p style="font-size: 22px;">Feb 2022 - May 2022</p>
-          </div>
-        </div>
-        <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- TOP 20</p>
-      </div>
-    </section>
-
-    <section class="module2" style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
-      <div>
-        <div style="display: flex; justify-content: space-between; margin-bottom: -40px">
-          <div>
-            <h3 style="font-size: 23px; ">ASA DataFest</h3>
-          </div>
-          <div>
-            <p style="font-size: 22px;">Mar 2022</p>
-          </div>
-        </div>
-        <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- Best Data Visualization Team</p>
       </div>
     </section>
   </section>
