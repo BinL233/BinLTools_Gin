@@ -1,39 +1,66 @@
 {{ define "header" }}
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
         <link rel="icon" href="/static/images/BinLTools_logo.ico" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap" rel="stylesheet">
         <meta charset="utf-8">
 
         <style>
-            *{
-                box-sizing: border-box;
+            body {
+                font-family: 'Montserrat', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                color: #333;
             }
-
-            #intro{
-                position: relative;
-                top: 100px;
+            .container {
+                width: 80%;
+                margin: auto;
+                overflow: hidden;
             }
-
-            header{
-                border-bottom: 1px solid rgba(0, 0, 0, 0.22);
-                height: 60px;
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                background-color: #ffffff;
+            header {
+                background: #333;
+                color: #fff;
+                padding-top: 30px;
+                min-height: 70px;
+                border-bottom: #bbb 1px solid;
             }
-
-            body{
-                background-color: #ffffff;
-                font-family: 'Open Sans';
+            header a {
+                color: #fff;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 16px;
             }
-
-            li.base{
+            header ul {
+                padding: 0;
+                margin: 0;
                 list-style: none;
-                display: inline-block;
-                margin-left: 20px;
+                overflow: hidden;
+            }
+            header li {
+                float: left;
+                display: inline;
+                padding: 0 20px 0 20px;
+            }
+            header #branding {
+                float: left;
+            }
+            header #branding h1 {
+                margin: 0;
+            }
+            header nav {
+                float: right;
+                margin-top: 10px;
+            }
+            header .highlight, header .current a {
+                color: #44c0c0;
+                font-weight: bold;
             }
 
         </style>
@@ -67,25 +94,21 @@
             }
         </script>
     </head>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">BinL</span>Tools</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/author_homepage">Author's HomePage</a></li>
+                    <li><a href="https://github.com/BinL233">GitHub</a></li>
+                    <li><a href="/login">{{.userName.username}}</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <body>
-       <header class="navbar" style="justify-content: space-between; display: flex;">
-            <nav class="left-nav" style="overflow: hidden;">
-                <ul>
-                    <li class="base"><a href="/"><img src="/static/images/BinLTools_logo.ico"></a></li>
-                    <li class="base"><a href="/" style="color:#de77a5; text-decoration: none; font-size: 25px; font-weight: bolder; top: -6px; position: relative">BinLTools</a></li>
-                </ul>
-            </nav>
-	    <nav class="right-nav" style="overflow: hidden;">
-                <ul>
-                    <!-- <li><a href="" style="color:#0000009e; text-decoration: none; font-size: 20px; font-weight: bold;">Message Board</a></li> -->
-                    <li class="base"><a href="/author_profile" style="color:#0000009e; text-decoration: none; font-size: 20px; font-weight: bold; margin-right: 30px;">Author's Profile</a></li>
-                    <li class="base"><a href="https://github.com/BinL233" style="color:#0000009e; text-decoration: none; font-size: 20px; font-weight: bold; margin-right: 30px;">GitHub</a></li>
-                    <li class="base"><a href="/login" style="color:rgba(0,206,201,0.84); text-decoration: none; font-size: 20px; margin-right: 30px;">{{.userName.username}}</a></li>
-                </ul>
-            </nav>
-
-        </header>
-
        <div class="l2d"  id="L2d" >
            <div id="L2dCanvas" class="Canvas" style="z-index: -1; position: fixed"></div>
        </div>

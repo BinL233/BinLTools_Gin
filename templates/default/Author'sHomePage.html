@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap" rel="stylesheet">
+  <title>Academic Homepage</title>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding-top: 30px;
+      min-height: 70px;
+      border-bottom: #bbb 1px solid;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    header ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      overflow: hidden;
+    }
+    header li {
+      float: left;
+      display: inline;
+      padding: 0 20px 0 20px;
+    }
+    header #branding {
+      float: left;
+    }
+    header #branding h1 {
+      margin: 0;
+    }
+    header nav {
+      float: right;
+      margin-top: 10px;
+    }
+    header .highlight, header .current a {
+      color: #44c0c0;
+      font-weight: bold;
+    }
+    .module {
+      padding: 20px;
+      background: #fff;
+      margin-top: 20px;
+      border-radius: 15px; /* Rounded corners for each module */
+    }
+    /*.module2 {*/
+    /*  padding: 20px;*/
+    /*  background: #ececec;*/
+    /*  margin-top: 20px;*/
+    /*  border-radius: 15px; !* Rounded corners for each module *!*/
+    /*}*/
+
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <div id="branding">
+      <h1><span class="highlight">Academic</span> Homepage</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#biography">Biography</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#competition">Competition</a></li>
+        <li><a href="#courses">Courses</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <section id="biography" class="module" style="margin-top: 150px;">
+    <div class="photo-container" style="text-align: center;">
+      <img src="../../static/images/Author‘sImage.jpg" alt="Kaile Ying" style="width:200px; height:200px; border-radius: 50%; object-fit: cover;">
+    </div>
+
+    <h2 style="text-align: center; font-size: 40px;">Kaile Ying</h2>
+    <p style="text-align: center; margin-bottom: 50px;">Download my <a href="../../static/Documents/CV_Kaile%20Ying.docx" target="_blank">CV</a>.</p>
+
+    <div style="display: flex; justify-content: space-around;">
+        <div>
+          <h3 style="font-size: 30px; text-align: center;">Interests</h3>
+          <p style="text-align: center;">Deep Learning for DNA Analysis</p>
+          <p style="text-align: center;">Robotics</p>
+          <p style="text-align: center;">Web Development</p>
+          <p style="text-align: center;">iOS Applications Development</p>
+        </div>
+        <div>
+          <h3 style="font-size: 30px; text-align: center;">Education</h3>
+          <p style="text-align: center; text-align: center;">The Pennsylvania State University - University Park</p>
+          <p style="margin-left: 20px; color: #7a7a7a; font-size: 15px;">2020-2024</p>
+          <p style="margin-left: 20px; color: #7a7a7a; font-size: 15px;">Computer Science Major</p>
+          <p style="margin-left: 20px; color: #7a7a7a; font-size: 15px;">Mathematics Minor</p>
+        </div>
+    </div>
+  </section>
+
+  <section id="projects" class="module">
+    <h2 style="text-align: center; font-size: 24px;">Projects</h2>
+    <div>
+      <a href="#" class="button" style="background-color: #f4f4f4; color: #333; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background-color 0.3s ease;">Repository</a>
+      <a href="#" class="button" style="background-color: #f4f4f4; color: #333; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background-color 0.3s ease;">Website</a>
+      <style>
+        .button:hover {
+          background-color: #4CAF50;
+          color: #fff;
+        }
+      </style>
+    </div>
+  </section>
+  <section id="research" class="module">
+    <h2 style="text-align: center; font-size: 24px;">Research</h2>
+    <p>Details of your research...</p>
+  </section>
+  <section id="competition" class="module">
+    <h2 style="text-align: center; font-size: 24px;">Competition</h2>
+    <p>Competition details and achievements...</p>
+  </section>
+  <section id="skills" class="module">
+    <h2 style="text-align: center; font-size: 24px;">Skills</h2>
+    <p>Your skills and proficiencies...</p>
+  </section>
+</div>
+</body>
+<br /><br /><br /><br /><br /><br /><br /><br />
+{{template "footer"}}
+</html>
