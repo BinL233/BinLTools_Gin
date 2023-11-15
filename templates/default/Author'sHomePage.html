@@ -4,8 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/static/images/BinLTools_logo.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href=https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap" rel="stylesheet">
@@ -15,8 +18,17 @@
       box-sizing: border-box;
     }
 
+    @font-face {
+      font-family: 'Mona Sans';
+      src:
+              url('../../static/Font/Mona Sans/Mona-Sans.woff2') format('woff2 supports variations'),
+              url('../../static/Font/Mona Sans/Mona-Sans.woff2') format('woff2-variations');
+      font-weight: 400 900;
+      font-stretch: 100% 125%;
+    }
+
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', 'Mona Sans', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
@@ -82,12 +94,27 @@
       margin-top: 20px;
       border-radius: 15px; /* Rounded corners for each module */
     }
-    /*.module2 {*/
-    /*  padding: 20px;*/
-    /*  background: #ececec;*/
-    /*  margin-top: 20px;*/
-    /*  border-radius: 15px; !* Rounded corners for each module *!*/
-    /*}*/
+
+    .module2 {
+      padding: 20px;
+      background: #ececec;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+
+    .hover_button {
+      background-color: #e0e0e0;
+      color: #333;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .hover_button:hover {
+      background-color: #44c0c0;
+      color: #fff;
+    }
 
   </style>
 </head>
@@ -142,30 +169,79 @@
   </section>
 
   <section id="projects" class="module">
-    <h2 style="text-align: center; font-size: 24px;">Projects</h2>
-    <div>
-      <a href="#" class="button" style="background-color: #f4f4f4; color: #333; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background-color 0.3s ease;">Repository</a>
-      <a href="#" class="button" style="background-color: #f4f4f4; color: #333; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background-color 0.3s ease;">Website</a>
-      <style>
-        .button:hover {
-          background-color: #4CAF50;
-          color: #fff;
-        }
-      </style>
-    </div>
+    <p style="text-align: center; font-size: 40px;">Projects</p>
+    <section style="padding-left: 20px; padding-right: 20px; padding-bottom: 50px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
+          <div>
+            <h3 style="font-size: 25px;">(Kubernetes Native) Kueue</h3>
+          </div>
+          <div>
+            <p style="font-size: 20px;">Jun 2023 - Present</p>
+          </div>
+        </div>
+        <p style="font-family: 'Mona Sans'; font-size: 17px; margin-bottom: 25px;">
+          Kueue is a kubernetes-native system that manages quotas and how jobs consume them. Kueue decides when a job should wait,
+          when a job should be admitted to start (as in pods can be created) and when a job should be preempted (as in active pods should be deleted).
+        </p>
+      </div>
+      <div>
+        <a href="https://github.com/kubernetes-sigs/kueue" class="hover_button">Repository</a>
+        <a href="https://kueue.sigs.k8s.io/docs/overview/" class="hover_button">Website</a>
+      </div>
+    </section>
+
+    <section style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
+          <div>
+            <h3 style="font-size: 25px;">(iOS Application) Revive</h3>
+          </div>
+          <div>
+            <p style="font-size: 20px;">Oct 2023 - Present</p>
+          </div>
+        </div>
+        <p style="font-family: 'Mona Sans'; font-size: 17px; margin-bottom: 25px;">Revive is a Focus App for iOS, based on taking care of endangered or extinct species.
+          In Revive, you can take care of a species from 0 to 1, starting with an egg. For your species to thrive,
+          you need to do anything in a focused way-----such as studying, working, or other activities, which is the core of Revive.
+        </p>
+      </div>
+      <div>
+        <a href="https://github.com/BinL233/Revive" class="hover_button">Repository</a>
+<!--        <a href="#" class="hover_button">Website</a>-->
+      </div>
+    </section>
   </section>
+
   <section id="research" class="module">
-    <h2 style="text-align: center; font-size: 24px;">Research</h2>
-    <p>Details of your research...</p>
+    <p style="text-align: center; font-size: 40px;">Research</p>
+    <section style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
+      <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
+          <div>
+            <h3 style="font-size: 25px;">(Deep Learning for ChIP-nexus) Cage</h3>
+          </div>
+          <div>
+            <p style="font-size: 20px;">Jun 2022 - Jun 2023</p>
+          </div>
+        </div>
+        <p style="font-family: 'Mona Sans'; font-size: 17px; margin-bottom: 25px;">
+          We reduces the time complexity of analyzing ChIP-nexus data by constructing efficient and accurate models through Deep Learning techniques.
+        </p>
+      </div>
+    </section>
   </section>
+
   <section id="competition" class="module">
     <h2 style="text-align: center; font-size: 24px;">Competition</h2>
     <p>Competition details and achievements...</p>
   </section>
+
   <section id="skills" class="module">
     <h2 style="text-align: center; font-size: 24px;">Skills</h2>
     <p>Your skills and proficiencies...</p>
   </section>
+
 </div>
 </body>
 <br /><br /><br /><br /><br /><br /><br /><br />
