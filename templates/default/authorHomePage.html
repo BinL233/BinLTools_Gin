@@ -37,15 +37,10 @@
       color: #333;
     }
     .container {
-      width: 1200px;;
+      padding-left: 300px;
+      padding-right: 300px;
       margin: auto;
       overflow: hidden;
-    }
-
-    @media screen and (max-width: 1200px) {
-      body {
-        overflow-x: scroll;
-      }
     }
 
     header {
@@ -124,6 +119,30 @@
       border-radius: 15px;
     }
 
+    .container3_around {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .container3 {
+      display: flex;
+    }
+
+    @media (max-width: 1400px) {
+      .container {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      .container3 {
+        flex-direction: column;
+      }
+
+      .container3_around {
+        flex-direction: column;
+      }
+    }
+
   </style>
 </head>
 
@@ -162,7 +181,7 @@
       <i class="fab fa-github"></i> My Github HomePage
     </a></p>
 
-    <div style="display: flex; justify-content: space-around;">
+    <div class="container3_around">
         <div>
           <h3 style="font-size: 30px; text-align: center;">Interests</h3>
           <p style="text-align: center;">Deep Learning for DNA Analysis</p>
@@ -219,7 +238,7 @@
           you need to do anything in a focused way-----such as studying, working, or other activities, which is the core of Revive.
         </p>
         <p style="font-family: 'Roboto'; font-size: 17px; margin-bottom: 25px;"><b>This app will be available on the App Store in December!</b></p>
-        <div style="display: flex; padding: 30px">
+        <div class="container3" style="padding: 30px">
           <div><img src="../../static/images/ReviveReviveMockUp.jpg" alt="ReviveMockUp" style="width: 90%; height: auto"></div>
           <div><img src="../../static/images/Flowchart.jpg" alt="ReviveFlowChart" style="width: 90%; height: auto"></div>
         </div>
@@ -300,7 +319,7 @@
           add-subtract-multiply-divide calculations.
         </p>
       </div>
-      <div style="display: flex; padding: 30px">
+      <div class="container3" style="padding: 30px">
         <div><img src="../../static/images/CPU1.png" alt="CPU1" style="width: 90%; height: auto"></div>
         <div><img src="../../static/images/CPU2.png" alt="CPU2" style="width: 90%; height: auto"></div>
       </div>
@@ -347,7 +366,7 @@
           <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- 2nd Place</p>
       </div>
       <hr class="custom-hr">
-      <div style="display: flex;">
+      <div class="container3">
         <div><img src="../../static/images/RoboMaster.jpg" style="margin-left: 20px; width: 76%; height: auto; border-radius: 15px;"></div>
         <div><img src="../../static/images/RoboMaster2.jpg" style="margin-left: 20px; width: 70%; height: auto; border-radius: 15px;"></div>
       </div>
@@ -380,7 +399,14 @@
         <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- Best Data Visualization Team</p>
       </div>
       <hr class="custom-hr">
-      <div><img src="../../static/images/ASADataFest.jpg" style="margin-left: 20px; width: 30%; height: auto; border-radius: 15px;"></div>
+      <div class="container3">
+        <div style="margin-left: 20px; flex: 1;">
+          <img src="../../static/images/ASADataFest.jpg" style="width: 100%; height: auto; border-radius: 15px;">
+        </div>
+        <div style="margin-left: 100px; margin-right: 100px; flex: 2;">
+          <img src="../../static/images/ASADataFest2.JPG" style="width: 100%; height: auto; border-radius: 15px;">
+        </div>
+      </div>
     </section>
   </section>
 
