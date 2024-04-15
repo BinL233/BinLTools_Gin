@@ -30,6 +30,9 @@ Website: http://binltools.fun
 3. 进制转换器 Digit Converter
     - 进制快速转换 Fast conversion of digits
     - 支持二进制、八进制、十进制和十六进制的相互转换 Support Binary, Octal, Decimal and Hexdecimal conversions.
+
+4. About me
+   - 作者的个人档案
     
 ## 结构 Structure
 ``` 
@@ -139,3 +142,4 @@ Website: http://binltools.fun
 - [x] Live2d部件 Live2d widget
 - [ ] 完善登出功能 Improve log out function
 - [ ] 个人主页 Personal homepage
+- [x] About me
