@@ -37,8 +37,9 @@
       color: #333;
     }
     .container {
-      padding-left: 300px;
-      padding-right: 300px;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 20px;
       margin: auto;
       overflow: hidden;
     }
@@ -46,13 +47,14 @@
     header {
       background: #333;
       color: #fff;
-      padding-top: 30px;
+      padding-top: 10px;
       min-height: 70px;
       border-bottom: #bbb 1px solid;
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
+      z-index: 1000;
     }
     header a {
       color: #fff;
@@ -64,6 +66,8 @@
       padding: 0;
       margin: 0;
       list-style: none;
+      display: flex;
+      justify-content: space-around;
       overflow: hidden;
     }
     header li {
@@ -128,7 +132,26 @@
       display: flex;
     }
 
-    @media (max-width: 1200px) {
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .container3_around {
+        flex-direction: column;
+      }
+
+      header ul {
+        display: none;
+      }
+
+      header li {
+        padding: 10px 0;
+      }
+    }
+
+    /* @media (max-width: 1200px) {
       .container {
         padding-left: 50px;
         padding-right: 50px;
@@ -160,7 +183,7 @@
         margin: auto;
         overflow: hidden;
       }
-    }
+    } */
 
   </style>
 </head>
@@ -194,7 +217,7 @@
       <img src="../../static/images/Optimized/Author‘sImage-min.jpg" alt="Kaile Ying" style="width:200px; height:200px; border-radius: 50%; object-fit: cover;">
     </div>
 
-    <h2 style="text-align: center; font-size: 40px;">Kaile Ying</h2>
+    <h2 style="text-align: center; font-size: xx-large;">Kaile Ying</h2>
     <p style="text-align: center;">Download my <a href="../../static/Documents/CV_Kaile%20Ying.docx" target="_blank">CV</a>.</p>
     <p style="text-align: center; margin-bottom: 50px;"><a href="https://github.com/BinL233">
       <i class="fab fa-github"></i> My Github HomePage
@@ -202,39 +225,39 @@
 
     <div class="container3_around">
         <div>
-          <h3 style="font-size: 30px; text-align: center;">Interests</h3>
+          <h3 style="font-size: xx-large; text-align: center;">Interests</h3>
           <p style="text-align: center;">Deep Learning for DNA Analysis</p>
           <p style="text-align: center;">Robotics</p>
           <p style="text-align: center;">Web Development</p>
           <p style="text-align: center;">iOS Applications Development</p>
-        </div>
+        </div>    
         <div>
-          <h3 style="font-size: 30px; text-align: center;">Education</h3>
-          <p style="text-align: center; text-align: center;">Carnegie Mellon University</p>
-          <p style="margin-left: 20px; color: #7a7a7a; font-size: 15px;"><i class="far fa-clock"></i> 2025 SP - 2027 SP</p>
-          <p style="margin-left: 20px; color: #7a7a7a; font-size: 15px;"><i class="fas fa-graduation-cap"></i> Electric and Computer Engineering Major</p>
+          <h3 style="font-size: xx-large; text-align: center;">Education</h3>
+          <p style="text-align: center; font-size: larger;">Carnegie Mellon University</p>
+          <p style="color: #7a7a7a; font-size: medium; text-align: center;"><i class="far fa-clock"></i> 2025 SP - 2027 SP</p>
+          <p style="color: #7a7a7a; font-size: medium; text-align: center;"><i class="fas fa-graduation-cap"></i> Electrical and Computer Engineering Major</p>
 
-          <p style="text-align: center; text-align: center; margin-top: 50px;">The Pennsylvania State University - University Park</p>
-          <p style="margin-left: 20px; color: #7a7a7a; font-size: 15px;"><i class="far fa-clock"></i> 2020 FA - 2024 FA</p>
-          <p style="margin-left: 20px; color: #7a7a7a; font-size: 15px;"><i class="fas fa-graduation-cap"></i> Computer Science Major</p>
-          <p style="margin-left: 20px; color: #7a7a7a; font-size: 15px;"><i class="fas fa-graduation-cap"></i> Mathematics Minor</p>
+          <p style="text-align: center; margin-top: 50px; font-size: larger;">The Pennsylvania State University - University Park</p>
+          <p style="color: #7a7a7a; font-size: medium; text-align: center;"><i class="far fa-clock"></i> 2020 FA - 2024 FA</p>
+          <p style="color: #7a7a7a; font-size: medium; text-align: center;"><i class="fas fa-graduation-cap"></i> Computer Science Major</p>
+          <p style="color: #7a7a7a; font-size: medium; text-align: center;"><i class="fas fa-graduation-cap"></i> Mathematics Minor</p>
         </div>
     </div>
   </section>
 
   <section id="projects" class="module">
-    <p style="text-align: center; font-size: 40px;">Projects</p>
+    <p style="text-align: center; font-size: xx-large;">Projects</p>
     <section style="padding-left: 20px; padding-right: 20px; padding-bottom: 50px;">
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
           <div>
-            <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> (Kubernetes Native) Kueue</h3>
+            <h3 style="font-size: x-large;"><i class="fas fa-laptop-code"></i> (Kubernetes Native) Kueue</h3>
           </div>
           <div>
-            <p style="font-size: 23px;">Jun 2023 - Present</p>
+            <p style="font-size: x-large;">Jun 2023 - Present</p>
           </div>
         </div>
-        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
+        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: medium; margin-bottom: 25px;">
           Kueue is a kubernetes-native system that manages quotas and how jobs consume them. Kueue decides when a job should wait,
           when a job should be admitted to start (as in pods can be created) and when a job should be preempted (as in active pods should be deleted).
         </p>
@@ -250,20 +273,20 @@
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
           <div>
-            <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> (Application for iOS) Revive</h3>
+            <h3 style="font-size: x-large;"><i class="fas fa-laptop-code"></i> (Application for iOS) Revive</h3>
           </div>
           <div>
-            <p style="font-size: 23px;">Oct 2023 - Present</p>
+            <p style="font-size: x-large;">Oct 2023 - Present</p>
           </div>
         </div>
-        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">Revive is a Focus App for iOS, based on taking care of endangered or extinct species.
+        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: medium; margin-bottom: 25px;">Revive is a Focus App for iOS, based on taking care of endangered or extinct species.
           In Revive, you can take care of a species from 0 to 1, starting with an egg. For your species to thrive,
           you need to do anything in a focused way-----such as studying, working, or other activities, which is the core of Revive.
         </p>
-        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
+        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: medium; margin-bottom: 25px;">
           Features: Core Data, iCloud Sync, Live Activity Notifications, Timer, json Encoder & Decoder, Data Visualization Analysis, UserDefaults.
         </p>
-        <p style="font-family: 'Roboto'; font-size: 17px; margin-bottom: 25px;"><b>This app now is available on Apple TestFlight!</b></p>
+        <p style="font-family: 'Roboto'; font-size: medium; margin-bottom: 25px;"><b>This app now is available on Apple TestFlight!</b></p>
         <div class="container3" style="padding: 30px">
           <div><img src="../../static/images/Optimized/ReviveReviveMockUp-min.jpg" alt="ReviveMockUp" style="width: 90%; height: auto"></div>
           <div><img src="../../static/images/Optimized/Flowchart-min.jpg" alt="ReviveFlowChart" style="width: 90%; height: auto"></div>
@@ -280,14 +303,14 @@
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
           <div>
-            <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> (Personal Website) BinLTools</h3>
+            <h3 style="font-size: x-large;"><i class="fas fa-laptop-code"></i> (Personal Website) BinLTools</h3>
           </div>
           <div>
-            <p style="font-size: 23px;">Jun 2022 - Present</p>
+            <p style="font-size: x-large;">Jun 2022 - Present</p>
           </div>
         </div>
-        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
-          Gin Framework-based project. Used for small features and articles created by the author.
+        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: medium; margin-bottom: 25px;">
+          Gin Framework-based project. Used for medium features and articles created by the author.
           Applied Gin as Framework, HTML+CSS as Front-end, JavaScript+Golang as Back-end, and Mysql as Database.
           This website allows users to log in, register, test reactions, convert digits (Binary, Octal, Decimal and
           Hexadecimal), etc. It also contains an L2D Widget and Author's home page.
@@ -303,13 +326,13 @@
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
           <div>
-            <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> Thread scheduler</h3>
+            <h3 style="font-size: x-large;"><i class="fas fa-laptop-code"></i> Thread scheduler</h3>
           </div>
           <div>
-            <p style="font-size: 23px;">Jan 2023 - Mar 2023</p>
+            <p style="font-size: x-large;">Jan 2023 - Mar 2023</p>
           </div>
         </div>
-        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
+        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: medium; margin-bottom: 25px;">
           This repository contains code for emulation of a single CPU with the Shortest Remaining Time
           First scheduling policy and two IO Devices-based thread schedulers. Implemented and parsed various
           mechanisms for virtual memory to physical memory to page mapping and page scheduling algorithms (FIFO, LRU, CLOCK).
@@ -327,13 +350,13 @@
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
           <div>
-            <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> CPU Organization and Design</h3>
+            <h3 style="font-size: x-large;"><i class="fas fa-laptop-code"></i> CPU Organization and Design</h3>
           </div>
           <div>
-            <p style="font-size: 23px;">Jun 2022 - Aug 2022</p>
+            <p style="font-size: x-large;">Jun 2022 - Aug 2022</p>
           </div>
         </div>
-        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
+        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: medium; margin-bottom: 25px;">
           This project builds an FPGA on Vivado via Verilog that simulates the key components and functions of a CPU:
           Datapath for executing instructions and controlling data transfer; Pipeline Registers such as IDEXEPipelineReg,
           IFIDPipelineReg. Pipeline Registers such as IDEXEPipelineReg, IFIDPipelineReg, exememPipelineReg and
@@ -360,13 +383,13 @@
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
           <div>
-            <h3 style="font-size: 25px;"><i class="fas fa-laptop-code"></i> (Game for Windows) One Death Clear</h3>
+            <h3 style="font-size: x-large;"><i class="fas fa-laptop-code"></i> (Game for Windows) One Death Clear</h3>
           </div>
           <div>
-            <p style="font-size: 23px;">Jul 2021 - Sep 2022</p>
+            <p style="font-size: x-large;">Jul 2021 - Sep 2022</p>
           </div>
         </div>
-        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
+        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: medium; margin-bottom: 25px;">
           This is a 2D RPG game. Control the character to fight against monsters and defeat the boss at the end to clear the game.
           The most important thing is that if you die you need to start over!
         </p>
@@ -379,18 +402,18 @@
   </section>
 
   <section id="competitions" class="module">
-    <p style="text-align: center; font-size: 40px;">Competitions</p>
+    <p style="text-align: center; font-size: xx-large;">Competitions</p>
     <section class="module2" style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -40px">
           <div>
-            <h3 style="font-size: 23px; ">DJI RoboMaster Competition in IEEE International Conference</h3>
+            <h3 style="font-size: x-large; ">DJI RoboMaster Competition in IEEE International Conference</h3>
           </div>
           <div>
-            <p style="font-size: 22px;">May 2022</p>
+            <p style="font-size: x-large;">May 2022</p>
           </div>
         </div>
-          <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- 2nd Place</p>
+          <p style="color: #606060; font-size: medium; margin-bottom: 25px; margin-left: 25px;">- 2nd Place</p>
       </div>
       <hr class="custom-hr">
       <div class="container3">
@@ -403,13 +426,13 @@
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -40px">
           <div>
-            <h3 style="font-size: 23px; ">Nittany AI Challenge</h3>
+            <h3 style="font-size: x-large; ">Nittany AI Challenge</h3>
           </div>
           <div>
-            <p style="font-size: 22px;">Feb 2022 - May 2022</p>
+            <p style="font-size: x-large;">Feb 2022 - May 2022</p>
           </div>
         </div>
-        <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- TOP 20</p>
+        <p style="color: #606060; font-size: medium; margin-bottom: 25px; margin-left: 25px;">- TOP 20</p>
       </div>
     </section>
 
@@ -417,13 +440,13 @@
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -40px">
           <div>
-            <h3 style="font-size: 23px; ">ASA DataFest</h3>
+            <h3 style="font-size: x-large; ">ASA DataFest</h3>
           </div>
           <div>
-            <p style="font-size: 22px;">Mar 2022</p>
+            <p style="font-size: x-large;">Mar 2022</p>
           </div>
         </div>
-        <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- Best Data Visualization Team</p>
+        <p style="color: #606060; font-size: medium; margin-bottom: 25px; margin-left: 25px;">- Best Data Visualization Team</p>
       </div>
       <hr class="custom-hr">
       <div class="container3">
@@ -438,18 +461,18 @@
   </section>
 
   <section id="internship" class="module">
-    <p style="text-align: center; font-size: 40px;">Internship</p>
+    <p style="text-align: center; font-size: xx-large;">Internship</p>
     <section style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -40px">
           <div>
-            <h3 style="font-size: 25px;"><i class="fas fa-id-badge"></i> DaoCloud Network Technology Co., Ltd.</h3>
+            <h3 style="font-size: x-large;"><i class="fas fa-id-badge"></i> DaoCloud Network Technology Co., Ltd.</h3>
           </div>
           <div>
-            <p style="font-size: 23px;">May 2023 - Aug 2023</p>
+            <p style="font-size: x-large;">May 2023 - Aug 2023</p>
           </div>
         </div>
-        <p style="color: #606060; font-size: 20px; margin-bottom: 25px; margin-left: 25px;">- Back-end Developer Intern</p>
+        <p style="color: #606060; font-size: medium; margin-bottom: 25px; margin-left: 25px;">- Back-end Developer Intern</p>
         <p style="margin-left: 25px"><i class="fas fa-circle fa-xs"></i> <b>Cloud Native: </b> Kubernetes, Docker, Kueue</p>
         <p style="margin-left: 25px"><i class="fas fa-circle fa-xs"></i> <b>AI Models Platform: </b> KubeRay</p>
       </div>
@@ -458,18 +481,18 @@
 
 
   <section id="research" class="module">
-    <p style="text-align: center; font-size: 40px;">Research</p>
+    <p style="text-align: center; font-size: xx-large;">Research</p>
     <section style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
       <div>
         <div style="display: flex; justify-content: space-between; margin-bottom: -10px">
           <div>
-            <h3 style="font-size: 25px;"><i class="fas fa-chart-pie"></i>   (Deep Learning for ChIP-nexus) Cage</h3>
+            <h3 style="font-size: x-large;"><i class="fas fa-chart-pie"></i>   (Deep Learning for ChIP-nexus) Cage</h3>
           </div>
           <div>
-            <p style="font-size: 23px;"> Aug 2023 - Present</p>
+            <p style="font-size: x-large;"> Aug 2023 - Present</p>
           </div>
         </div>
-        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: 17px; margin-bottom: 25px;">
+        <p style="font-family: 'Roboto'; line-height: 1.5; font-size: medium; margin-bottom: 25px;">
           We reduce the time complexity of analyzing ChIP-nexus data by analyzing base pairs in DNA sequences.
           Applied forward and backward propagation in neural networks with multi-scale feature learning.
           Randomly split the genome into training, validation and test chromosomes.
@@ -480,62 +503,62 @@
   </section>
 
   <section id="courses" class="module">
-    <p style="text-align: center; font-size: 40px;">Courses</p>
+    <p style="text-align: center; font-size: xx-large;">Courses</p>
 
     <section style="padding-left: 20px; padding-right: 20px; margin-bottom: 25px;">
       <div style="text-align: center">
-        <p style="font-size: 18px;">CMPSC 464 - Introduction to the Theory of Computation - A</p>
-        <p style="font-size: 18px;">CMPSC 461 - Programming Language Concepts - A</p>
-        <p style="font-size: 18px;">CMPSC 360 - Discrete Mathematics for Computer Science - A</p>
-        <p style="font-size: 18px;">CMPSC 475 - Applications Programming - A</p>
-        <p style="font-size: 18px;">CMPSC 461 - Programming Language Concepts - A</p>
-        <p style="font-size: 18px;">CMPSC 465 - Data Structures and Algorithms - A-</p>
-        <p style="font-size: 18px;">CMPEN 270 - Digital Design - A</p>
-        <p style="font-size: 18px;">CMPEN 331 - Computer Organization and Design - A</p>
-        <p style="font-size: 18px;">CMPSC 415 - Numerical Computations - A-</p>
-        <p style="font-size: 18px;">Stat 414 - Introduction to Probability Theory - A</p>
-        <p style="font-size: 18px;">Stat 415 - Introduction to Mathematical Statistics - A</p>
-        <p style="font-size: 18px;">CMPSC 221 - Object Oriented Programming with Web-Based Applications - A</p>
+        <p style="font-size: medium">CMPSC 464 - Introduction to the Theory of Computation - A</p>
+        <p style="font-size: medium">CMPSC 461 - Programming Language Concepts - A</p>
+        <p style="font-size: medium">CMPSC 360 - Discrete Mathematics for Computer Science - A</p>
+        <p style="font-size: medium">CMPSC 475 - Applications Programming - A</p>
+        <p style="font-size: medium">CMPSC 461 - Programming Language Concepts - A</p>
+        <p style="font-size: medium">CMPSC 465 - Data Structures and Algorithms - A-</p>
+        <p style="font-size: medium">CMPEN 270 - Digital Design - A</p>
+        <p style="font-size: medium">CMPEN 331 - Computer Organization and Design - A</p>
+        <p style="font-size: medium">CMPSC 415 - Numerical Computations - A-</p>
+        <p style="font-size: medium">Stat 414 - Introduction to Probability Theory - A</p>
+        <p style="font-size: medium">Stat 415 - Introduction to Mathematical Statistics - A</p>
+        <p style="font-size: medium">CMPSC 221 - Object Oriented Programming with Web-Based Applications - A</p>
       </div>
     </section>
   </section>
 
   <section id="skills" class="module">
-    <p style="text-align: center; font-size: 40px;">Skills</p>
+    <p style="text-align: center; font-size: xx-large;">Skills</p>
 
     <div style="display: flex; justify-content: space-around;">
       <div style="text-align: center">
-        <h3 style="font-size: 18px;"><i class="fas fa-code"></i> Programming Languages</h3>
-        <p style="font-size: 16px;">Golang</p>
-        <p style="font-size: 16px;">Python</p>
-        <p style="font-size: 16px;">Swift</p>
-        <p style="font-size: 16px;">C</p>
-        <p style="font-size: 16px;">Java</p>
-        <p style="font-size: 16px;">HTML & CSS</p>
-        <p style="font-size: 16px;">SQL</p>
+        <h3 style="font-size: large;"><i class="fas fa-code"></i> Programming Languages</h3>
+        <p style="font-size: medium;">Golang</p>
+        <p style="font-size: medium;">Python</p>
+        <p style="font-size: medium;">Swift</p>
+        <p style="font-size: medium;">C</p>
+        <p style="font-size: medium;">Java</p>
+        <p style="font-size: medium;">HTML & CSS</p>
+        <p style="font-size: medium;">SQL</p>
       </div>
 
       <div style="text-align: center">
-        <h3 style="font-size: 18px;"><i class="fas fa-laptop-code"></i> CS Related Technics</h3>
-        <p style="font-size: 16px;">Kubernetes</p>
-        <p style="font-size: 16px;">Docker</p>
-        <p style="font-size: 16px;">Web Development (Gin, Django...)</p>
-        <p style="font-size: 16px;">iOS Application Development (SwiftUI, UiKit)</p>
-        <p style="font-size: 16px;">Deep Learning (PyTorch)</p>
-        <p style="font-size: 16px;">Embedded System Development</p>
-        <p style="font-size: 16px;">Game Development</p>
-        <p style="font-size: 16px;">Database</p>
+        <h3 style="font-size: large;"><i class="fas fa-laptop-code"></i> CS Related Technics</h3>
+        <p style="font-size: medium;">Kubernetes</p>
+        <p style="font-size: medium;">Docker</p>
+        <p style="font-size: medium;">Web Development (Gin, Django...)</p>
+        <p style="font-size: medium;">iOS Application Development (SwiftUI, UiKit)</p>
+        <p style="font-size: medium;">Deep Learning (PyTorch)</p>
+        <p style="font-size: medium;">Embedded System Development</p>
+        <p style="font-size: medium;">Game Development</p>
+        <p style="font-size: medium;">Database</p>
       </div>
 
       <div style="text-align: center">
-        <h3 style="font-size: 18px;"><i class="fas fa-tools"></i> Non-CS Related Technics</h3>
+        <h3 style="font-size: large;"><i class="fas fa-tools"></i> Non-CS Related Technics</h3>
         <div style="text-align: center">
-          <p style="font-size: 16px;">Video Clip (Premiere)</p>
-          <p style="font-size: 16px;">Video Effects (After Effects)</p>
-          <p style="font-size: 16px;">MMD (3D)</p>
-          <p style="font-size: 16px;">BeatBox</p>
-          <p style="font-size: 16px;">Painting</p>
-          <p style="font-size: 16px;">Image Processing (PhotoShop)</p>
+          <p style="font-size: medium;">Video Clip (Premiere)</p>
+          <p style="font-size: medium;">Video Effects (After Effects)</p>
+          <p style="font-size: medium;">MMD (3D)</p>
+          <p style="font-size: medium;">BeatBox</p>
+          <p style="font-size: medium;">Painting</p>
+          <p style="font-size: medium;">Image Processing (PhotoShop)</p>
         </div>
       </div>
     </div>
