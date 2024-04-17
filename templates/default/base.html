@@ -24,14 +24,22 @@
                 color: #333;
             }
             .container {
-                width: 1200px;;
+                width: 100%;
                 margin: auto;
                 overflow: auto;
             }
 
-            @media screen and (max-width: 1200px) {
+            @media (max-width: 768px) {
                 body {
                     overflow-x: scroll;
+                }
+
+                header ul {
+                    flex-direction: column;
+                }
+
+                header li {
+                    padding: 10px 0;
                 }
             }
 
