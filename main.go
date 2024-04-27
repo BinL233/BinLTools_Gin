@@ -19,11 +19,12 @@ func main() {
 
 	//Load static files
 	r.Static("/static", "./static")
+	r.Static("/js", "./JSFunctions")
 
 	routes.InitRoutes(r)
 	//http.ListenAndServe(":"+port, r)
 
-	err := r.Run(":80")
+	err := r.Run(":8080")
 	//err := r.Run()
 	if err != nil {
 		return
