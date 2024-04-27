@@ -22,8 +22,8 @@ COPY go.sum .
 
 RUN go mod download
 
-RUN go build -o main .
+RUN go build -o binltools .
 
-EXPOSE 8080
+EXPOSE 80
 
-ENTRYPOINT ["./main"]
+ENTRYPOINT ["./binltools"]
