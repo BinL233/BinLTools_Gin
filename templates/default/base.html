@@ -10,8 +10,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <script src="../../JSFunctions/ColorSchemePreference.js"></script>
-        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/js/ColorSchemePreference.js"></script>
+        <script src="/js/HeaderShadow.js"></script>
 
         <style>
             *{
@@ -22,7 +23,7 @@
                 font-family: 'Montserrat', sans-serif;
                 margin: 0;
                 padding: 0;
-                background-color: #f4f4f4;
+                background-color: #f0f0f0;
                 color: #333;
             }
             .container {
@@ -46,43 +47,56 @@
             }
 
             header {
-                background: #dcdcdc;
-                color: #fff;
+                color: #a2a2a2;
+                background: #fff;
                 padding-top: 30px;
                 min-height: 70px;
-                border-bottom: #bbb 1px solid;
+                /* border-bottom: #bbb 1px solid; */
                 position: fixed;
                 top: 0;
                 left: 0;
                 right: 0;
             }
+
+            header.shadow {
+                -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+                -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+                box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            }
+
             header a {
                 color: #525252;
                 text-decoration: none;
                 text-transform: uppercase;
                 font-size: 16px;
             }
+
             header ul {
                 padding: 0;
                 margin: 0;
                 list-style: none;
                 overflow: hidden;
             }
+
             header li {
                 float: left;
                 display: inline;
                 padding: 0 20px 0 20px;
             }
+
             header #branding {
                 float: left;
             }
+
             header #branding h1 {
                 margin: 0;
             }
+
             header nav {
                 float: right;
                 margin-top: 10px;
             }
+
             header .highlight, header .current a {
                 color: #de77a5;
                 font-weight: bold;
@@ -119,6 +133,9 @@
             }
 
             sendColorSchemePreference();
+            $(document).ready(function() {
+                headerShadow();
+            });
         </script>
     </head>
     <header>

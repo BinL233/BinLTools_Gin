@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
 {{template "header" .}}
+<head>
+	<script src="/js/SubmitForm.js"></script>
+</head>
 <body>
 <title>{{.title}}</title>
 <style>
@@ -36,12 +39,6 @@
 
 					</div>
 				</form>
-				<script>
-					function submitForm() {
-						var form = document.getElementById("myForm");
-						form.submit();
-					}
-				</script>
 			</div>
 		</div>
 	</div>
