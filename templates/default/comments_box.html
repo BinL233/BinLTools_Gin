@@ -1,0 +1,22 @@
+{{ define "comment_box" }}
+
+<head>
+    <link rel="stylesheet" href="/css/comment_box.css">
+    <link rel="stylesheet" href="/css/hover_button.css">
+</head>
+
+<body>
+    <div id="comment" class="comment-respond">
+        <form action="" method="post" id="commentform" class="comment-form">
+            <p class="comment-form-comment">
+                <textarea class="comment-text-area" id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea>
+            </p>
+            <p class="form-submit"><input name="submit" type="submit" id="submit" class="hover_button" value="Submit" /> 
+                <input type='hidden' name='comment_post_ID' value='267' id='comment_post_ID' />
+                <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+            </p>
+        </form>	
+    </div>
+</body>
+
+{{ end }}

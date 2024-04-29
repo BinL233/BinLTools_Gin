@@ -20,6 +20,7 @@ func main() {
 	//Load static files
 	r.Static("/static", "./static")
 	r.Static("/js", "./JSFunctions")
+	r.Static("/css", "./static/css")
 
 	routes.InitRoutes(r)
 	//http.ListenAndServe(":"+port, r)

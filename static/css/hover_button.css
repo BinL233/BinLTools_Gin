@@ -1,0 +1,14 @@
+.hover_button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hover_button:hover {
+    background-color: #44c0c0;
+    color: #fff;
+}
