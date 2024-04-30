@@ -15,11 +15,11 @@ func main() {
 	r := gin.Default()
 
 	//Load HTML
-	r.LoadHTMLGlob("templates/**/*")
+	r.LoadHTMLGlob("web/build/*.html")
 
 	//Load static files
-	r.Static("/static", "./static")
-	r.Static("/js", "./JSFunctions")
+	// r.Static("/static", "./src/static")
+	// r.Static("/js", "./src/JSFunctions")
 
 	routes.InitRoutes(r)
 	//http.ListenAndServe(":"+port, r)

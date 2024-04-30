@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+{{ template "header" .}}
+<br />
+<br />
+    <body class="container">
+    <title>{{.title}}</title>
+    <style>
+        @import "/static/css/input.css";
+        @import "/static/css/textarea.css";
+        @import "/static/css/select.css";
+        @import "/static/css/button2.css";
+    </style>
+        <br />
+        <br />
+        <div id="logo_main">
+            <p style="text-align: center;">
+                <img src="{{.image_dc_logo}}"
+                width="560"
+                height="167">
+            </p>
+        </div>
+        <br /><br>
+        <div id="function" style="text-align: center">
+            <form id="convert" autocomplete="off">
+                <div class="form-group">
+                    <label for="input" style="font-size: 20px; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; letter-spacing: 2px; font-weight: bold;">Input number</label><br>
+                    <input style="height: 35px; width: 50%" type="text" id="input" name="input" class="form-control form-control-lg" required autofocus>
+                </div><br><br>
+                <div class="form-group">
+                    <label for="sel1" style="font-size: 20px; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; letter-spacing: 2px; font-weight: bold;">From: </label><br>
+                    <select name="sel1" id="sel1" class="form-control">
+                        <option value="2" selected>binary</option>
+                        <option value="8">octal</option>
+                        <option value="10">decimal</option>
+                        <option value="16">hex</option>
+                    </select><br><br>
+                </div>
+                <div class="form-group">
+                    <label for="sel2" style="font-size: 20px; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; letter-spacing: 2px; font-weight: bold;">To: </label><br>
+                    <select name="sel2" id="sel2" class="form-control">
+                        <option value="2">binary</option>
+                        <option value="8">octal</option>
+                        <option value="10" selected>decimal</option>
+                        <option value="16">hex</option>
+                    </select><br><br>
+                </div><br><br>
+                <div class="form-group">
+                    <button class="button2" type="button" title="Convert" onclick="convert(document.getElementById('input').value, document.getElementById('sel1').value, document.getElementById('sel2').value)">Convert</button>
+                </div><br><br><br>
+                <div class="form-group">
+                    <label for="output" id="output_label" style="font-size: 20px; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; letter-spacing: 2px; font-weight: bold;">Result number</label><br>
+                    <textarea style="vertical-align: center; text-align: center; font-size: 20px; width: 50%" rows="2" id="output" class="form-control form-control-lg" readonly></textarea>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script>
+        function convert(input, f_base, t_base) {
+            let decimalNum;
+            decimalNum = parseInt(input, parseInt(f_base));
+            if (t_base === "10") {
+                document.getElementById("output").innerHTML=decimalNum.toString();
+            }
+            else if (t_base === "8") {
+                document.getElementById("output").innerHTML=decimalNum.toString(8);
+            }
+            else if (t_base === "16") {
+                document.getElementById("output").innerHTML=decimalNum.toString(16);
+            }
+            else {
+                document.getElementById("output").innerHTML=decimalNum.toString(2);
+            }
+        }
+    </script>
+{{ template "footer" }}
+</html>
