@@ -2,7 +2,6 @@ package main
 
 import (
 	"BinLTools_Gin/models"
-	"BinLTools_Gin/routes"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,14 +14,17 @@ func main() {
 	r := gin.Default()
 
 	//Load HTML
-	r.LoadHTMLGlob("web/build/*.html")
+	// r.LoadHTMLGlob("web/build/*.html")
 
 	//Load static files
-	// r.Static("/static", "./src/static")
-	// r.Static("/js", "./src/JSFunctions")
+	r.Static("/", "./web/build")
 
-	routes.InitRoutes(r)
+	// routes.InitRoutes(r)
 	//http.ListenAndServe(":"+port, r)
+
+	r.NoRoute(func(c *gin.Context) {
+		c.File("./web/build/index.html")
+	})
 
 	err := r.Run(":8080")
 	//err := r.Run()
