@@ -81,6 +81,16 @@
     margin-top: 1px;
 }
 
+#logo_image {
+    max-width: 30%; 
+    height: auto;
+}
+
+.logo_main {
+    margin-bottom: 100px;
+    margin-top: 200px;
+}
+
 #logo_main img {
     max-width: 446px;
     max-height: 80px;
@@ -89,7 +99,8 @@
 }
 
 @media (max-width: 456px) {
-    #logo_main img {
-        max-width: 100%;
+    #logo_image {
+        max-width: 70%; 
+        height: auto;
     }
 }

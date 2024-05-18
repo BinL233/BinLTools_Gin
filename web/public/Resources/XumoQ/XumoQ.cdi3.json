@@ -1,0 +1,561 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "ParamGroup",
+			"Name": "角度 X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "ParamGroup",
+			"Name": "角度 Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "ParamGroup",
+			"Name": "角度 Z"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "ParamGroup",
+			"Name": "摇动 前发"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "ParamGroup",
+			"Name": "摇动 侧发"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "ParamGroup",
+			"Name": "摇动 后发"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "ParamGroup",
+			"Name": "兽耳 物理"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "ParamGroup2",
+			"Name": "眼珠 X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "ParamGroup2",
+			"Name": "眼珠 Y"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "ParamGroup2",
+			"Name": "右眼　微笑"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "ParamGroup2",
+			"Name": "右眼   开闭"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "ParamGroup2",
+			"Name": "左眼　微笑"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "ParamGroup2",
+			"Name": "左眼　开闭"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "ParamGroup2",
+			"Name": "眼珠   物理R1"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "ParamGroup2",
+			"Name": "眼珠   物理R2"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "ParamGroup2",
+			"Name": "眼珠   物理L1"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "ParamGroup2",
+			"Name": "眼珠   物理L2"
+		},
+		{
+			"Id": "ParamBrowRForm",
+			"GroupId": "ParamGroup3",
+			"Name": "右眉　変形"
+		},
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "ParamGroup3",
+			"Name": "左眉　変形"
+		},
+		{
+			"Id": "ParamBrowRAngle",
+			"GroupId": "ParamGroup3",
+			"Name": "右眉　角度"
+		},
+		{
+			"Id": "ParamBrowLAngle",
+			"GroupId": "ParamGroup3",
+			"Name": "左眉　角度"
+		},
+		{
+			"Id": "ParamBrowRX",
+			"GroupId": "ParamGroup3",
+			"Name": "右眉　左右"
+		},
+		{
+			"Id": "ParamBrowLX",
+			"GroupId": "ParamGroup3",
+			"Name": "左眉　左右"
+		},
+		{
+			"Id": "ParamBrowRY",
+			"GroupId": "ParamGroup3",
+			"Name": "右眉　上下"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "ParamGroup3",
+			"Name": "左眉   上下"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "ParamGroup4",
+			"Name": "嘴　变形"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "ParamGroup4",
+			"Name": "嘴　张开和闭合"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "ParamGroup5",
+			"Name": "呼吸"
+		},
+		{
+			"Id": "Param26",
+			"GroupId": "ParamGroup5",
+			"Name": "叉腰"
+		},
+		{
+			"Id": "Param27",
+			"GroupId": "ParamGroup5",
+			"Name": "躬身"
+		},
+		{
+			"Id": "ParamCheek",
+			"GroupId": "ParamGroup5",
+			"Name": "脸颊泛红"
+		},
+		{
+			"Id": "Param25",
+			"GroupId": "ParamGroup5",
+			"Name": "高光"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "ParamGroup5",
+			"Name": "光效"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "ParamGroup6",
+			"Name": "身体旋转　X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "ParamGroup6",
+			"Name": "身体旋转　Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "ParamGroup6",
+			"Name": "身体旋转　Z"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_R1_phy2"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_R1_phy"
+		},
+		{
+			"Id": "Param11",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_L1_phy2"
+		},
+		{
+			"Id": "Param12",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_L1_phy"
+		},
+		{
+			"Id": "Param13",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_L2_phy2"
+		},
+		{
+			"Id": "Param14",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_L2_phy"
+		},
+		{
+			"Id": "Param15",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_M_phy2"
+		},
+		{
+			"Id": "Param16",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_M_phy"
+		},
+		{
+			"Id": "Param17",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_R2_phy2"
+		},
+		{
+			"Id": "Param18",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_R2_phy"
+		},
+		{
+			"Id": "Param19",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_L3_phy2"
+		},
+		{
+			"Id": "Param20",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_L3_phy"
+		},
+		{
+			"Id": "Param21",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_R3_phy2"
+		},
+		{
+			"Id": "Param22",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_R3_phy"
+		},
+		{
+			"Id": "Param23",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_L4_phy2"
+		},
+		{
+			"Id": "Param24",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_L4_phy"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_phy2"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "ParamGroup7",
+			"Name": "hair_F_phy"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_hair_T1",
+			"GroupId": "ParamGroup8",
+			"Name": "[0]hair_T1"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_hair_T1",
+			"GroupId": "ParamGroup8",
+			"Name": "[1]hair_T1"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_hair_T1",
+			"GroupId": "ParamGroup8",
+			"Name": "[2]hair_T1"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_hair_T1",
+			"GroupId": "ParamGroup8",
+			"Name": "[3]hair_T1"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_hair_T1",
+			"GroupId": "ParamGroup8",
+			"Name": "[4]hair_T1"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_hair_T2",
+			"GroupId": "ParamGroup9",
+			"Name": "[0]hair_T2"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_hair_T2",
+			"GroupId": "ParamGroup9",
+			"Name": "[1]hair_T2"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_hair_T2",
+			"GroupId": "ParamGroup9",
+			"Name": "[2]hair_T2"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_hair_T2",
+			"GroupId": "ParamGroup9",
+			"Name": "[3]hair_T2"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_hair_T2",
+			"GroupId": "ParamGroup9",
+			"Name": "[4]hair_T2"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_hair_F_L1",
+			"GroupId": "ParamGroup10",
+			"Name": "[0]hair_F_L1"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_hair_F_L1",
+			"GroupId": "ParamGroup10",
+			"Name": "[1]hair_F_L1"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_hair_F_L1",
+			"GroupId": "ParamGroup10",
+			"Name": "[2]hair_F_L1"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_hair_F_L1",
+			"GroupId": "ParamGroup10",
+			"Name": "[3]hair_F_L1"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_hair_F_L1",
+			"GroupId": "ParamGroup10",
+			"Name": "[4]hair_F_L1"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_hair_F_L1",
+			"GroupId": "ParamGroup10",
+			"Name": "[5]hair_F_L1"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_hair_F_L1",
+			"GroupId": "ParamGroup10",
+			"Name": "[6]hair_F_L1"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_tail",
+			"GroupId": "ParamGroup11",
+			"Name": "[0]tail"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_tail",
+			"GroupId": "ParamGroup11",
+			"Name": "[1]tail"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_tail",
+			"GroupId": "ParamGroup11",
+			"Name": "[2]tail"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_tail",
+			"GroupId": "ParamGroup11",
+			"Name": "[3]tail"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_tail",
+			"GroupId": "ParamGroup11",
+			"Name": "[4]tail"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_tail",
+			"GroupId": "ParamGroup11",
+			"Name": "[5]tail"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_tail",
+			"GroupId": "ParamGroup11",
+			"Name": "[6]tail"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroup",
+			"GroupId": "",
+			"Name": "头部"
+		},
+		{
+			"Id": "ParamGroup2",
+			"GroupId": "",
+			"Name": "眼睛"
+		},
+		{
+			"Id": "ParamGroup3",
+			"GroupId": "",
+			"Name": "眉毛"
+		},
+		{
+			"Id": "ParamGroup4",
+			"GroupId": "",
+			"Name": "嘴"
+		},
+		{
+			"Id": "ParamGroup5",
+			"GroupId": "",
+			"Name": "动作表情"
+		},
+		{
+			"Id": "ParamGroup6",
+			"GroupId": "",
+			"Name": "身体"
+		},
+		{
+			"Id": "ParamGroup7",
+			"GroupId": "",
+			"Name": "头发物理"
+		},
+		{
+			"Id": "ParamGroup8",
+			"GroupId": "",
+			"Name": "hair_T1"
+		},
+		{
+			"Id": "ParamGroup9",
+			"GroupId": "",
+			"Name": "hair_T2"
+		},
+		{
+			"Id": "ParamGroup10",
+			"GroupId": "",
+			"Name": "hair_F_L1"
+		},
+		{
+			"Id": "ParamGroup11",
+			"GroupId": "",
+			"Name": "tail"
+		},
+		{
+			"Id": "ParamGroup12",
+			"GroupId": "",
+			"Name": "hair_F_L1"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "Part6",
+			"Name": "XumoQ.psd"
+		},
+		{
+			"Id": "Part11",
+			"Name": "ges front layer"
+		},
+		{
+			"Id": "hair_T1_Skinning",
+			"Name": "hair_T1(蒙皮)"
+		},
+		{
+			"Id": "Part4",
+			"Name": "hair_T1(旋转)"
+		},
+		{
+			"Id": "hair_T2_Skinning",
+			"Name": "hair_T2(蒙皮)"
+		},
+		{
+			"Id": "Part5",
+			"Name": "hair_T2(旋转)"
+		},
+		{
+			"Id": "Eyes",
+			"Name": "Eyes"
+		},
+		{
+			"Id": "Part12",
+			"Name": "ges m layer"
+		},
+		{
+			"Id": "Part13",
+			"Name": "ges last layer"
+		},
+		{
+			"Id": "tail_Skinning",
+			"Name": "tail(蒙皮)"
+		},
+		{
+			"Id": "Part7",
+			"Name": "tail(旋转)"
+		},
+		{
+			"Id": "Part",
+			"Name": "ges front layer"
+		},
+		{
+			"Id": "Eyes2",
+			"Name": "Eyes"
+		},
+		{
+			"Id": "Part2",
+			"Name": "ges m layer"
+		},
+		{
+			"Id": "Part3",
+			"Name": "ges last layer"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamAngleX",
+			"ParamAngleY"
+		],
+		[
+			"ParamEyeBallX",
+			"ParamEyeBallY"
+		],
+		[
+			"Param3",
+			"Param4"
+		],
+		[
+			"ParamBodyAngleX",
+			"ParamBodyAngleY"
+		],
+		[
+			"Param5",
+			"Param6"
+		],
+		[
+			"Param11",
+			"Param12"
+		],
+		[
+			"Param13",
+			"Param14"
+		],
+		[
+			"Param19",
+			"Param20"
+		],
+		[
+			"Param23",
+			"Param24"
+		],
+		[
+			"Param7",
+			"Param9"
+		]
+	]
+}
