@@ -2,7 +2,7 @@ import "./homepage.css"
 import Header from "../../components/header/header.js"
 import Footer from "../../components/footer/footer.js"
 import React, { useEffect } from 'react';
-import logoImage from '../../images/logo.png';
+import logoImage from '../../resources/images/logo.png';
 
 
 function HomePage() {

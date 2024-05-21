@@ -1,7 +1,7 @@
 import "./digitConverter.css"
 import Header from "../../components/header/header.js"
 import Footer from "../../components/footer/footer.js"
-import logoImage from "../../images/DigitConverter_logo.png";
+import logoImage from "../../resources/images/DigitConverter_logo.png";
 import React, { useState } from "react";
 
 function DigitConverter() {

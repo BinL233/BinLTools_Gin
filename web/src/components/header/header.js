@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./header.css"
 import $ from 'jquery';
-// import ReactLive2d from 'react-live2d';
 
 function Header() {
+    const [loginText, setLoginText] = useState(["Login"]);
+
     useEffect(() => {
         const loadModule = () => {
             const initializeViewer = () => {
@@ -12,7 +13,7 @@ function Header() {
                     bottom: '-5px',
                     width: 350,
                     height: 350,
-                    basePath: '/Resources',
+                    basePath: '/Resources/L2D',
                     role: 'Domino',
                     opacity: 1,
                     mobile: false
@@ -37,23 +38,30 @@ function Header() {
                 window.removeEventListener('load', loadModule);
             };
         }
-            // $(document).ready(function() {
-            //     headerShadow();
-            // });
+
+        $(document).ready(function() {
+            headerShadow();
+        });
 
         function headerShadow() {
             var header = $('header');
         
             $(window).scroll(function(e){
                 if(header.offset().top > 0){
-                    if(!header.hasclass('shadow')){
-                        header.addclass('shadow');
+                    if(!header.hasClass('shadow')){
+                        header.addClass('shadow');
                     }
                 }else{
-                    header.removeclass('shadow');
+                    header.removeClass('shadow');
                 }
             });
         }
+
+        // Get login data from backend
+        fetch('/api/login_process')
+            .then(response => response.json())
+            .then(data => setLoginText(data))
+            .catch(error => console.error('Error fetching data:', error));
 
         loadModule();
 
@@ -71,8 +79,6 @@ function Header() {
             <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet" />
             <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap" rel="stylesheet" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-            <link rel="stylesheet" herf="style.css" />
-            <link rel="stylesheet" href="/static/css/live2d.css" />
             
             <header>
                 <div className="container">
@@ -84,11 +90,12 @@ function Header() {
                             <li><a href="/about_me">About Me</a></li>
                             <li><a href="https://github.com/BinL233">GitHub</a></li>
                             {/* TODO: Need to link to backend */}
-                            <li><a href="/login"></a></li>
+                            <li><a href="/login">{loginText}</a></li>
                         </ul>
                     </nav>
                 </div>
             </header>
+
             <div className="l2d"  id="L2d" >
                 <div id="L2dCanvas" className="Canvas"></div>
             </div>
