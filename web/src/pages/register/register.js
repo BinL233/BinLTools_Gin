@@ -1,34 +1,55 @@
 import React, { useState } from "react";
-import "./login.css";
+import "./register.css";
 import Header from "../../components/header/header.js";
 import Footer from "../../components/footer/footer.js";
 import ErrorBox from "../../components/errorBox/errorBox.js";
 
-function Login() {
+function Register() {
     const [user, setUser] = useState("");
     const [pwd, setPwd] = useState("");
+    const [cpwd, setCpwd] = useState("");
     const [message, setMessage] = useState("");
 
     const handleSubmit = async (event) => {
-        // TODO: Finish handler
+        event.preventDefault();
+
+        const response = await fetch("/api/user/register_process", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: new URLSearchParams({
+                user: user,
+                pwd: pwd,
+                cpwd: cpwd,
+            }),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            setMessage(`Register successful! Token: ${data.token}`);
+        } else {
+            setMessage(data.message || "Register failed");
+        }
     };
 
     return (
-        <div className="login">
+        <div className="register">
             {/* Import Header */}
             <div>
                 <Header />
             </div>
 
             <div className="frame">
-                <div className='login_sub'>
-                    <div className='title'>Login</div>
+                <div className='register_sub'>
+                    <div className='title'>Register</div>
                     <div className='biao'>
                         <form id="myForm" onSubmit={handleSubmit}>
                             <div id="boxs">
                                 <div className="box1">
                                     <label>Username: </label>
                                     <label>Password: </label>
+                                    <label>Confirm Password: </label>
                                 </div>
                                 <div className="box2">
                                     <input
@@ -43,15 +64,21 @@ function Login() {
                                         value={pwd}
                                         onChange={(e) => setPwd(e.target.value)}
                                     />
+                                    <input
+                                        type="password"
+                                        name="cpwd"
+                                        value={cpwd}
+                                        onChange={(e) => setCpwd(e.target.value)}
+                                    />
                                 </div>
                             </div>
                             <div className="container2">
                                 <button type="submit" className="button">
                                     <div className="button__line"></div>
                                     <div className="button__line"></div>
-                                    <span className="button__text">Login</span>
+                                    <span className="button__text">Register</span>
                                 </button>
-                                <p><a href="/register" id="go_to_register">I don't have an account. I want to sign up!</a></p>
+                                <p><a href="/login" id="go_to_login">I already had an account. I want to login!</a></p>
                             </div>
                         </form>
                     </div>
@@ -71,4 +98,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default Register;

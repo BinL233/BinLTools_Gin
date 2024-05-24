@@ -58,7 +58,7 @@ function Header() {
         }
 
         // Get login data from backend
-        fetch('/api/login_process')
+        fetch('/api/user/login')
             .then(response => response.json())
             .then(data => setLoginText(data))
             .catch(error => console.error('Error fetching data:', error));
@@ -89,7 +89,6 @@ function Header() {
                         <ul>
                             <li><a href="/about_me">About Me</a></li>
                             <li><a href="https://github.com/BinL233">GitHub</a></li>
-                            {/* TODO: Need to link to backend */}
                             <li><a href="/login">{loginText}</a></li>
                         </ul>
                     </nav>

@@ -24,6 +24,6 @@ RUN go mod download
 
 RUN go build -o binltools .
 
-EXPOSE 80
+EXPOSE 3000
 
 ENTRYPOINT ["./binltools"]

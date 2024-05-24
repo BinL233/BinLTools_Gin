@@ -126,7 +126,7 @@ input{
     margin-top: 150px;
 }
 
-.login_sub {
+.register_sub {
     text-align: center;
 }
 
@@ -176,7 +176,7 @@ label {
     min-width: 300px;
 }
 
-#go_to_register {
+#go_to_login {
     color:rgba(201,67,120,0.8); 
     text-decoration: none; 
     font-size: small;

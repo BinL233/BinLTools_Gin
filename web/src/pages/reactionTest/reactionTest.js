@@ -13,7 +13,7 @@ function ReactionTest() {
     const [ranks, setRanks] = useState([]);
 
     useEffect(() => {
-        fetch('/api/reaction_test_rank')
+        fetch('/api/reaction/reaction_test_rank')
             .then(response => response.json())
             .then(data => setRanks(data))
             .catch(error => console.error('Error fetching data:', error));
@@ -27,7 +27,7 @@ function ReactionTest() {
 
             // Send "reactionB" value to the backend
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/api/handle_reaction_b", true);
+            xhr.open("POST", "/api/reaction/handle_reaction_b", true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.send("reactionB=" + encodeURIComponent(`${endTime - beginTime} ms`));
         } else if (flag === 0) {
