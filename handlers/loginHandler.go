@@ -6,6 +6,7 @@ import (
 	"BinLTools_Gin/dto"
 	"BinLTools_Gin/middlewares"
 	"BinLTools_Gin/models"
+	"log"
 	"net/http"
 	"strconv"
 
@@ -19,23 +20,24 @@ func Login(c *gin.Context) {
 
 	// Check whether login
 	if len(userInfo) == 0 {
-		userInfo["username"] = "Sign In"
+		log.Println("User does not sign in")
+		userInfo["username"] = "Login"
 	}
 
 	c.JSON(http.StatusOK, userInfo)
 }
 
 func LoginProcess(c *gin.Context) {
-	//Initialize database
+	// Initialize database
 	DB := models.GetDB()
 
-	//Fetch data
+	// Fetch data
 	userName := c.PostForm("user")
 	password := c.PostForm("pwd")
 
 	var user models.User
 
-	//Check username
+	// Check username
 	DB.Where("user_name = ?", userName).First(&user)
 	if len(userName) == 0 {
 		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Username cannot be null")
@@ -47,7 +49,7 @@ func LoginProcess(c *gin.Context) {
 		return
 	}
 
-	//Check password
+	// Check password
 	if len(password) == 0 {
 		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Password cannot be null")
 		return
@@ -58,25 +60,23 @@ func LoginProcess(c *gin.Context) {
 		return
 	}
 
-	//token
+	// Token
 	token, err := middlewares.ReleaseToken(user)
-
 	if err != nil {
 		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "Server Error")
 		return
 	}
 
-	//Success
+	// Success
 	if user.ID > 0 {
 		Services.SaveAuthSession(c, string(strconv.Itoa(int(user.ID))))
+		Responses.SuccessResponse(c, gin.H{"token": token}, "Success!")
 	} else {
 		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "System error")
 	}
-
-	Responses.Success(c, gin.H{"token": token}, "Success!")
 }
 
 func Info(c *gin.Context) {
 	user, _ := c.Get("user")
-	Responses.Success(c, gin.H{"user": dto.ToUserDto(user.(models.User))}, "Success!")
+	Responses.SuccessResponse(c, gin.H{"user": dto.ToUserDto(user.(models.User))}, "Success!")
 }

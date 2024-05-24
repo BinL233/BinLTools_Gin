@@ -87,5 +87,5 @@ func RegisterProcess(c *gin.Context) {
 		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "System error")
 	}
 
-	Responses.Success(c, nil, "Success!")
+	Responses.SuccessResponse(c, nil, "Success!")
 }

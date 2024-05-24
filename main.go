@@ -22,9 +22,6 @@ func main() {
 	r.StaticFile("/favicon.ico", "./web/build/favicon.ico")
 	r.StaticFile("/manifest.json", "./web/build/manifest.json")
 
-	// Test
-	r.LoadHTMLGlob("./src/*")
-
 	routes.InitAPIRoutes(r)
 
 	r.NoRoute(func(c *gin.Context) {

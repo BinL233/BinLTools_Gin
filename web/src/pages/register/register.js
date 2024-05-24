@@ -1,37 +1,94 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./register.css";
 import Header from "../../components/header/header.js";
 import Footer from "../../components/footer/footer.js";
-import ErrorBox from "../../components/errorBox/errorBox.js";
 
 function Register() {
     const [user, setUser] = useState("");
     const [pwd, setPwd] = useState("");
     const [cpwd, setCpwd] = useState("");
     const [message, setMessage] = useState("");
+    const userRef = useRef(null);
+    const pwdRef = useRef(null);
+    const cpwdRef = useRef(null)
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const response = await fetch("/api/user/register_process", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: new URLSearchParams({
-                user: user,
-                pwd: pwd,
-                cpwd: cpwd,
-            }),
-        });
+        try {
+            const response = await fetch('/api/user/register_process', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'user': user,
+                    'pwd': pwd,
+                    'cpwd': cpwd
+                })
+            });
 
-        const data = await response.json();
-        if (response.ok) {
-            setMessage(`Register successful! Token: ${data.token}`);
-        } else {
-            setMessage(data.message || "Register failed");
+            if (response.headers.get('content-type')?.includes('application/json')) {
+                const data = await response.json();
+                if (response.ok) {
+                    console.log("Register successful:", data);
+                    setMessage("Register successful");
+                    window.location.href = '/login';
+                } else {
+                    console.error("Register failed:", data.msg);
+                    setMessage(data.msg || "Register failed due to unknown error.");
+                }
+            } else {
+                const text = await response.text();
+                console.error("Unexpected response format:", text);
+                setMessage("An error occurred. Please try again later.");
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+            setMessage("An error occurred. Please try again later.");
         }
     };
+
+    function error_notifier() {
+        switch (message) {
+            case "Password cannot less than 6":
+                pwdRef.current.style.boxShadow = '0 2px 10px 2px #FF0056';
+                userRef.current.style.boxShadow = '0 2px 10px 2px #999999';
+                cpwdRef.current.style.boxShadow = '0 2px 10px 2px #999999';
+                break;
+
+            case "two Password fields not match":
+                pwdRef.current.style.boxShadow = '0 2px 10px 2px #999999';
+                userRef.current.style.boxShadow = '0 2px 10px 2px #999999';
+                cpwdRef.current.style.boxShadow = '0 2px 10px 2px #FF0056';
+                break;
+
+            case "Invalid username format: The length of username only accepts 5 to 20":
+                userRef.current.style.boxShadow = '0 2px 10px 2px #FF0056';
+                pwdRef.current.style.boxShadow = '0 2px 10px 2px #999999';
+                cpwdRef.current.style.boxShadow = '0 2px 10px 2px #999999';
+                break;
+
+            case "Invalid username format: Username only accepts letters, numbers and underline":
+                userRef.current.style.boxShadow = '0 2px 10px 2px #FF0056';
+                pwdRef.current.style.boxShadow = '0 2px 10px 2px #999999';
+                cpwdRef.current.style.boxShadow = '0 2px 10px 2px #999999';
+                break;
+
+            case "Name exist":
+                userRef.current.style.boxShadow = '0 2px 10px 2px #FF0056';
+                pwdRef.current.style.boxShadow = '0 2px 10px 2px #999999';
+                cpwdRef.current.style.boxShadow = '0 2px 10px 2px #999999';
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    useEffect(() => {
+        error_notifier();
+    }, [message]);
 
     return (
         <div className="register">
@@ -56,18 +113,21 @@ function Register() {
                                         type="text"
                                         name="user"
                                         value={user}
+                                        ref={userRef}
                                         onChange={(e) => setUser(e.target.value)}
                                     />
                                     <input
                                         type="password"
                                         name="pwd"
                                         value={pwd}
+                                        ref={pwdRef}
                                         onChange={(e) => setPwd(e.target.value)}
                                     />
                                     <input
                                         type="password"
                                         name="cpwd"
                                         value={cpwd}
+                                        ref={cpwdRef}
                                         onChange={(e) => setCpwd(e.target.value)}
                                     />
                                 </div>
@@ -88,11 +148,6 @@ function Register() {
             {/* Import Footer */}
             <div>
                 <Footer />
-            </div>
-
-            {/* Import errorBox */}
-            <div id="error_box">
-                {<ErrorBox message={message} />}
             </div>
         </div>
     );

@@ -10,9 +10,10 @@ import (
 func ErrorResponse(c *gin.Context, httpStatus int, code int, data gin.H, msg string) {
 	userInfo := Services.GetUserInfo(c)
 	if userInfo == nil {
+		userInfo = make(map[string]interface{})
 		userInfo["username"] = "Sign Up"
 	}
-	c.HTML(httpStatus, "error_page.html", gin.H{
+	c.JSON(httpStatus, gin.H{
 		"code":     code,
 		"data":     data,
 		"msg":      msg,
@@ -20,24 +21,18 @@ func ErrorResponse(c *gin.Context, httpStatus int, code int, data gin.H, msg str
 	})
 }
 
-// func SuccessResponse(c *gin.Context, httpStatus int, code int, data gin.H, msg string) {
-// 	userInfo := Services.GetUserInfo(c)
-// 	if userInfo == nil {
-// 		userInfo["username"] = "Sign Up"
-// 	}
-// 	c.HTML(httpStatus, "success_page.html", gin.H{
-// 		"code":     code,
-// 		"data":     data,
-// 		"msg":      msg,
-// 		"userName": userInfo,
-// 	})
-// }
-
-func Success(c *gin.Context, data gin.H, msg string) {
-	// Redirect to the homepage
-	c.Redirect(http.StatusFound, "/")
-
-	// SuccessResponse(c, http.StatusOK, 200, data, msg)
+func SuccessResponse(c *gin.Context, data gin.H, msg string) {
+	userInfo := Services.GetUserInfo(c)
+	if userInfo == nil {
+		userInfo = make(map[string]interface{})
+		userInfo["username"] = "Sign Up"
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"code":     200,
+		"data":     data,
+		"msg":      msg,
+		"userName": userInfo,
+	})
 }
 
 //func Fail(c *gin.Context, msg string, data gin.H) {

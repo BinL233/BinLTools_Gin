@@ -3,9 +3,25 @@ import "./header.css"
 import $ from 'jquery';
 
 function Header() {
-    const [loginText, setLoginText] = useState(["Login"]);
+    const [loginText, setLoginText] = useState({});
 
     useEffect(() => {
+        console.log("Fetching login data...");
+
+        // Get login data from backend
+        fetch('/api/user/login')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Login data received:", data);
+                setLoginText(data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
         const loadModule = () => {
             const initializeViewer = () => {
                 var config = {
@@ -57,12 +73,6 @@ function Header() {
             });
         }
 
-        // Get login data from backend
-        fetch('/api/user/login')
-            .then(response => response.json())
-            .then(data => setLoginText(data))
-            .catch(error => console.error('Error fetching data:', error));
-
         loadModule();
 
     }, []);
@@ -89,7 +99,7 @@ function Header() {
                         <ul>
                             <li><a href="/about_me">About Me</a></li>
                             <li><a href="https://github.com/BinL233">GitHub</a></li>
-                            <li><a href="/login">{loginText}</a></li>
+                            <li><a href="/login">{loginText.username}</a></li>
                         </ul>
                     </nav>
                 </div>
