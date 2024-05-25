@@ -1,0 +1,7 @@
+#footer_text {
+    text-align: center; 
+    justify-content: center; 
+    align-items: center; 
+    display: flex;
+    margin-top: 100px;
+}

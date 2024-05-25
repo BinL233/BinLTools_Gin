@@ -5,39 +5,29 @@ import (
 	"BinLTools_Gin/Services"
 	"BinLTools_Gin/models"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"net/http"
 	"strconv"
 	"strings"
+
+	"github.com/gin-gonic/gin"
 )
 
-func ReactionTest(c *gin.Context) {
-	userInfo := Services.GetUserInfo(c)
+func GetReactionTestRanks(c *gin.Context) {
 	users := models.FindTopTen()
-	rank := []map[string]interface{}{
-		{"id": 1, "userName": users[0].UserName, "score": users[0].Score},
-		{"id": 2, "userName": users[1].UserName, "score": users[1].Score},
-		{"id": 3, "userName": users[2].UserName, "score": users[2].Score},
-		{"id": 4, "userName": users[3].UserName, "score": users[3].Score},
-		{"id": 5, "userName": users[4].UserName, "score": users[4].Score},
-		{"id": 6, "userName": users[5].UserName, "score": users[5].Score},
-		{"id": 7, "userName": users[6].UserName, "score": users[6].Score},
-		{"id": 8, "userName": users[7].UserName, "score": users[7].Score},
-		{"id": 9, "userName": users[8].UserName, "score": users[8].Score},
-		{"id": 10, "userName": users[9].UserName, "score": users[9].Score},
+	ranks := make([]map[string]interface{}, len(users))
+
+	for i, user := range users {
+		ranks[i] = map[string]interface{}{
+			"id":       i + 1,
+			"userName": user.UserName,
+			"score":    user.Score,
+		}
 	}
-	if len(userInfo) == 0 {
-		userInfo["username"] = "Sign In"
-	}
-	c.HTML(http.StatusOK, "reaction.html", gin.H{
-		"title":    "反应测试ReactionTest",
-		"userName": userInfo,
-		"rank":     rank,
-	})
+
+	c.JSON(http.StatusOK, ranks)
 }
 
 func HandleReactionB(c *gin.Context) {
-	fmt.Println("Enter HandleReactionB...\n")
 	DB := models.GetDB()
 
 	// Get the value of "reactionB" from the AJAX request

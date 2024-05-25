@@ -1,0 +1,132 @@
+p {
+    text-align: center;
+}
+
+#logo_image {
+    max-height: 30%; 
+    height: auto;
+}
+
+#logo_main img {
+    max-width: 446px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+}
+
+#logo_image {
+    max-width: 30%; 
+    height: auto;
+}
+
+.logo_main {
+    margin-bottom: 30px;
+    margin-top: 150px;
+}
+
+label {
+    font-size: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    height: 100%; 
+    letter-spacing: 2px; 
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+input {
+    height: 35px; 
+    width: 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance:none ;
+    outline: 0;
+    padding:0 8px;
+    box-shadow: 0 2px 10px 2px #999999;
+    border-radius:30px;
+}
+
+textarea {
+    vertical-align: center; 
+    text-align: center; 
+    font-size: 20px; 
+    width: 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance:none ;
+    outline: 0;
+    padding:0 8px;
+    box-shadow: 0 2px 10px 2px #999999;
+    border-radius:5px;
+}
+
+select{
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 17px;
+    box-shadow: 0 2px 10px 2px #999999;
+}
+
+.button2 {
+    color: #0099CC;
+    background: transparent;
+    border: 2px solid #0099CC;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+.button2 {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.form-group {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.form-group-flex {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#function {
+    text-align: center;
+}
+
+@media (max-width: 456px) {
+    #logo_image {
+        max-width: 70%; 
+        height: auto;
+    }
+}

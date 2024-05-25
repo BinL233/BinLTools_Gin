@@ -1,0 +1,72 @@
+.error_ {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff
+}
+
+.error_page {
+    background-color: rgba(255, 130, 45, 0.85);
+}
+
+
+.error_ .error {
+    text-align: center;
+    padding: 16px;
+    position: relative;
+}
+
+.error_ h1 {
+    margin: -10px 0 -30px;
+    font-size: calc(17vw + 40px);
+    opacity: .8;
+    letter-spacing: -17px;
+}
+
+.error_ p {
+    opacity: .8;
+    font-size: 20px;
+    margin: 8px 0 38px 0;
+    font-weight: bold
+}
+
+.error_ input, .error_ button, .error_ input:focus, .error_ button:focus {
+    border: 0;
+    outline: 0!important;
+}
+
+.error_ input {
+    width: 300px;
+    padding: 14px;
+    max-width: calc(100% - 80px);
+    border-radius: 6px 0 0 6px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.error_ button {
+    width: 40px;
+    padding: 14.5px 16px 14.5px 12.5px;
+    vertical-align: top;
+    border-radius: 0 6px 6px 0;
+    color: grey;
+    background: silver;
+    cursor: pointer;
+    transition: all 0.4s
+}
+
+.error_ button:hover {
+    color: white;
+    background: #9A5C32
+}
+
+.error_ .fa-arrow-left {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    font-size: 2em;
+    color:white;
+    text-decoration:none
+}

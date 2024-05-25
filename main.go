@@ -3,6 +3,7 @@ package main
 import (
 	"BinLTools_Gin/models"
 	"BinLTools_Gin/routes"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -14,19 +15,31 @@ func main() {
 	//Create the server
 	r := gin.Default()
 
-	//Load HTML
-	r.LoadHTMLGlob("templates/**/*")
-
 	//Load static files
-	r.Static("/static", "./static")
-	r.Static("/js", "./JSFunctions")
+	r.Static("/static", "./web/build/static")
+	r.Static("/scripts", "./web/build/scripts")
+	r.Static("/Resources", "./web/build/Resources")
+	r.StaticFile("/favicon.ico", "./web/build/favicon.ico")
+	r.StaticFile("/manifest.json", "./web/build/manifest.json")
 
-	routes.InitRoutes(r)
-	//http.ListenAndServe(":"+port, r)
+	routes.InitAPIRoutes(r)
 
-	err := r.Run(":8080")
-	//err := r.Run()
+	r.NoRoute(func(c *gin.Context) {
+		path := c.Request.URL.Path
+		if !fileExists("./web/build" + path) {
+			c.File("./web/build/index.html")
+		} else {
+			c.File("./web/build" + path)
+		}
+	})
+
+	err := r.Run(":3000")
 	if err != nil {
 		return
 	}
+}
+
+func fileExists(path string) bool {
+	_, err := os.Stat(path)
+	return !os.IsNotExist(err)
 }

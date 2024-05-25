@@ -1,0 +1,37 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "Domino0.moc3",
+		"Textures": [
+			"Domino0.2048/texture_00.png"
+		],
+		"Physics": "Domino0.physics3.json",
+		"DisplayInfo": "Domino0.cdi3.json",
+		"Motions": {
+			"Idle": [
+				{
+					"Name": "idle",
+					"File": "motions/idle.motion3.json"
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamMouthForm",
+				"ParamMouthOpenY"
+			]
+		}
+	]
+}

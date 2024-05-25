@@ -2,6 +2,8 @@ package Services
 
 import (
 	"BinLTools_Gin/models"
+	"log"
+
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
@@ -28,6 +30,7 @@ func SaveAuthSession(c *gin.Context, info interface{}) {
 
 func GetSessionUserInfo(c *gin.Context) map[string]interface{} {
 	session := sessions.Default(c)
+	log.Printf("Session: %v", session)
 	id := session.Get("id")
 	data := make(map[string]interface{})
 	if id != nil {

@@ -1,0 +1,312 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    padding: 0 20px;
+    margin: auto;
+    overflow: hidden;
+}
+
+#about_me {
+    background: #333;
+    color: #fff;
+    padding-top: 10px;
+    min-height: 70px;
+    border-bottom: #bbb 1px solid;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+#about_me a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+#about_me ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+#about_me li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+#about_me #branding {
+    float: left;
+}
+
+#about_me #branding h1 {
+    margin: 0;
+}
+
+#about_me nav {
+    float: right;
+    margin-top: 10px;
+}
+
+#about_me .highlight, #about_me .current a {
+    color: #44c0c0;
+    font-weight: bold;
+}
+
+.module {
+    padding: 20px;
+    background: #fff;
+    margin-top: 20px;
+    border-radius: 15px; /* Rounded corners for each module */
+}
+
+.module2 {
+    padding: 20px;
+    background: #ececec;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+.hover_button {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.hover_button:hover {
+    background-color: #44c0c0;
+    color: #fff;
+}
+
+.custom-hr {
+    margin-bottom: 20px;
+    border-width:1px;
+    border-radius: 15px;
+}
+
+.container3_around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container3 {
+    display: flex;
+}
+
+#top_head {
+    margin-top: 130px;
+}
+
+#back_web {
+    color: #de77a5;
+    
+}
+
+#biography {
+    margin-top: 50px;
+}
+
+.photo-container {
+    text-align: center;
+}
+
+#avatar {
+    width:200px; 
+    height:200px; 
+    border-radius: 50%; 
+    object-fit: cover;
+}
+
+#name {
+    text-align: center; 
+    font-size: xx-large;
+}
+
+#dl_cv {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+h3 {
+    font-size: xx-large; text-align: center;
+}
+
+xx-large_p {
+    text-align: center; 
+    font-size: xx-large;
+}
+
+.section2 {
+    padding-left: 20px; 
+    padding-right: 20px; 
+    padding-bottom: 25px;
+}
+
+#github {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.larger_p {
+    text-align: center; 
+    font-size: larger;
+}
+
+.medium_p {
+    color: #7a7a7a; 
+    font-size: medium; 
+    text-align: center;
+}
+
+.x-large_p {
+    font-size: x-large;
+}
+
+.intro {
+    font-family: 'Roboto'; 
+    line-height: 1.5; 
+    font-size: medium; 
+    margin-bottom: 25px;
+}
+
+.project {
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: -10px
+}
+
+.x-large_h3 {
+    font-size: x-large;
+}
+
+.award_place {
+    color: #606060; 
+    font-size: medium;
+    margin-bottom: 25px; 
+    margin-left: 25px;
+}
+
+#datafest {
+    margin-left: 20px; 
+    flex: 1;
+}
+
+#datafest2 {
+    margin-left: 100px; 
+    margin-right: 100px; 
+    flex: 2;
+}
+
+.competition_img {
+    margin-left: 20px; 
+    width: 76%; 
+    height: auto; 
+    border-radius: 15px;
+}
+
+.intern_title {
+    color: #606060; 
+    font-size: medium; 
+    margin-bottom: 25px; 
+    margin-left: 25px;
+}
+
+.intern_intro {
+    margin-left: 25px;
+}
+
+#courses_section {
+    padding-left: 20px; 
+    padding-right: 20px; 
+    margin-bottom: 25px;
+}
+
+#courses_div {
+    text-align: center;
+}
+
+#courses_p {
+    font-size: medium;
+}
+
+#skills_div {
+    display: flex; 
+    justify-content: space-around;
+}
+
+.skills_div2 {
+    text-align: center;
+}
+
+.large_h3 {
+    font-size: large;
+}
+
+.skills_p {
+    font-size: medium;
+}
+
+#xx-large_h3 {
+    font-size: xx-large; 
+    text-align: center;
+}
+
+.revive_image {
+    width: 90%; 
+    height: auto;
+}
+
+.CPU_image {
+    width: 90%; 
+    height: auto;
+}
+
+.buttons {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+        width: 100%;
+    }
+
+    .container3_around {
+        flex-direction: column;
+    }
+
+    #about_me ul {
+        display: none;
+    }
+
+    #about_me ul {
+        padding: 10px 0;
+    }
+}
