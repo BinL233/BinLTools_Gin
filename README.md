@@ -5,7 +5,7 @@ Website: http://binltools.fun
 
 ## 技术栈 Tech
 - Framework: Gin
-- Frontend: HTML + CSS + JavaScript
+- Frontend: React
 - Backend: Go
 - Database: Mysql
 
@@ -37,7 +37,13 @@ Website: http://binltools.fun
 ## 结构 Structure
 ``` 
 .
+├── Dockerfile
 ├── README.md
+├── Responses
+│   └── response.go
+├── Services
+│   ├── session.go
+│   └── userServices.go
 ├── config
 │   └── application.yml
 ├── dto
@@ -45,101 +51,24 @@ Website: http://binltools.fun
 ├── go.mod
 ├── go.sum
 ├── handlers
-│   ├── digitConverterHandler.go
+│   ├── downloadHandler.go
 │   ├── indexHandler.go
-│   └── reactionTestHandler.go
+│   ├── loginHandler.go
+│   ├── reactionTestHandler.go
+│   └── registerHandler.go
+├── main
+├── main.exe
 ├── main.go
 ├── middlewares
 │   ├── authMiddleware.go
 │   └── jwt.go
 ├── models
+│   ├── db.go
 │   ├── reactionTestRank.go
-│   ├── test.go
-│   └── user.go
-├── responses
-│   └── response.go
+│   └── test.go
 ├── routes
 │   └── route.go
-├── services
-│   ├── session.go
-│   └── userServices.go
-├── static
-│   ├── css
-│   │   ├── a0d73-0rp1k-001.ico
-│   │   ├── button1.css
-│   │   ├── button2.css
-│   │   ├── input
-│   │   ├── input.css
-│   │   ├── live2d.css
-│   │   ├── select.css
-│   │   ├── style.css
-│   │   └── textarea.css
-│   ├── images
-│   │   ├── BinLTools_logo.ico
-│   │   ├── BinLTools_logo.png
-│   │   ├── DigitConverter_logo.png
-│   │   └── logo.png
-│   └── live2d
-│       ├── Resources
-│       │   ├── Domino
-│       │   │   ├── Domino.2048
-│       │   │   │   └── texture_00.png
-│       │   │   ├── Domino.cdi3.json
-│       │   │   ├── Domino.moc3
-│       │   │   ├── Domino.model3.json
-│       │   │   ├── Domino.physics3.json
-│       │   │   └── motions
-│       │   │       └── idle.motion3.json
-│       │   ├── Domino0
-│       │   │   ├── Domino0.2048
-│       │   │   │   └── texture_00.png
-│       │   │   ├── Domino0.cdi3.json
-│       │   │   ├── Domino0.moc3
-│       │   │   ├── Domino0.model3.json
-│       │   │   ├── Domino0.physics3.json
-│       │   │   └── motions
-│       │   │       └── idle.motion3.json
-│       │   └── XumoQ
-│       │       ├── XumoQ.cdi3.json
-│       │       ├── XumoQ.moc3
-│       │       ├── XumoQ.model3.json
-│       │       ├── XumoQ.physics3.json
-│       │       ├── motions
-│       │       │   ├── akimbo.motion3.json
-│       │       │   ├── idle.motion3.json
-│       │       │   └── stoop.motion3.json
-│       │       └── textures
-│       │           └── texture_00.png
-│       ├── frame
-│       │   └── pixi.min.js
-│       ├── go.mod
-│       ├── l2d.js
-│       ├── live2dcubismframework.js
-│       ├── live2dcubismpixi.js
-│       └── main.js
-├── templates
-│   └── default
-│       ├── base.html
-│       ├── digit_converter.html
-│       ├── error_page.html
-│       ├── footer.html
-│       ├── index.html
-│       ├── login.html
-│       ├── reaction.html
-│       ├── register.html
-│       └── success_page.html
-├── tmp
-│   └── runner-build
-└── util
-    └── util.go
-
-
+├── util
+│   └── util.go
+└── web
 ``` 
-
-## TODO
-- [x] 反应测试排名系统 Reaction test ranking system
-- [x] 完善进制转换器 Improve Digit Converter
-- [x] Live2d部件 Live2d widget
-- [ ] 完善登出功能 Improve log out function
-- [ ] 个人主页 Personal homepage
-- [x] About me
