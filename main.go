@@ -22,7 +22,7 @@ func main() {
 	r.StaticFile("/favicon.ico", "./web/build/favicon.ico")
 	r.StaticFile("/manifest.json", "./web/build/manifest.json")
 
-	routes.InitAPIRoutes(r)
+	routes.InitRoutes(r)
 
 	r.NoRoute(func(c *gin.Context) {
 		path := c.Request.URL.Path
