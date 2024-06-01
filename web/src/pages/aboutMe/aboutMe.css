@@ -104,6 +104,7 @@ body {
     margin-bottom: 20px;
     border-width:1px;
     border-radius: 15px;
+    color: #4a4a4a6d;
 }
 
 .container3_around {
@@ -156,9 +157,9 @@ h3 {
     font-size: xx-large; text-align: center;
 }
 
-xx-large_p {
+.xx-large_p {
     text-align: center; 
-    font-size: xx-large;
+    font-size:  xx-large;
 }
 
 .section2 {
@@ -192,6 +193,7 @@ xx-large_p {
     line-height: 1.5; 
     font-size: medium; 
     margin-bottom: 25px;
+    text-align: left;
 }
 
 .project {
@@ -206,9 +208,11 @@ xx-large_p {
 
 .award_place {
     color: #606060; 
-    font-size: medium;
-    margin-bottom: 25px; 
+    font-size: larger;
+    font-weight: 600;
+    margin-bottom: 50px; 
     margin-left: 25px;
+    text-align: left;
 }
 
 #datafest {
@@ -231,13 +235,16 @@ xx-large_p {
 
 .intern_title {
     color: #606060; 
-    font-size: medium; 
+    font-size: large; 
+    font-weight: 600;
     margin-bottom: 25px; 
     margin-left: 25px;
+    text-align: left;
 }
 
 .intern_intro {
     margin-left: 25px;
+    text-align: left;
 }
 
 #courses_section {

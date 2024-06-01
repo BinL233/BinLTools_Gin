@@ -9,7 +9,7 @@ function HomePage() {
     useEffect(() => {
         // Real time clock
         function Timer() {
-            var myVar=setInterval(function(){myTimer()},1);
+            setInterval(function(){myTimer()},1);
             var clock = document.getElementById("timer")
 
             function myTimer() {

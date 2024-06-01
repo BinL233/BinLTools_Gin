@@ -66,27 +66,31 @@ function Header() {
             };
         }
 
-        $(document).ready(function() {
-            headerShadow();
-        });
-
-        function headerShadow() {
-            var header = $('header');
-        
-            $(window).scroll(function(e){
-                if(header.offset().top > 0){
-                    if(!header.hasClass('shadow')){
-                        header.addClass('shadow');
-                    }
-                }else{
-                    header.removeClass('shadow');
-                }
-            });
-        }
-
         loadModule();
 
     }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const header = $('header');
+            if (header.offset().top > 0) {
+                if (!header.hasClass('shadow')) {
+                    header.addClass('shadow');
+                }
+            } else {
+                header.removeClass('shadow');
+            }
+        };
+
+        $(window).on('scroll', handleScroll);
+
+        handleScroll();
+
+        return () => {
+            $(window).off('scroll', handleScroll);
+        };
+    }, []);
+
 
     return (
         <div className="header">
