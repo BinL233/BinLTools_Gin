@@ -3,6 +3,7 @@ package main
 import (
 	"BinLTools_Gin/models"
 	"BinLTools_Gin/routes"
+	"log"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -10,6 +11,8 @@ import (
 
 func main() {
 	models.InitDB()
+
+	log.Println("DB init success.")
 	//port := viper.GetString(`app.port`)
 
 	//Create the server
@@ -33,7 +36,9 @@ func main() {
 		}
 	})
 
-	err := r.Run(":3000")
+	log.Println("Start run...")
+
+	err := r.Run("0.0.0.0:3000")
 	if err != nil {
 		return
 	}

@@ -3,6 +3,7 @@ package models
 import (
 	"fmt"
 	"log"
+	"os"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -19,11 +20,11 @@ type User struct {
 func InitDB() *gorm.DB {
 	//driverName := "mysql"
 	host := "localhost"
-	host2 := "124.222.134.63"
-	port := "3306"
+	host2 := os.Getenv("DB_HOST")
+	port := os.Getenv("DB_PORT")
 	database := "binltools"
-	username := "remote_test"
-	password := "554850"
+	username := os.Getenv("DB_USER")
+	password := os.Getenv("DB_PASSWORD")
 	charset := "utf8"
 
 	// Try local database
@@ -47,7 +48,11 @@ func InitDB() *gorm.DB {
 	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err == nil {
 		log.Println("Connected to remote database.")
-		db.AutoMigrate(&User{})
+		errMi := db.AutoMigrate(&User{})
+		if errMi != nil {
+			log.Fatalf("AutoMigrate failed: %v", errMi)
+		}
+		log.Println("DB migrate success.")
 		DB = db
 		return db
 	}

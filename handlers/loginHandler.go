@@ -22,6 +22,9 @@ func Login(c *gin.Context) {
 	if len(userInfo) == 0 {
 		log.Println("User does not sign in")
 		userInfo["username"] = "Login"
+		userInfo["id"] = "?"
+		c.JSON(http.StatusNotFound, userInfo)
+		return
 	}
 
 	c.JSON(http.StatusOK, userInfo)

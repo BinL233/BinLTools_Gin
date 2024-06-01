@@ -76,9 +76,6 @@ function HomePage() {
             {/* Introduction */}
             <div className="intro">
                     <a className="title">关于作者</a>
-                    <br />
-                <br />
-                <br />
                     <p className="text">
                         大家好！我是BinL。本网站的制作人。<br />
                         <br />

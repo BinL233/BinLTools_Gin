@@ -1,0 +1,87 @@
+.xxlarge_text {
+    font-size: xx-large;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 100px;
+}
+
+.medium_text {
+    font-size: medium;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 32px;
+    color: #4e4e4e;
+    margin-left: 8px;
+}
+
+.main_container {
+    width: 70%;
+    padding: 0 20px;
+    margin: auto;
+    overflow: hidden;
+}
+
+#user_name {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 150px;
+}
+
+#main_panel {
+    margin: auto; 
+    border-radius: 
+    10px; background-color:#a19a9a19; 
+    text-align: center; 
+    clear: both; 
+    max-width: 800px;
+}
+
+.info_container {
+    display: flex;
+}
+
+#log_out {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.log_out {
+    color: #f94646;
+    background: transparent;
+    border: 2px solid #f94646;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.log_out {
+    background-color: white;
+    color: black;
+    border: 2px solid #f94646;
+}
+
+.log_out:hover {
+    background-color: #f94646;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .main_container {
+        padding: 0 15px;
+        width: 100%;
+    }
+}

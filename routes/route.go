@@ -40,6 +40,9 @@ func InitRoutes(r *gin.Engine) {
 
 			// Get user info
 			userRoute.GET("/user_info", middlewares.AuthMiddleware(), handlers.Info)
+
+			// User Logout
+			userRoute.POST("/logout_process", handlers.LogoutProcess)
 		}
 	}
 }

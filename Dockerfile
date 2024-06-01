@@ -1,27 +1,27 @@
-FROM golang:alpine
+FROM golang:1.22
 
-RUN go env -w GO111MODULE=on
+ENV GO111MODULE=on \
+    GOPROXY=https://goproxy.cn,direct \
+    GIN_MODE=release
 
-RUN go env -w GOPROXY=https://goproxy.cn,direct
-
-MAINTAINER "BinL"
-
-ENV GIN_MODE=release
+RUN apt-get update && apt-get install -y npm
 
 WORKDIR /app
 
-ADD . .
-
-CMD go mod init BinLTools_Gin
-
-CMD go mod tidy
-
-COPY go.mod .
-
-COPY go.sum .
-
+COPY go.mod go.sum ./
 RUN go mod download
 
+COPY web/package*.json ./web/
+WORKDIR /app/web
+RUN npm install --legacy-peer-deps
+
+WORKDIR /app
+COPY . .
+
+WORKDIR /app/web
+RUN npm run build
+
+WORKDIR /app
 RUN go build -o binltools .
 
 EXPOSE 3000
