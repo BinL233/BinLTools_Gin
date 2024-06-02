@@ -4,10 +4,11 @@ import (
 	"BinLTools_Gin/Responses"
 	"BinLTools_Gin/Services"
 	"BinLTools_Gin/models"
-	"BinLTools_Gin/util"
 	"log"
 	"net/http"
 	"regexp"
+
+	"golang.org/x/text/unicode/norm"
 
 	"github.com/gin-gonic/gin"
 )
@@ -30,19 +31,9 @@ func ChangeUserName(c *gin.Context) {
 
 	//Fetch data
 	userName := c.PostForm("user")
-	userNameRegex := `^[a-zA-Z0-9_]{4,20}$`
-	matched, err := regexp.MatchString(userNameRegex, userName)
-
-	//Check userName
-	if len(userName) == 0 {
-		userName = util.RandomString(10)
-	}
-
-	// Check Regex
-	if err != nil {
-		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "Regex error")
-		return
-	}
+	userNameRegex := regexp.MustCompile(`^[\p{L}\p{N}_]{4,20}$`)
+	normalizedUserName := norm.NFC.String(userName)
+	matched := userNameRegex.MatchString(normalizedUserName)
 
 	if !matched {
 		if len(userName) < 4 || len(userName) > 20 {

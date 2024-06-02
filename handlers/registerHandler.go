@@ -4,13 +4,13 @@ import (
 	"BinLTools_Gin/Responses"
 	"BinLTools_Gin/Services"
 	"BinLTools_Gin/models"
-	"BinLTools_Gin/util"
 	"net/http"
 	"regexp"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
+	"golang.org/x/text/unicode/norm"
 )
 
 func Register(c *gin.Context) {
@@ -31,8 +31,9 @@ func RegisterProcess(c *gin.Context) {
 	userName := c.PostForm("user")
 	password := c.PostForm("pwd")
 	confirmPwd := c.PostForm("cpwd")
-	userNameRegex := `^[a-zA-Z0-9_]{4,20}$`
-	matched, err := regexp.MatchString(userNameRegex, userName)
+	userNameRegex := regexp.MustCompile(`^[\p{L}\p{N}_]{4,20}$`)
+	normalizedUserName := norm.NFC.String(userName)
+	matched := userNameRegex.MatchString(normalizedUserName)
 
 	//Check password
 	if len(password) < 6 {
@@ -45,16 +46,6 @@ func RegisterProcess(c *gin.Context) {
 		return
 	}
 
-	//Check userName
-	if len(userName) == 0 {
-		userName = util.RandomString(10)
-	}
-
-	// Check Regex
-	if err != nil {
-		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 500, nil, "Regex error")
-		return
-	}
 	if !matched {
 		if len(userName) < 5 || len(userName) > 20 {
 			Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Invalid username format: The length of username only accepts 5 to 20")

@@ -69,8 +69,6 @@ func IsUserNameExist(db *gorm.DB, userName string) bool {
 	var user User
 	db.Where("user_name = ?", userName).First(&user)
 	return user.ID != 0
-
-	return false
 }
 
 func FindUserByField(value string) User {

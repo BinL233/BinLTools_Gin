@@ -46,6 +46,7 @@ function UserPage() {
                     console.log("username changed successful:", data);
                     setMessage("username changed successful");
                     setError(false);
+                    window.location.href = '/user_page';
                 } else {
                     console.error("username changed failed:", data.msg);
                     setMessage(data.msg || "username changed failed due to unknown error.");
