@@ -110,7 +110,6 @@ class L2D {
                     tempHitAreas.sort(function (a, b) {
                         return b.Order - a.Order
                     });
-                    console.log(tempHitAreas);
                     tempHitAreas.forEach((e) => {
                         let [MotionsGroup, MotionsItems] = e.Motion.split(':')
                         if (MotionsItems) {

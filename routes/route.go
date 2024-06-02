@@ -43,6 +43,9 @@ func InitRoutes(r *gin.Engine) {
 
 			// User Logout
 			userRoute.POST("/logout_process", handlers.LogoutProcess)
+
+			// Change username
+			userRoute.POST("/change_username", handlers.ChangeUserName)
 		}
 	}
 }
