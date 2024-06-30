@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./login.css";
+import "./../../components/inputBox/inputBox.css"
+import "./../../components/buttons/button1.css"
 import Header from "../../components/header/header.js";
 import Footer from "../../components/footer/footer.js";
 
@@ -96,14 +98,14 @@ function Login() {
                                     <label>Password: </label>
                                 </div>
                                 <div className="box2">
-                                    <input id="username"
+                                    <input className="inputBox" id="username"
                                         type="text"
                                         name="user"
                                         value={user}
                                         ref={userRef}
                                         onChange={(e) => setUser(e.target.value)}
                                     />
-                                    <input id="password"
+                                    <input className="inputBox" id="password"
                                         type="password"
                                         name="pwd"
                                         value={pwd}
@@ -113,10 +115,10 @@ function Login() {
                                 </div>
                             </div>
                             <div className="container2">
-                                <button type="submit" className="button">
-                                    <div className="button__line"></div>
-                                    <div className="button__line"></div>
-                                    <span className="button__text">Login</span>
+                                <button type="submit" className="button1">
+                                    <div className="button1__line"></div>
+                                    <div className="button1__line"></div>
+                                    <span className="button1__text">Login</span>
                                 </button>
                                 <p><a href="/register" id="go_to_register">I don't have an account. I want to sign up!</a></p>
                             </div>

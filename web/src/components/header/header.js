@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import "./header.css"
 import $ from 'jquery';
 
 function Header() {
-    const [loginText, setLoginText] = useState({});
+    const [loginText, setLoginText] = useState({username: "Login"});
+    const [userPageLink, setUserPageLink] = useState("/login");
 
     useEffect(() => {
         console.log("Fetching login data...");
@@ -12,6 +14,8 @@ function Header() {
         fetch('/api/user/login')
             .then(response => {
                 if (!response.ok) {
+                    setUserPageLink("/login")
+                    setLoginText({username: "Login"})
                     throw new Error('Network response was not ok');
                 }
                 return response.json();
@@ -19,9 +23,16 @@ function Header() {
             .then(data => {
                 console.log("Login data received:", data);
                 setLoginText(data);
+                setUserPageLink("/user_page")
             })
-            .catch(error => console.error('Error fetching data:', error));
-
+            .catch(error => {
+                setUserPageLink("/login")
+                setLoginText({username: "Login"})
+                console.error('Error fetching data:', error)
+            });
+        }, []);
+    
+    useEffect(() => {
         const loadModule = () => {
             const initializeViewer = () => {
                 var config = {
@@ -55,27 +66,31 @@ function Header() {
             };
         }
 
-        $(document).ready(function() {
-            headerShadow();
-        });
-
-        function headerShadow() {
-            var header = $('header');
-        
-            $(window).scroll(function(e){
-                if(header.offset().top > 0){
-                    if(!header.hasClass('shadow')){
-                        header.addClass('shadow');
-                    }
-                }else{
-                    header.removeClass('shadow');
-                }
-            });
-        }
-
         loadModule();
 
     }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const header = $('header');
+            if (header.offset().top > 0) {
+                if (!header.hasClass('shadow')) {
+                    header.addClass('shadow');
+                }
+            } else {
+                header.removeClass('shadow');
+            }
+        };
+
+        $(window).on('scroll', handleScroll);
+
+        handleScroll();
+
+        return () => {
+            $(window).off('scroll', handleScroll);
+        };
+    }, []);
+
 
     return (
         <div className="header">
@@ -97,9 +112,9 @@ function Header() {
                     </div>
                     <nav>
                         <ul>
-                            <li><a href="/about_me">About Me</a></li>
+                            <li><Link to="/about_me">About Me</Link></li>
                             <li><a href="https://github.com/BinL233">GitHub</a></li>
-                            <li><a href="/login">{loginText.username}</a></li>
+                            <li><Link to={userPageLink}>{loginText.username}</Link></li>
                         </ul>
                     </nav>
                 </div>

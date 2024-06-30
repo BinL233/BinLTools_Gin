@@ -6,7 +6,7 @@ import "github.com/gin-gonic/gin"
 
 func DownloadFile(c *gin.Context) {
 	fileName := c.Param("filename")
-	filePath := "/home/root/download_path/" + fileName
+	filePath := "/app/download_path/" + fileName
 
 	c.FileAttachment(filePath, fileName)
 }

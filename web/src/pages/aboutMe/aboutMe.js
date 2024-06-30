@@ -10,27 +10,16 @@ import ReviveReviveMockUp from "../../resources/images/ReviveReviveMockUp.jpg"
 import RoboMaster from "../../resources/images/RoboMaster.jpg"
 import RoboMaster2 from "../../resources/images/RoboMaster2.jpg"
 import KueueImage from "../../resources/images/theory-of-operation.svg"
+import Header from "../../components/header/header.js"
+import Footer from "../../components/footer/footer.js"
 
 function AboutMe() {
     return (
         <div classNameName="aboutMe">
-            <header id="about_me">
-                <div className="container">
-                    <div id="branding">
-                        <h1><span className="highlight">Academic</span> Homepage</h1>
-                    </div>
-                    <nav>
-                        <ul>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#competitions">Competitions</a></li>
-                            <li><a href="#internship">Internship</a></li>
-                            <li><a href="#research">Research</a></li>
-                            <li><a href="#courses">Courses</a></li>
-                            <li><a href="#skills">Skills</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
+            {/* Import Header */}
+            <div>
+                { Header() }
+            </div>
 
             <div className="container">
                 <div id="top_head">
@@ -95,6 +84,8 @@ function AboutMe() {
                         </div>
                     </section>
 
+                    <hr className="custom-hr" />
+
                     <section className="section2">
                         <div>
                             <div className="project">
@@ -130,6 +121,8 @@ function AboutMe() {
                         </div>
                     </section>
 
+                    <hr className="custom-hr" />
+
                     <section className="section2">
                         <div>
                             <div className="project">
@@ -156,6 +149,8 @@ function AboutMe() {
                         </div>
                     </section>
 
+                    <hr className="custom-hr" />
+
                     <section className="section2">
                         <div>
                             <div className="project">
@@ -179,6 +174,8 @@ function AboutMe() {
                             {/* <!--        <a href="#" className="hover_button">Website</a>--> */}
                         </div>
                     </section>
+
+                    <hr className="custom-hr" />
 
                     <section className="section2">
                         <div>
@@ -213,6 +210,8 @@ function AboutMe() {
                             {/* <!--        <a href="#" className="hover_button">Website</a>--> */}
                         </div>
                     </section>
+
+                    <hr className="custom-hr" />
 
                     <section className="section2">
                         <div>
@@ -251,12 +250,13 @@ function AboutMe() {
                         </div>
                         <p className="award_place">- 2nd Place</p>
                     </div>
-                    <hr className="custom-hr" />
                     <div className="container3">
                         <div><img className="competition_img" src={RoboMaster} alt="robomaster1" /></div>
                         <div><img className="competition_img" src={RoboMaster2} alt="robomaster2" /></div>
                     </div>
                 </section>
+
+                <hr className="custom-hr" />
 
                 <section className="section2">
                     <div>
@@ -271,6 +271,8 @@ function AboutMe() {
                         <p className="award_place">- TOP 20</p>
                     </div>
                 </section>
+
+                <hr className="custom-hr" />
 
                 <section className="section2">
                     <div>
@@ -402,6 +404,12 @@ function AboutMe() {
 
 
             </div>
+
+            {/* Import Footer */}
+            <div>
+                { Footer() }
+            </div>
+
         </div>
     );
 }

@@ -9,7 +9,7 @@ function HomePage() {
     useEffect(() => {
         // Real time clock
         function Timer() {
-            var myVar=setInterval(function(){myTimer()},1);
+            setInterval(function(){myTimer()},1);
             var clock = document.getElementById("timer")
 
             function myTimer() {
@@ -53,7 +53,7 @@ function HomePage() {
                         <a className="menu_links" href="https://testflight.apple.com/join/TfxHXkvb">Revive - Focus Timer for iOS</a>
                         </p>
                     <p className="menu_p1">
-                        <a className="menu_links" href="/download/No_Death_Clear_0.8.3.exe">一命通关 No Death Clear</a>
+                        <a className="menu_links" href="/api/download/No_Death_Clear_0.8.3.exe">No Death Clear</a>
                         </p>
                     <p className="menu_p2">
                         <a className="menu_text">自制魂系游戏，速速下载！</a>
@@ -76,9 +76,6 @@ function HomePage() {
             {/* Introduction */}
             <div className="intro">
                     <a className="title">关于作者</a>
-                    <br />
-                <br />
-                <br />
                     <p className="text">
                         大家好！我是BinL。本网站的制作人。<br />
                         <br />

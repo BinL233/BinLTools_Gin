@@ -11,6 +11,21 @@ function DigitConverter() {
     const [output, setOutput] = useState("");
 
     const handleConvert = () => {
+        const isValid = (input, base) => {
+            var regex;
+            if (base < 10) {
+                regex = new RegExp(`^[0-${base - 1}]+$`);
+            } else {
+                regex = new RegExp(`^[0-9 a-f]+$`)
+            }
+            return regex.test(input);
+        };
+
+        if (!isValid(input, parseInt(fromBase))) {
+            setOutput('Invalid input');
+            return;
+        }
+        
         let decimalNum = parseInt(input, parseInt(fromBase));
         if (toBase === "10") {
             setOutput(decimalNum.toString());
