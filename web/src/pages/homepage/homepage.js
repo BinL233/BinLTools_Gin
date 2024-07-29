@@ -52,11 +52,11 @@ function HomePage() {
                     <p className="menu_p">
                         <a className="menu_links" href="https://testflight.apple.com/join/TfxHXkvb">Revive - Focus Timer for iOS</a>
                         </p>
+                    <p className="menu_p2">
+                        <a className="menu_text">现已登陆TestFlight！</a>
+                        </p>
                     <p className="menu_p1">
                         <a className="menu_links" href="/api/download/No_Death_Clear_0.8.3.exe">No Death Clear</a>
-                        </p>
-                    <p className="menu_p2">
-                        <a className="menu_text">自制魂系游戏，速速下载！</a>
                         </p>
                     <p className="menu_p">
                         <a className="menu_links" href="/reaction_test">反应测试 ReactionTest</a>
