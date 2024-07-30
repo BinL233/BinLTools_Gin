@@ -1,6 +1,7 @@
 package main
 
 import (
+	"BinLTools_Gin/middlewares"
 	"BinLTools_Gin/models"
 	"BinLTools_Gin/routes"
 	"log"
@@ -35,6 +36,10 @@ func main() {
 			c.File("./web/build" + path)
 		}
 	})
+
+	// Load rate limiter
+	rateLimiter := middlewares.NewRateLimiter(10, 20)
+	r.Use(rateLimiter.Middleware())
 
 	log.Println("Start run...")
 
