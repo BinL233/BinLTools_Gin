@@ -11,7 +11,7 @@ function Header() {
         console.log("Fetching login data...");
 
         // Get login data from backend
-        fetch('/api/user/login')
+        fetch('http://localhost:8080/api/user/login')
             .then(response => {
                 if (!response.ok) {
                     setUserPageLink("/login")
