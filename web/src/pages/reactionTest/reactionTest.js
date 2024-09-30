@@ -13,7 +13,7 @@ function ReactionTest() {
     const [ranks, setRanks] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/reaction/reaction_test_rank')
+        fetch('http://bintools_backend:8080/api/reaction/reaction_test_rank')
             .then(response => response.json())
             .then(data => setRanks(data))
             .catch(error => console.error('Error fetching data:', error));

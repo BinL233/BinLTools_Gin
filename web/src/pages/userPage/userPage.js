@@ -30,7 +30,7 @@ function UserPage() {
 
     async function handleSaveUsername() {
         try {
-            const response = await fetch('http://localhost:8080/api/user/change_username', {
+            const response = await fetch('http://backend:8080/api/user/change_username', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -82,7 +82,7 @@ function UserPage() {
     }, [message, error_notifier]);
 
     function Logout() {
-        fetch('http://localhost:8080/api/user/logout_process', {
+        fetch('http://backend:8080/api/user/logout_process', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -104,7 +104,7 @@ function UserPage() {
 
     useEffect(() => {
         // Get login data from backend
-        fetch('http://localhost:8080/api/user/login')
+        fetch('http://bintools_backend:8080/api/user/login')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
