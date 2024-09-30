@@ -8,6 +8,7 @@ Website: http://binltools.fun
 - Frontend: React
 - Backend: Go
 - Database: Mysql
+- Reverse proxy: Nginx
 
 ## 功能 Feature
 1. 登陆/注册 Login/Registation
