@@ -16,7 +16,7 @@ function Register() {
         event.preventDefault();
 
         try {
-            const response = await fetch('http://binltools_backend:8080/api/user/register_process', {
+            const response = await fetch('http://binltools.fun/api/user/register_process', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

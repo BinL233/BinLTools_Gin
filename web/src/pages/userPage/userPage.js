@@ -104,7 +104,7 @@ function UserPage() {
 
     useEffect(() => {
         // Get login data from backend
-        fetch('http://binltools_backend:8080/api/user/login')
+        fetch('http://binltools.fun/api/user/login')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

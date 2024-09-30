@@ -11,7 +11,7 @@ function Header() {
         console.log("Fetching login data...");
 
         // Get login data from backend
-        fetch('http://binltools_backend:8080/api/user/login')
+        fetch('http://binltools.fun/api/user/login')
             .then(response => {
                 if (!response.ok) {
                     setUserPageLink("/login")
