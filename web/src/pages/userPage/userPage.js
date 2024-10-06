@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import "./../../components/inputBox/inputBox.css"
 import Header from "../../components/header/header.js"
 import Footer from "../../components/footer/footer.js"
+import { useNavigate } from 'react-router-dom';
 
 function UserPage() {
     const [userContent, setUserContent] = useState({});
@@ -27,10 +28,16 @@ function UserPage() {
         setShowModel(false);
     }
 
+    const navigate = useNavigate();
+
+    const handleArticleEditorButton = () => {
+        navigate('/articleEditor');
+    };
+
 
     async function handleSaveUsername() {
         try {
-            const response = await fetch('http://backend:8080/api/user/change_username', {
+            const response = await fetch('http://localhost:8080/api/user/change_username', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -82,7 +89,7 @@ function UserPage() {
     }, [message, error_notifier]);
 
     function Logout() {
-        fetch('http://backend:8080/api/user/logout_process', {
+        fetch('http://localhost:8080/api/user/logout_process', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -104,7 +111,7 @@ function UserPage() {
 
     useEffect(() => {
         // Get login data from backend
-        fetch('http://binltools.fun/api/user/login')
+        fetch('http://localhost:8080/api/user/login')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -138,6 +145,12 @@ function UserPage() {
                         <p className="info">
                             <button className="change_name" onClick={handleChangeUsername}>
                                 Change User Name
+                            </button>
+                        </p>
+
+                        <p className="info">
+                            <button className="change_name" onClick={handleArticleEditorButton}>
+                                Create Articles
                             </button>
                         </p>
                         <br />

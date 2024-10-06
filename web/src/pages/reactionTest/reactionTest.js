@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Footer from "../../components/footer/footer.js"
+import Header from "../../components/header/header.js"
 import "./reactionTest.css"
 
 var num = Math.ceil(Math.random()*5);
@@ -13,7 +14,7 @@ function ReactionTest() {
     const [ranks, setRanks] = useState([]);
 
     useEffect(() => {
-        fetch('http://binltools.fun/api/reaction/reaction_test_rank')
+        fetch('http://localhost:8080/api/reaction/reaction_test_rank')
             .then(response => response.json())
             .then(data => setRanks(data))
             .catch(error => console.error('Error fetching data:', error));
@@ -47,18 +48,23 @@ function ReactionTest() {
 
     return (
         <div className="reactionTest">
+            {/* Import Header */}
+            <div>
+                { Header() }
+            </div>
+
             <div id="reaction_button" className="container">
-                <p>           
+                <p id='reaction_test'>           
                     <button onClick={ ChangeColor } id="reactionB" style={{ background: reactionColor }}>
                         { reactionText }
                     </button>
                 </p>
-                <p>You can refresh current page by clicking on the green area again after the test :)</p>
+                <p id='reaction_test'>You can refresh current page by clicking on the green area again after the test :)</p>
             </div>
 
             <div id="rank" className="container">
                 <div if="rank_title">
-                    <p><label id="rank_title">Rank</label></p>
+                    <p id='reaction_test'><label id="rank_title">Rank</label></p>
                 </div>
                 <table>
                     <thead>

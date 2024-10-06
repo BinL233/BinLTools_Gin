@@ -24,6 +24,18 @@ func InitRoutes(r *gin.Engine) {
 			reactionRoute.GET("/reaction_test_rank", handlers.GetReactionTestRanks)
 		}
 
+		ArticleRoute := apiIdx.Group("/article")
+		{
+			// Get certain article by ID
+			ArticleRoute.GET("/:id", handlers.GetArticleById)
+
+			// Get article list
+			ArticleRoute.GET("/article_list", handlers.GetArticleList)
+
+			// Post new article
+			ArticleRoute.POST("/post_article", handlers.PostArticle)
+		}
+
 		userRoute := apiIdx.Group("/user")
 		{
 			// Get login info
@@ -46,6 +58,9 @@ func InitRoutes(r *gin.Engine) {
 
 			// Change username
 			userRoute.POST("/change_username", handlers.ChangeUserName)
+
+			// Get user name by Id
+			userRoute.GET("/:id", handlers.GetUserNameById)
 		}
 	}
 }

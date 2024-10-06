@@ -2,6 +2,7 @@ package Services
 
 import (
 	"BinLTools_Gin/models"
+	"fmt"
 	"log"
 
 	"github.com/gin-contrib/sessions"
@@ -29,9 +30,14 @@ func DeleteAuthSession(c *gin.Context) {
 
 func SaveAuthSession(c *gin.Context, info interface{}) {
 	session := sessions.Default(c)
-	session.Set("id", info)
-	// c.SetCookie("user_id",string(info.(map[string]interface{})["b"].(uint)), 1000, "/", "localhost", false, true)
-	session.Save()
+	idString := fmt.Sprintf("%v", info)
+	session.Set("id", idString)
+	log.Printf("session_info: %v", idString)
+
+	err := session.Save()
+	if err != nil {
+		log.Printf("error: %v", err)
+	}
 }
 
 func GetSessionUserInfo(c *gin.Context) map[string]interface{} {

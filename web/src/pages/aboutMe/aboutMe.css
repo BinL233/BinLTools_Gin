@@ -12,7 +12,7 @@ body {
 
 .container {
     width: 80%;
-    padding: 0 20px;
+    padding: 0 80px;
     margin: auto;
     overflow: hidden;
 }
@@ -149,7 +149,7 @@ body {
     text-align: center;
 }
 
-p {
+.aboutMe_text p {
     text-align: center;
 }
 

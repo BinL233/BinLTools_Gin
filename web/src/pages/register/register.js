@@ -16,7 +16,7 @@ function Register() {
         event.preventDefault();
 
         try {
-            const response = await fetch('http://binltools.fun/api/user/register_process', {
+            const response = await fetch('http://localhost:8080/api/user/register_process', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -27,6 +27,10 @@ function Register() {
                     'cpwd': cpwd
                 })
             });
+
+            // 检查响应的内容，不先解析为 JSON
+            const textResponse = await response.text(); // 获取原始文本响应
+            console.log('Raw response:', textResponse);  // 打印后端返回的原始响应
 
             if (response.headers.get('content-type')?.includes('application/json')) {
                 const data = await response.json();

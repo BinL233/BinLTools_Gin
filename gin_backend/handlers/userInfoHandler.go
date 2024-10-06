@@ -66,3 +66,10 @@ func ChangeUserName(c *gin.Context) {
 
 	Responses.SuccessResponse(c, nil, "Success!")
 }
+
+func GetUserNameById(c *gin.Context) {
+	id := c.Param("id")
+
+	user := models.FindUserByField(id)
+	c.JSON(http.StatusOK, user.UserName)
+}

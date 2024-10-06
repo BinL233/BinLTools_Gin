@@ -11,7 +11,7 @@ function Header() {
         console.log("Fetching login data...");
 
         // Get login data from backend
-        fetch('http://binltools.fun/api/user/login')
+        fetch('http://localhost:8080/api/user/login')
             .then(response => {
                 if (!response.ok) {
                     setUserPageLink("/login")
@@ -22,6 +22,10 @@ function Header() {
             })
             .then(data => {
                 console.log("Login data received:", data);
+
+                // TODO: Save user login data
+                // LocalStorage.setItem('user', JSON.stringify({ id: data.id, username: data.username }));
+
                 setLoginText(data);
                 setUserPageLink("/user_page")
             })

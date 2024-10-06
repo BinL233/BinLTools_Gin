@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#article.container {
+    width: 80%;
+    padding: 0 150px;
+    margin: 100px auto 0 auto;
+    overflow: hidden;
+    text-align: left;
+}
+
+.module {
+    padding: 120px;
+    background: #fff;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.article_title h1 {
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 2em; 
+}
+
+.horizontal-line {
+    border-top: 1px solid #6e6e6e79;
+    width: 100%;
+    margin: 40px 0;
+}
+
+#article.author_name_sec {
+    background: #8181813e;
+    border-radius: 15px;
+}
+
+.author_name {
+    color: #434343;
+    font: bolder;
+}
+
+#article.details {
+    color: #757575;
+}
+
+#article.details span {
+    margin-right: 5px;
+}
+
+.author_user_name {
+    background-color: rgba(211, 211, 211, 0.45);
+    display: inline-block;
+    padding: 3px 7px;
+    border-radius: 5px;
+}
+
+.author_name span {
+    margin-right: 5px;
+}
+
+.markdown {
+    text-align: left;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+}
+
+.markdown h1 {
+    margin-top: 50px;
+}
+
+.markdown h2 {
+    margin-top: 40px;
+}
+
+.markdown h3 {
+    margin-top: 25px;
+}
+
+.markdown p {
+    text-align: left;
+    margin: 1em 0;
+}
+
+@media (max-width: 768px) {
+    #article.container {
+        padding: 0 15px;
+        width: 95%;
+    }
+
+    .module {
+        padding: 30px;
+    }
+}

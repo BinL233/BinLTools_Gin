@@ -18,7 +18,7 @@
 
 .notice {
     text-align: center; 
-    margin-bottom: 200px; 
+    margin-bottom: 100px; 
     padding: 20px;
 }
 
@@ -27,7 +27,7 @@
     color: rgba(9,132,227,0.79);
 }
 
-.intro {
+#homepage.intro {
     text-align: center; 
     clear: both; 
     overflow: hidden;
@@ -54,6 +54,17 @@
     font-size: large;
 }
 
+.category_title_h3 {
+    text-align: left;
+    color: #3c3c3c;
+    margin-left: 400px;
+    margin-bottom: 10px;
+}
+
+.logo_p {
+    text-align: center;
+}
+
 .menu_text {
     color:#efaa7e; 
     text-decoration: none; 
@@ -62,18 +73,21 @@
 }
 
 .menu_text2 {
-    text-align: center; 
+    text-align: left;
+    margin-left: 100px;
     color: #de77a5; 
     font-size: large;
 }
 
 .menu_p {
-    text-align: center;
+    text-align: left;
+    margin-left: 100px;
 }
 
 .menu_p1 {
-    text-align: center; 
+    text-align: left; 
     margin-bottom: 1px;
+    margin-left: 100px;
 }
 
 .menu_p2 {
@@ -102,5 +116,17 @@
     #logo_image {
         max-width: 70%; 
         height: auto;
+    }
+
+    .category_title_h3 {
+        margin-left: 10px;
+    }
+
+    .menu_p {
+        margin-left: 40px;
+    }
+    
+    .menu_p1 {
+        margin-left: 40px;
     }
 }
