@@ -7,13 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 function HomePage() {
-    const [menuArticleItems, setMenuArticleItems] = useState([]);
-
-    const navigate = useNavigate();
-
-    const handleArticleEditorButton = () => {
-        navigate('/articleEditor');
-    };
+    const [ArticleItems, setArticleItems] = useState([]);
 
     useEffect(() => {
         // Real time clock
@@ -31,17 +25,17 @@ function HomePage() {
             }
         }
 
-        const fetchMenuArticleItems = async () => {
+        const fetchArticleItems = async () => {
             try {
-                const response = await fetch('http://localhost:8080/api/article/article_list');
-                const data = await response.json();
-                setMenuArticleItems(data);
+                const response = await fetch('https://raw.githubusercontent.com/BinL233/my_docs/refs/heads/main/directory.json');
+                const data = await response.json()
+                setArticleItems(data);
             } catch (error) {
                 console.error('Error fetching menu article items:', error);
             }
         };
 
-        fetchMenuArticleItems();
+        fetchArticleItems();
         Timer();
     }, []);
 
@@ -100,10 +94,10 @@ function HomePage() {
                 {/* blog links */}
                 <div id="div_menu">  
                     <br />
-                    {menuArticleItems && menuArticleItems.map((item, index) => (
+                    {ArticleItems && ArticleItems.map((item, index) => (
                         <p className="menu_p" key={index}>
-                            <a className="menu_links" href={`/article/${item.Id}`}>
-                                { item.Title }
+                            <a className="menu_links" href={`/article/${item.title}`}>
+                                { item.title }
                             </a>
                         </p>
                     ))}

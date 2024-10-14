@@ -30,9 +30,9 @@ function UserPage() {
 
     const navigate = useNavigate();
 
-    const handleArticleEditorButton = () => {
-        navigate('/articleEditor');
-    };
+    // const handleArticleEditorButton = () => {
+    //     navigate('/articleEditor');
+    // };
 
 
     async function handleSaveUsername() {
@@ -148,11 +148,11 @@ function UserPage() {
                             </button>
                         </p>
 
-                        <p className="info">
+                        {/* <p className="info">
                             <button className="change_name" onClick={handleArticleEditorButton}>
                                 Create Articles
                             </button>
-                        </p>
+                        </p> */}
                         <br />
                     </div>
                 </div>

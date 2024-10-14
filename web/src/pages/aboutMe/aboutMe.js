@@ -23,7 +23,7 @@ function AboutMe() {
 
             <div className="container">
                 <div id="top_head">
-                    <h3><a href="/" id="back_web">Back to my Website</a></h3>
+                    <h3 id="xx-large_h3"><a href="/" id="back_web">Back to my Website</a></h3>
                 </div>
 
                 <section id="biography" className="module">
@@ -39,7 +39,7 @@ function AboutMe() {
 
                     <div className="container3_around">
                         <div>
-                            <h3>Interests</h3>
+                            <h3 id="xx-large_h3">Interests</h3>
                             <p className="aboutMe_text">Deep Learning for DNA Analysis</p>
                             <p className="aboutMe_text">Robotics</p>
                             <p className="aboutMe_text">Web Development</p>

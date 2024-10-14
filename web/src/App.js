@@ -15,7 +15,7 @@ import ErrorPage from './pages/errorPage/errorPage';
 import Register from './pages/register/register';
 import UserPage from './pages/userPage/userPage';
 import Article from './pages/article/article';
-import ArticleEditor from './pages/articleEditor/articleEditor';
+// import ArticleEditor from './pages/articleEditor/articleEditor';
 
 function App() {
   return (
@@ -30,8 +30,8 @@ function App() {
           <Route path='/register' element={ <Register />} />
           <Route path='/error_page' element={ <ErrorPage />} />
           <Route path='/user_page' element={ <UserPage />} />
-          <Route path='/article/:id' element={ <Article />} />
-          <Route path='/articleEditor' element={ <ArticleEditor />} />
+          <Route path='/article/:title' element={ <Article />} />
+          {/* <Route path='/articleEditor' element={ <ArticleEditor />} /> */}
         </Routes>
       </Router>
     </AuthProvider>

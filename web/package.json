@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^12.1.5",
     "@testing-library/user-event": "^13.5.0",
+    "codeblock": "^0.4.0-pre.3",
     "jquery": "^3.7.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
