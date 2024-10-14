@@ -8,6 +8,7 @@ Website: http://binltools.fun
 - Frontend: React
 - Backend: Go
 - Database: Mysql
+- Reverse proxy: Nginx
 
 ## 功能 Feature
 1. 登陆/注册 Login/Registation
@@ -33,42 +34,3 @@ Website: http://binltools.fun
 
 4. About me
    - 作者的个人档案
-    
-## 结构 Structure
-``` 
-.
-├── Dockerfile
-├── README.md
-├── Responses
-│   └── response.go
-├── Services
-│   ├── session.go
-│   └── userServices.go
-├── config
-│   └── application.yml
-├── dto
-│   └── userDto.go
-├── go.mod
-├── go.sum
-├── handlers
-│   ├── downloadHandler.go
-│   ├── indexHandler.go
-│   ├── loginHandler.go
-│   ├── reactionTestHandler.go
-│   └── registerHandler.go
-├── main
-├── main.exe
-├── main.go
-├── middlewares
-│   ├── authMiddleware.go
-│   └── jwt.go
-├── models
-│   ├── db.go
-│   ├── reactionTestRank.go
-│   └── test.go
-├── routes
-│   └── route.go
-├── util
-│   └── util.go
-└── web
-``` 
