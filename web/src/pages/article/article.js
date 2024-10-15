@@ -4,7 +4,7 @@ import Footer from "../../components/footer/footer.js"
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import CodeBlock from "./CodeBlock";
+// import CodeBlock from "./CodeBlock";
 
 function Article() {
     const [articleItem, setArticleItem] = useState([]);
@@ -76,8 +76,8 @@ function Article() {
             <div id="article" className="container">
                 <section id="article" className="module">
                     {/* <h1 className="article_title" style={{fontSize: '2em'}}>{articleItem.Title}</h1> */}
-{/* 
-                    <p id="article" className="details">
+
+                    {/* <p id="article" className="details">
                         <span>Published at</span>
                         <span>{formatDate(articleItem.PublishedAt)}</span>
                         <span>   ·   </span>
@@ -85,14 +85,14 @@ function Article() {
                         <span>views</span>
                     </p> */}
 
-                    {/* <p id="article" className="author_name">
-                        <span>Author:</span> <span className="author_user_name">{authorName}</span>
-                    </p> */}
+                    <p id="article" className="author_name">
+                        <span>Author:</span> <span className="author_user_name">{articleItem.author}</span>
+                    </p>
 
                     <div class="horizontal-line"></div>
 
                     <p id="article">
-                        <ReactMarkdown className="markdown" renderers={{ code: CodeBlock }}>{articleItem}</ReactMarkdown>
+                        <ReactMarkdown className="markdown">{articleItem}</ReactMarkdown>
                     </p>
                 </section>
             </div>

@@ -94,10 +94,10 @@ function HomePage() {
                 {/* blog links */}
                 <div id="div_menu">  
                     <br />
-                    {ArticleItems && ArticleItems.map((item, index) => (
-                        <p className="menu_p" key={index}>
-                            <a className="menu_links" href={`/article/${item.title}`}>
-                                { item.title }
+                    {ArticleItems && Object.keys(ArticleItems).map(key => (
+                        <p className="menu_p" key={key}>
+                            <a className="menu_links" href={`/article/${key}`}>
+                                { key }
                             </a>
                         </p>
                     ))}
