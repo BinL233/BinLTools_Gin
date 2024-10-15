@@ -32,8 +32,8 @@ func InitRoutes(r *gin.Engine) {
 			// Get article list
 			ArticleRoute.GET("/article_list", handlers.GetArticleList)
 
-			// Post new article
-			ArticleRoute.POST("/post_article", handlers.PostArticle)
+			// // Post new article
+			// ArticleRoute.POST("/post_article", handlers.PostArticle)
 		}
 
 		userRoute := apiIdx.Group("/user")
