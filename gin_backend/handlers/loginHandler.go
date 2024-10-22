@@ -6,7 +6,6 @@ import (
 	"BinLTools_Gin/dto"
 	"BinLTools_Gin/middlewares"
 	"BinLTools_Gin/models"
-	"log"
 	"net/http"
 	"strconv"
 
@@ -16,15 +15,15 @@ import (
 
 func Login(c *gin.Context) {
 	// Get user information and session
-	userInfo := Services.GetUserInfo(c)
-
-	// Check whether login
-	if len(userInfo) == 0 {
-		log.Println("User does not sign in")
-		userInfo["username"] = "Login"
-		userInfo["id"] = "?"
-		c.JSON(http.StatusNotFound, userInfo)
+	user, exists := c.Get("user")
+	if !exists {
+		Responses.ErrorResponse(c, http.StatusUnauthorized, 401, nil, "User not authenticated")
 		return
+	}
+
+	userInfo := gin.H{
+		"username": user.(models.User).UserName,
+		"id":       user.(models.User).ID,
 	}
 
 	c.JSON(http.StatusOK, userInfo)
@@ -38,23 +37,23 @@ func LoginProcess(c *gin.Context) {
 	userName := c.PostForm("user")
 	password := c.PostForm("pwd")
 
-	var user models.User
-
-	// Check username
-	DB.Where("user_name = ?", userName).First(&user)
 	if len(userName) == 0 {
 		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Username cannot be null")
-		return
-	}
-
-	if user.ID == 0 {
-		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Username not exist")
 		return
 	}
 
 	// Check password
 	if len(password) == 0 {
 		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Password cannot be null")
+		return
+	}
+
+	var user models.User
+
+	// Check if user exists in database
+	result := DB.Where("user_name = ?", userName).First(&user)
+	if result.Error != nil {
+		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "Username not exist")
 		return
 	}
 
@@ -73,7 +72,11 @@ func LoginProcess(c *gin.Context) {
 	// Success
 	if user.ID > 0 {
 		Services.SaveAuthSession(c, string(strconv.Itoa(int(user.ID))))
-		Responses.SuccessResponse(c, gin.H{"token": token}, "Success!")
+		c.JSON(http.StatusOK, gin.H{
+			"code": 200,
+			"data": gin.H{"token": token},
+			"msg":  "Success!",
+		})
 	} else {
 		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "System error")
 	}

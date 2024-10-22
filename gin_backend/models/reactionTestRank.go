@@ -17,11 +17,7 @@ func (ReactionTest) TableName() string {
 func IsUserNameExistInRTR(db *gorm.DB, userName string) bool {
 	var user ReactionTest
 	db.Where("user_name = ?", userName).First(&user)
-	if user.UserName != "" {
-		return true
-	}
-
-	return false
+	return user.UserName != ""
 }
 
 func FindUserInRank(userName string) ReactionTest {

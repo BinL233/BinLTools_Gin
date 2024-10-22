@@ -149,7 +149,6 @@
             let deltaTime = 0.016 * delta;
             if (!this.animator.isPlaying) {
                 let m = this.motions.get("idle");
-                console.log( _.l2d.TriggerMotions.get('Idle')[0]);
                 this.animator.getLayer("base").play(m);
             }
             this._animator.updateAndEvaluate(deltaTime);

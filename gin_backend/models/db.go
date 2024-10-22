@@ -11,12 +11,6 @@ import (
 
 var DB *gorm.DB
 
-type User struct {
-	gorm.Model
-	UserName string `gorm:"type:varchar(20);not null"`
-	Password string `gorm:"type:varchar(255);not null"`
-}
-
 func InitDB() *gorm.DB {
 	//driverName := "mysql"
 	host := "localhost"
@@ -34,12 +28,12 @@ func InitDB() *gorm.DB {
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err == nil {
 		log.Println("Connected to local database.")
-		db.AutoMigrate(&User{})
+		db.AutoMigrate(&User{}, &Article{}, &ReactionTest{})
 		DB = db
 		return db
 	}
 
-	log.Printf("Failed to connect to local database: %v. Try remote database...", err)
+	log.Printf("Failed to connect to local database: %v. Try remote database...\n", err)
 
 	// try remote database
 	dsn = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=%s&parseTime=true",
@@ -63,16 +57,4 @@ func InitDB() *gorm.DB {
 
 func GetDB() *gorm.DB {
 	return DB
-}
-
-func IsUserNameExist(db *gorm.DB, userName string) bool {
-	var user User
-	db.Where("user_name = ?", userName).First(&user)
-	return user.ID != 0
-}
-
-func FindUserByField(value string) User {
-	var u User
-	DB.Where("id = ?", value).First(&u)
-	return u
 }

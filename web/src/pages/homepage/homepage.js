@@ -1,11 +1,14 @@
 import "./homepage.css"
 import Header from "../../components/header/header.js"
 import Footer from "../../components/footer/footer.js"
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import logoImage from '../../resources/images/logo.png';
+import { useNavigate } from 'react-router-dom';
 
 
 function HomePage() {
+    const [articleItems, setArticleItems] = useState([]);
+
     useEffect(() => {
         // Real time clock
         function Timer() {
@@ -22,6 +25,17 @@ function HomePage() {
             }
         }
 
+        const fetchArticleItems = async () => {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/BinL233/my_docs/refs/heads/main/directory.json');
+                const data = await response.json()
+                setArticleItems(data);
+            } catch (error) {
+                console.error('Error fetching menu article items:', error);
+            }
+        };
+
+        fetchArticleItems();
         Timer();
     }, []);
 
@@ -34,7 +48,7 @@ function HomePage() {
 
             {/* Logo */}
             <div className="logo_main">
-                <p className="menu_p"> 
+                <p className="logo_p"> 
                     <img id="logo_image" src={logoImage} alt="Logo" />
                 </p>
             </div>
@@ -44,41 +58,73 @@ function HomePage() {
                 <p id="timer_s" className="timer_s"></p>
             </div>
 
+            <h3 className="category_title_h3">
+                    Applications & Tools
+            </h3>
+
             {/* menu */}
             <div id="menu" className="menu">
                 {/* page links */}
-                <div id="div menu">    
+                <div id="div_menu">    
                     <br />
                     <p className="menu_p">
                         <a className="menu_links" href="https://testflight.apple.com/join/TfxHXkvb">Revive - Focus Timer for iOS</a>
                         </p>
                     <p className="menu_p1">
-                        <a className="menu_links" href="/api/download/No_Death_Clear_0.8.3.exe">No Death Clear</a>
+                        <a className="menu_links" href="/api/download/No_Death_Clear_0.8.3.exe">No Death Clear - Soul-like RPG Demo (Windows OS only) </a>
                         </p>
                     <p className="menu_p">
-                        <a className="menu_links" href="/reaction_test">反应测试 ReactionTest</a>
+                        <a className="menu_links" href="/reaction_test">ReactionTest</a>
                         </p>
                     <p className="menu_p">
-                        <a className="menu_links" href="/digit_converter">进制转换器 DigitConverter</a>
+                        <a className="menu_links" href="/digit_converter">DigitConverter</a>
                         </p>
-                    <p className="menu_text2">持续更新中...</p>
+                    <p className="menu_text2">Creating...</p>
                     <br />
                 </div>
             </div>
 
+            <br />
+
+            <h3 className="category_title_h3">
+                    Articles
+            </h3>
+
+            <div id="menu" className="menu">
+                {/* blog links */}
+                <div id="div_menu">  
+                    <br />
+                    {articleItems && Object.keys(articleItems).map(key => (
+                        <p className="article_menu_p" key={key}>
+                            <a className="menu_links" href={`/article/${key}`}>
+                                { articleItems[key]?.title }
+                            </a>
+                            <div className="article_menu_tags">
+                                { articleItems[key]?.tags && articleItems[key]?.tags.map((tag, index) => (
+                                    <p className="article_menu_tag" key={index}>
+                                        {`#${tag}`} 
+                                    </p>
+                                ))}
+                            </div>
+                        </p>
+                    ))}
+                    <br />
+                </div> 
+            </div>
+
             <div className="notice">
-                <a className="notice_text">ps.第一次进入网站Live2D需要加载，请耐心等待15s哦～</a>
+                <p className="notice_text">ps. Live2D needs to be loaded when you enter the website for the first time, please wait for about 15 seconds.</p>
             </div>
 
             {/* Introduction */}
-            <div className="intro">
-                    <a className="title">关于作者</a>
+            <div id="homepage" className="intro">
+                    <p className="title">About Author</p>
                     <p className="text">
-                        大家好！我是BinL。本网站的制作人。<br />
+                        Hello everyone! I'm BinL, the producer of this website <br />
                         <br />
-                        本网站从2022年6月开始慢慢建设中......<br />
+                        This website is under construction starting from June 2022... <br />
                         <br />
-                            今后将添加更多有用有趣的小功能！
+                        More useful and interesting little features will be added in the future!
                     </p>
             </div>
 

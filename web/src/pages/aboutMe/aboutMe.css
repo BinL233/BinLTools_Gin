@@ -12,7 +12,7 @@ body {
 
 .container {
     width: 80%;
-    padding: 0 20px;
+    padding: 0 80px;
     margin: auto;
     overflow: hidden;
 }
@@ -149,13 +149,14 @@ body {
     text-align: center;
 }
 
-p {
+.aboutMe_text p {
     text-align: center;
 }
-
+/* 
 h3 {
-    font-size: xx-large; text-align: center;
-}
+    font-size: xx-large; 
+    text-align: center;
+} */
 
 .xx-large_p {
     text-align: center; 

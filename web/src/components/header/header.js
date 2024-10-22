@@ -11,7 +11,12 @@ function Header() {
         console.log("Fetching login data...");
 
         // Get login data from backend
-        fetch('http://binltools.fun/api/user/login')
+        fetch('http://localhost:8080/api/user/login', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+        })
             .then(response => {
                 if (!response.ok) {
                     setUserPageLink("/login")
@@ -22,6 +27,10 @@ function Header() {
             })
             .then(data => {
                 console.log("Login data received:", data);
+
+                // TODO: Save user login data
+                // LocalStorage.setItem('user', JSON.stringify({ id: data.id, username: data.username }));
+
                 setLoginText(data);
                 setUserPageLink("/user_page")
             })
@@ -38,8 +47,8 @@ function Header() {
                 var config = {
                     right: '0px',
                     bottom: '-5px',
-                    width: 350,
-                    height: 350,
+                    width: 280,
+                    height: 280,
                     basePath: '/Resources/L2D',
                     role: 'Domino',
                     opacity: 1,

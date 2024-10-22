@@ -23,7 +23,7 @@ function AboutMe() {
 
             <div className="container">
                 <div id="top_head">
-                    <h3><a href="/" id="back_web">Back to my Website</a></h3>
+                    <h3 id="xx-large_h3"><a href="/" id="back_web">Back to my Website</a></h3>
                 </div>
 
                 <section id="biography" className="module">
@@ -39,11 +39,11 @@ function AboutMe() {
 
                     <div className="container3_around">
                         <div>
-                            <h3>Interests</h3>
-                            <p>Deep Learning for DNA Analysis</p>
-                            <p>Robotics</p>
-                            <p>Web Development</p>
-                            <p>iOS Applications Development</p>
+                            <h3 id="xx-large_h3">Interests</h3>
+                            <p className="aboutMe_text">Deep Learning for DNA Analysis</p>
+                            <p className="aboutMe_text">Robotics</p>
+                            <p className="aboutMe_text">Web Development</p>
+                            <p className="aboutMe_text">iOS Applications Development</p>
                         </div>    
                         <div>
                             <h3 id="xx-large_h3">Education</h3>
@@ -76,7 +76,7 @@ function AboutMe() {
                             Kueue is a kubernetes-native system that manages quotas and how jobs consume them. Kueue decides when a job should wait,
                             when a job should be admitted to start (as in pods can be created) and when a job should be preempted (as in active pods should be deleted).
                             </p>
-                            <p><img src={KueueImage} alt="kueue-theory-of-operation" /></p>
+                            <p className="aboutMe_text"><img src={KueueImage} alt="kueue-theory-of-operation" /></p>
                         </div>
                         <div className="buttons">
                             <a href="https://github.com/kubernetes-sigs/kueue" className="hover_button">Repository</a>

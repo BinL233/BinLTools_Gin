@@ -1,0 +1,64 @@
+.article_editor_div {
+    width: 80%;
+    padding: 50px 150px;
+    margin: 150px auto 0 auto;
+}
+
+.article-editor {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.editor-section {
+    margin-bottom: 20px;
+    padding: auto;
+    text-align: left;
+}
+
+.editor-section label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.editor-section input[type="text"],
+.editor-section select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.editor-section .ql-container {
+    height: 200px;
+}
+
+#article_editor.submit_button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#article_editor.submit_button:hover {
+    background-color: #0056b3;
+}
+
+.preview-section {
+    border: 1px solid #ccc; 
+    padding: 50px;
+    border-radius: 4px;
+    min-height: 100px;
+}
+
+h3 {
+    font-size: 1.3em;
+    text-align: left;
+    margin-left: 5px;
+}

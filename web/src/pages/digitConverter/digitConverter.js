@@ -47,7 +47,7 @@ function DigitConverter() {
 
             {/* Logo */}
             <div className="logo_main">
-                <p className="menu_p"> 
+                <p id="digit_converter" className="logo_p"> 
                     <img id="logo_image" src={logoImage} alt="Logo" />
                 </p>
             </div>
