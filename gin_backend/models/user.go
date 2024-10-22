@@ -1,8 +1,6 @@
 package models
 
 import (
-	"time"
-
 	"gorm.io/gorm"
 )
 
@@ -10,7 +8,7 @@ type User struct {
 	gorm.Model
 	UserName string `gorm:"type:varchar(20);not null"`
 	Password string `gorm:"type:varchar(255);not null"`
-	Admin    bool   `gorm:"type:varchar(255);not null"`
+	// Admin    bool   `gorm:"type:varchar(255);not null"`
 }
 
 func IsUserNameExist(db *gorm.DB, userName string) bool {
@@ -31,14 +29,14 @@ func FindUserByField(value string) User {
 	return u
 }
 
-func checkUserRole(id int) bool {
-	var user User
-	DB.Where("id = ?", id).First(&user)
-	return user.Admin
-}
+// func checkUserRole(id int) bool {
+// 	var user User
+// 	DB.Where("id = ?", id).First(&user)
+// 	return user.Admin
+// }
 
-func getUserCreateDate(id int) time.Time {
-	var user User
-	DB.Where("id = ?", id).First(&user)
-	return user.CreatedAt
-}
+// func getUserCreateDate(id int) time.Time {
+// 	var user User
+// 	DB.Where("id = ?", id).First(&user)
+// 	return user.CreatedAt
+// }

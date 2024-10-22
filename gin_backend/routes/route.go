@@ -39,7 +39,7 @@ func InitRoutes(r *gin.Engine) {
 		userRoute := apiIdx.Group("/user")
 		{
 			// Get login info
-			userRoute.GET("/login", handlers.Login)
+			userRoute.GET("/login", middlewares.AuthMiddleware(), handlers.Login)
 
 			// Post login username and password
 			userRoute.POST("/login_process", handlers.LoginProcess)

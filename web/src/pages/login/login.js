@@ -14,6 +14,7 @@ function Login() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        console.log("Submit login process...")
 
         try {
             const response = await fetch('http://localhost:8080/api/user/login_process', {
@@ -30,9 +31,8 @@ function Login() {
             if (response.headers.get('content-type')?.includes('application/json')) {
                 const data = await response.json();
                 if (response.ok) {
-                    console.log("Login successful:", data);
                     setMessage("Login successful");
-                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('token', data.data.token);
                     window.location.href = '/';
                 } else {
                     console.error("Login failed:", data.msg);

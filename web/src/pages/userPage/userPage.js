@@ -41,6 +41,7 @@ function UserPage() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
                 },
                 body: new URLSearchParams({
                     'user': newUsername,
@@ -89,29 +90,37 @@ function UserPage() {
     }, [message, error_notifier]);
 
     function Logout() {
-        fetch('http://localhost:8080/api/user/logout_process', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            }
-        })
+        // fetch('http://localhost:8080/api/user/logout_process', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded',
+        //     }
+        // })
 
-        .then(response => {
-            if (response.ok) {
-                console.log('User logged out');
-                window.location.href = '/';
-            } else {
-                console.error('Logout failed');
-            }
-        })
-        .catch(error => {
-            console.error('Error during logout:', error);
-        });
+        // .then(response => {
+        //     if (response.ok) {
+        //         console.log('User logged out');
+        //         window.location.href = '/';
+        //     } else {
+        //         console.error('Logout failed');
+        //     }
+        // })
+        // .catch(error => {
+        //     console.error('Error during logout:', error);
+        // });
+        localStorage.removeItem("token");
+        console.log('User logged out');
+        window.location.href = '/';
     }
 
     useEffect(() => {
         // Get login data from backend
-        fetch('http://localhost:8080/api/user/login')
+        fetch('http://localhost:8080/api/user/login', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+        })
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

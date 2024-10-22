@@ -7,8 +7,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/gin-contrib/cors"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -21,7 +19,9 @@ func main() {
 	//Create the server
 	r := gin.Default()
 
-	r.Use(cors.Default())
+	// r.Use(cors.Default())
+
+	middlewares.SetCors(r)
 
 	//Load static files
 	r.Static("/static", "./web/build/static")

@@ -3,8 +3,7 @@ import Header from "../../components/header/header.js"
 import Footer from "../../components/footer/footer.js"
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
-import MarkdownRenderer from '../../components/markdownHighlighter.js'
+import MarkdownRenderer from '../../components/markdownRenderer/markdownRenderer.js'
 
 function Article() {
     const [articleInfo, setArticleInfo] = useState([]);

@@ -25,6 +25,7 @@ func EnableCookieSession() gin.HandlerFunc {
 func DeleteAuthSession(c *gin.Context) {
 	session := sessions.Default(c)
 	session.Delete("id")
+	fmt.Println("Deleted session info.")
 	session.Save()
 }
 
@@ -48,7 +49,8 @@ func GetSessionUserInfo(c *gin.Context) map[string]interface{} {
 	if id != nil {
 		user := models.FindUserByField(id.(string))
 		data["username"] = user.UserName
-		data["id"] = id.(string)
 	}
+
+	fmt.Println("Session data: ", data)
 	return data
 }

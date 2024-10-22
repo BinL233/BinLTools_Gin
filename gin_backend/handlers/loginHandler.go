@@ -6,7 +6,6 @@ import (
 	"BinLTools_Gin/dto"
 	"BinLTools_Gin/middlewares"
 	"BinLTools_Gin/models"
-	"log"
 	"net/http"
 	"strconv"
 
@@ -16,15 +15,15 @@ import (
 
 func Login(c *gin.Context) {
 	// Get user information and session
-	userInfo := Services.GetUserInfo(c)
-
-	// Check whether login
-	if len(userInfo) == 0 {
-		log.Println("User does not sign in")
-		userInfo["username"] = "Login"
-		userInfo["id"] = "?"
-		c.JSON(http.StatusNotFound, userInfo)
+	user, exists := c.Get("user")
+	if !exists {
+		Responses.ErrorResponse(c, http.StatusUnauthorized, 401, nil, "User not authenticated")
 		return
+	}
+
+	userInfo := gin.H{
+		"username": user.(models.User).UserName,
+		"id":       user.(models.User).ID,
 	}
 
 	c.JSON(http.StatusOK, userInfo)
@@ -73,7 +72,11 @@ func LoginProcess(c *gin.Context) {
 	// Success
 	if user.ID > 0 {
 		Services.SaveAuthSession(c, string(strconv.Itoa(int(user.ID))))
-		Responses.SuccessResponse(c, gin.H{"token": token}, "Success!")
+		c.JSON(http.StatusOK, gin.H{
+			"code": 200,
+			"data": gin.H{"token": token},
+			"msg":  "Success!",
+		})
 	} else {
 		Responses.ErrorResponse(c, http.StatusUnprocessableEntity, 422, nil, "System error")
 	}
