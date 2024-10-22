@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 function HomePage() {
-    const [ArticleItems, setArticleItems] = useState([]);
+    const [articleItems, setArticleItems] = useState([]);
 
     useEffect(() => {
         // Real time clock
@@ -94,11 +94,18 @@ function HomePage() {
                 {/* blog links */}
                 <div id="div_menu">  
                     <br />
-                    {ArticleItems && Object.keys(ArticleItems).map(key => (
-                        <p className="menu_p" key={key}>
+                    {articleItems && Object.keys(articleItems).map(key => (
+                        <p className="article_menu_p" key={key}>
                             <a className="menu_links" href={`/article/${key}`}>
-                                { key }
+                                { articleItems[key]?.title }
                             </a>
+                            <div className="article_menu_tags">
+                                { articleItems[key]?.tags && articleItems[key]?.tags.map((tag, index) => (
+                                    <p className="article_menu_tag" key={index}>
+                                        {`#${tag}`} 
+                                    </p>
+                                ))}
+                            </div>
                         </p>
                     ))}
                     <br />

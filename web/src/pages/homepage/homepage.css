@@ -54,6 +54,18 @@
     font-size: large;
 }
 
+.article_menu_tags {
+    display: flex;
+}
+
+.article_menu_tag {
+    color:#99abab; 
+    text-decoration: none; 
+    font-size: small;
+    padding-left: 1%;
+    margin-top: 0px;
+}
+
 .category_title_h3 {
     text-align: left;
     color: #3c3c3c;
@@ -77,6 +89,12 @@
     margin-left: 100px;
     color: #de77a5; 
     font-size: large;
+}
+
+.article_menu_p {
+    text-align: left;
+    margin-left: 100px;
+    /* display: flex; */
 }
 
 .menu_p {
