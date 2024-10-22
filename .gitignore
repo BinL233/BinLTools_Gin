@@ -11,8 +11,8 @@ web/node_modules/
 # production
 web/build/
 
-.cache/
-*.pack
+web/.cache/
+web/*.pack
 
 # misc
 .DS_Store
