@@ -4,42 +4,53 @@ import Footer from "../../components/footer/footer.js"
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-// import CodeBlock from "./CodeBlock";
+import MarkdownRenderer from '../../components/markdownHighlighter.js'
 
 function Article() {
-    const [articleItem, setArticleItem] = useState([]);
-    const [authorName, serAuthorName] = useState([]);
+    const [articleInfo, setArticleInfo] = useState([]);
+    const [articleRawData, setArticleRawData] = useState([]);
+    const [articleItems, setArticleItems] = useState([]);
 
     // Get title from URL
     const { title } = useParams();
+
+    useEffect(() => {
+        const fetchArticleItems = async () => {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/BinL233/my_docs/refs/heads/main/directory.json');
+                const data = await response.json();
+                setArticleItems(data);
+            } catch (error) {
+                console.error('Error fetching article items:', error);
+            }
+        };
+        fetchArticleItems();
+    });
     
     useEffect(() => {
-        const fetchArticleItem = async () => {
+        const fetchArticleRawData = async () => {
             try {
                 const response = await fetch(`https://raw.githubusercontent.com/BinL233/my_docs/refs/heads/main/${title}/${title}.md`);
                 const data = await response.text();
-                setArticleItem(data);
+                setArticleRawData(data);
             } catch (error) {
                 console.error('Error fetching article item:', error);
             }
         };
 
-        fetchArticleItem();
-    }, [title]);
-
-    useEffect(() => {
-        const fetchAuthorName = async () => {
+        const fetchArticleInfo = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/api/user/${articleItem.AuthorId}`);
+                const response = await fetch(`https://api.github.com/repos/BinL233/my_docs/commits?path=${title}/${title}.md`);
                 const data = await response.json();
-                serAuthorName(data);
+                setArticleInfo(data);
             } catch (error) {
                 console.error('Error fetching article author:', error);
             }
         };
 
-        // fetchAuthorName();
-    }, [articleItem.AuthorId]);
+        fetchArticleInfo();
+        fetchArticleRawData();
+    }, [title]);
 
     function formatDate(dateString) {
         const date = new Date(dateString);
@@ -75,24 +86,24 @@ function Article() {
 
             <div id="article" className="container">
                 <section id="article" className="module">
-                    {/* <h1 className="article_title" style={{fontSize: '2em'}}>{articleItem.Title}</h1> */}
+                    <h1 className="article_title" style={{fontSize: '2em'}}>{articleItems?.kueue?.title}</h1>
 
-                    {/* <p id="article" className="details">
-                        <span>Published at</span>
-                        <span>{formatDate(articleItem.PublishedAt)}</span>
-                        <span>   ·   </span>
+                    <p id="article" className="details">
+                        <span>Edited at</span>
+                        <span>{formatDate(articleInfo[0]?.commit?.author?.date)}</span>
+                        {/* <span>   ·   </span>
                         <span>{articleItem.Views}</span>
-                        <span>views</span>
-                    </p> */}
+                        <span>views</span> */}
+                    </p>
 
                     <p id="article" className="author_name">
-                        <span>Author:</span> <span className="author_user_name">{articleItem.author}</span>
+                        <span>Author:</span> <span className="author_user_name">{articleItems?.kueue?.author}</span>
                     </p>
 
                     <div class="horizontal-line"></div>
 
                     <p id="article">
-                        <ReactMarkdown className="markdown">{articleItem}</ReactMarkdown>
+                        <MarkdownRenderer className="markdown" content={articleRawData} />
                     </p>
                 </section>
             </div>
