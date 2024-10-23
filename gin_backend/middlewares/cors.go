@@ -9,7 +9,7 @@ import (
 
 func SetCors(r *gin.Engine) {
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:3000"}, // 允许的前端域名
+		AllowOrigins:     []string{"http://localhost:3000", "http://binltools_web"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Authorization", "Content-Type"},
 		ExposeHeaders:    []string{"Content-Length", "Authorization"},
