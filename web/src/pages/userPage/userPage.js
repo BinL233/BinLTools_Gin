@@ -37,7 +37,7 @@ function UserPage() {
 
     async function handleSaveUsername() {
         try {
-            const response = await fetch('http://localhost:8080/api/user/change_username', {
+            const response = await fetch('/api/user/change_username', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

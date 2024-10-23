@@ -11,7 +11,7 @@ function Header() {
         console.log("Fetching login data...");
 
         // Get login data from backend
-        fetch('http://localhost:8080/api/user/login', {
+        fetch('/api/user/login', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`

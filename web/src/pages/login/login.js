@@ -17,7 +17,7 @@ function Login() {
         console.log("Submit login process...")
 
         try {
-            const response = await fetch('http://localhost:8080/api/user/login_process', {
+            const response = await fetch('/api/user/login_process', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

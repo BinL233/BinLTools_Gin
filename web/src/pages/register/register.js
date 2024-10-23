@@ -16,7 +16,7 @@ function Register() {
         event.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:8080/api/user/register_process', {
+            const response = await fetch('/api/user/register_process', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

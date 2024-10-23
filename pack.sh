@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Build backend image
 docker buildx build --platform linux/amd64 -t binl2333/binltools_backend:test . 
 
